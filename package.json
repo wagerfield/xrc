@@ -18,11 +18,12 @@
   ],
   "scripts": {
     "build": "tsc",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "format": "prettier --write '*.{json,md}' 'src/**/*.{ts,tsx}'",
+    "prepare": "yarn build"
   },
   "husky": {
     "hooks": {
-      "pre-publish": "tsc",
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
