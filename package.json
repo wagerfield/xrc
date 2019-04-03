@@ -20,7 +20,7 @@
     "build": "tsc",
     "watch": "tsc --watch",
     "format": "prettier --write '*.{json,md}' 'src/**/*.{ts,tsx}'",
-    "prepare": "yarn build"
+    "prepublishOnly": "yarn build"
   },
   "husky": {
     "hooks": {
@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
