@@ -1,0 +1,13 @@
+# folders
+node_modules
+lib
+tmp
+
+# files
+todo.*
+
+# logs
+*.log
+
+# system
+.DS_Store
