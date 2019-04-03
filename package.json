@@ -1,7 +1,7 @@
 {
   "name": "xrc",
   "description": "React Components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "Matthew Wagerfield <matthew@wagerfield.com>",
   "homepage": "https://github.com/wagerfield/xrc#readme",
