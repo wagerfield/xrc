@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "dev": "tsc --watch",
-    "build": "tsc --declaration --sourceMap --noEmitOnError",
+    "build": "tsc --declaration --noEmitOnError",
     "format": "prettier --write '*.{json,md}' 'src/**/*.{ts,tsx}'",
     "prepublishOnly": "yarn build"
   },
