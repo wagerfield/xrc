@@ -18,8 +18,8 @@
     "lib"
   ],
   "scripts": {
-    "dev": "tsc --watch",
-    "build": "tsc --declaration --noEmitOnError",
+    "build": "tsc",
+    "dev": "tsc --watch --skipLibCheck",
     "format": "prettier --write '*.{json,md}' 'src/**/*.{ts,tsx}'",
     "prepublishOnly": "yarn build"
   },
