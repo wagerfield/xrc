@@ -1,6 +1,6 @@
 {
   "name": "xrc",
-  "description": "React Components",
+  "description": "xrc",
   "version": "0.1.1",
   "license": "MIT",
   "author": "Matthew Wagerfield <matthew@wagerfield.com>",
@@ -13,12 +13,13 @@
     "url": "https://github.com/wagerfield/xrc/issues"
   },
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch",
+    "dev": "tsc --watch",
+    "build": "tsc --declaration --sourceMap --noEmitOnError",
     "format": "prettier --write '*.{json,md}' 'src/**/*.{ts,tsx}'",
     "prepublishOnly": "yarn build"
   },
@@ -40,6 +41,9 @@
     ]
   },
   "dependencies": {
+    "@types/react": "^16.8.11",
+    "@types/styled-components": "^4.1.12",
+    "ramda": "^0.26.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "styled-components": "^4.2.0"
