@@ -18,7 +18,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --noEmitOnError",
     "dev": "tsc --watch --skipLibCheck",
     "format": "prettier --write '*.{json,md}' 'src/**/*.{ts,tsx}'",
     "prepublishOnly": "yarn build"
@@ -41,6 +41,7 @@
     ]
   },
   "dependencies": {
+    "@types/ramda": "0.26.6",
     "@types/react": "16.8.12",
     "@types/styled-components": "4.1.8",
     "ramda": "0.26.1",
