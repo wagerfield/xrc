@@ -1,6 +1,5 @@
 {
   "include": ["src"],
-  "exclude": ["lib", "node_modules"],
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "lib",
@@ -13,11 +12,6 @@
     "jsx": "react",
 
     "strict": true,
-    "noUnusedLocals": true,
-    "allowSyntheticDefaultImports": true,
-
-    "sourceMap": false,
-    "declaration": true,
-    "noEmitOnError": true
+    "noUnusedLocals": true
   }
 }
