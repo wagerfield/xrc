@@ -1,5 +1,6 @@
 {
-  "include": ["src"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["src/**/*.spec.tsx", "src/**/*.stories.tsx"],
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "lib",
