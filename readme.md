@@ -17,7 +17,7 @@ ReactDOM.render(<Button>Hello XRC</Button>, root)
 ## Development
 
 1. Clone the repository and `cd` into it
-2. Run `yarn` to install the dependencies
+2. Run `yarn` to install the project dependencies
 3. Run `yarn dev` to start the TypeScript compiler in watch mode
 
 [typescript]: https://www.typescriptlang.org
