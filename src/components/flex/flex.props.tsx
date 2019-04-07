@@ -1,0 +1,32 @@
+import { BackgroundProperty } from "csstype"
+
+export interface FlexProps {
+  display?: "flex" | "inline-flex"
+  direction?: "row" | "row-reverse" | "column" | "column-reverse"
+  wrap?: "nowrap" | "wrap" | "wrap-reverse"
+
+  alignItems?: "flex-start" | "flex-end" | "center" | "baseline" | "stretch"
+  alignContent?:
+    | "flex-start"
+    | "flex-end"
+    | "center"
+    | "space-between"
+    | "space-around"
+    | "stretch"
+  justifyContent?:
+    | "flex-start"
+    | "flex-end"
+    | "center"
+    | "space-between"
+    | "space-around"
+    | "space-evenly"
+
+  width?: string
+  height?: string
+
+  fillWidth?: boolean
+  fillHeight?: boolean
+  fill?: boolean
+
+  background?: BackgroundProperty<0>
+}
