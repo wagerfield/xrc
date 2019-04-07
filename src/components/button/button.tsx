@@ -1,5 +1,5 @@
 import * as React from "react"
-import { ButtonProps } from "./button.types"
+import { ButtonProps } from "./button.props"
 import { StyledButton } from "./button.styles"
 
 export const Button: React.FunctionComponent<ButtonProps> = (props) => (
@@ -8,6 +8,5 @@ export const Button: React.FunctionComponent<ButtonProps> = (props) => (
 
 Button.defaultProps = {
   variant: "primary",
-  size: "large",
-  flex: false
+  size: "large"
 }

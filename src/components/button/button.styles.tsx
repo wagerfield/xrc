@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components"
-import { allPass, always, cond, propEq } from "ramda"
-import { ButtonProps as Props } from "./button.types"
+import { allPass, always, cond, ifElse, propEq } from "ramda"
+import { palette, ui } from "../../core/theme"
+import { prop, styleWhen } from "../../core/utils"
 
 const sizeEq = propEq("size")
 const isSmall = sizeEq("small")
@@ -11,6 +12,8 @@ const isPrimary = variantEq("primary")
 const isSecondary = variantEq("secondary")
 const isAlternative = variantEq("alternative")
 
+const grow = ifElse(prop("grow"), always(1), always(0))
+
 const padding = cond([
   [allPass([isSecondary, isLarge]), always("14px 30px")],
   [allPass([isSecondary, isSmall]), always("6px 14px")],
@@ -18,75 +21,57 @@ const padding = cond([
   [isSmall, always("8px 16px")]
 ])
 
-const flex = (p: Props) =>
-  p.flex &&
-  css`
-    flex-grow: 1;
-    flex-shrink: 0;
-  `
+const small = css`
+  height: ${ui.small.height};
+  border-radius: ${ui.small.borderRadius};
+  font-size: ${ui.small.fontSize};
+`
 
-const small = (p: Props) =>
-  isSmall(p) &&
-  css`
-    height: 32px;
-    border-radius: 16px;
-    font-size: 14px;
-  `
+const large = css`
+  height: ${ui.large.height};
+  border-radius: ${ui.large.borderRadius};
+  font-size: ${ui.large.fontSize};
+`
 
-const large = (p: Props) =>
-  isLarge(p) &&
-  css`
-    height: 48px;
-    border-radius: 24px;
-    font-size: 16px;
-  `
+const primary = css`
+  color: ${palette.text.contrast};
+  background: ${palette.brand.primary};
+  box-shadow: ${ui.shadow};
+`
 
-const primary = (p: Props) =>
-  isPrimary(p) &&
-  css`
-    border: none;
-    color: #ffffff;
-    background: #00b67d;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16),
-      0 -4px 0 rgba(0, 0, 0, 0.32) inset;
-  `
+const secondary = css`
+  color: ${palette.brand.primary};
+  background: ${palette.background.contrast};
+  border: ${ui.border} ${palette.brand.primary};
+`
 
-const secondary = (p: Props) =>
-  isSecondary(p) &&
-  css`
-    color: #00b67d;
-    background: #ffffff;
-    border: 2px solid #00b67d;
-  `
-
-const alternative = (p: Props) =>
-  isAlternative(p) &&
-  css`
-    border: none;
-    color: #00b67d;
-    background: rgba(0, 0, 0, 0.04);
-  `
+const alternative = css`
+  color: ${palette.brand.primary};
+  background: ${palette.overlay.light};
+`
 
 export const StyledButton = styled.button`
   box-sizing: border-box;
   display: inline-block;
 
+  flex-grow: ${grow};
+  flex-shrink: 0;
+
   margin: 0;
+  border: none;
   padding: ${padding};
 
-  font-family: "Avenir Next";
-  font-weight: bold;
-  line-height: 16px;
+  font-family: ${ui.fontFamily};
+  font-weight: ${ui.fontWeight};
+  line-height: ${ui.lineHeight};
 
   text-transform: uppercase;
   white-space: nowrap;
 
-  ${flex}
+  ${styleWhen(isSmall, small)}
+  ${styleWhen(isLarge, large)}
 
-  ${small}
-  ${large}
-
-  ${primary}
-  ${secondary}
-  ${alternative}
+  ${styleWhen(isPrimary, primary)}
+  ${styleWhen(isSecondary, secondary)}
+  ${styleWhen(isAlternative, alternative)}
 `
