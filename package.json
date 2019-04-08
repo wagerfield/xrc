@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@types/ramda": "0.26.6",
-    "@types/react": "16.8.12",
+    "@types/react": "16.8.13",
     "@types/styled-components": "4.1.8",
     "csstype": "^2.6.3",
     "ramda": "0.26.1",
