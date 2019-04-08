@@ -4,12 +4,12 @@ Library of React Components created with [TypeScript][typescript] and [Styled Co
 
 ## Usage
 
-```tsx
+```jsx
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 import { Button } from "xrc"
 
-const root = document.getElementById("root")!
+const root = document.getElementById("root")
 
 ReactDOM.render(<Button>Hello XRC</Button>, root)
 ```
