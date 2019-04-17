@@ -1,13 +1,8 @@
 import styled, { css } from "styled-components"
-import { allPass, always, cond, ifElse, mergeRight, prop, propEq } from "ramda"
-import { palette, ui } from "../../core/theme"
-import { styleWhen } from "../../core/utils"
-import { ButtonProps } from "./button.props"
-
-export const defaultProps: ButtonProps = {
-  variant: "primary",
-  size: "large"
-}
+import { allPass, always, cond, ifElse, prop, propEq } from "ramda"
+import { styleWhen, theme } from "../../core/utils"
+import { MasterTheme } from "../../themes/master.theme"
+import { ButtonProps } from "./button.types"
 
 const sizeEq = propEq("size")
 const isSmall = sizeEq("small")
@@ -22,41 +17,41 @@ const grow = ifElse(prop("grow"), always(1), always(0))
 
 const padding = cond([
   [allPass([isSecondary, isLarge]), always("14px 30px")],
-  [allPass([isSecondary, isSmall]), always("6px 14px")],
+  [allPass([isSecondary, isSmall]), always("7px 14px")],
   [isLarge, always("16px 32px")],
   [isSmall, always("8px 16px")]
 ])
 
 const small = css`
-  height: ${ui.small.height};
-  border-radius: ${ui.small.borderRadius};
-  font-size: ${ui.small.fontSize};
+  height: ${theme("sizeSmall")};
+  border-radius: ${theme("radiusSmall")};
+  font-size: ${theme("fontSizeSmall")};
 `
 
 const large = css`
-  height: ${ui.large.height};
-  border-radius: ${ui.large.borderRadius};
-  font-size: ${ui.large.fontSize};
+  height: ${theme("sizeLarge")};
+  border-radius: ${theme("radiusLarge")};
+  font-size: ${theme("fontSizeRegular")};
 `
 
 const primary = css`
-  color: ${palette.text.contrast};
-  background: ${palette.brand.primary};
-  box-shadow: ${ui.shadow};
+  color: ${theme("colorTextContrast")};
+  background: ${theme("colorBrandPrimary")};
+  box-shadow: ${theme("shadowButton")};
 `
 
 const secondary = css`
-  color: ${palette.brand.primary};
-  background: ${palette.background.contrast};
-  border: ${ui.border} ${palette.brand.primary};
+  color: ${theme("colorBrandPrimary")};
+  background: ${theme("colorBackgroundContrast")};
+  border: ${theme("border")} ${theme("colorBrandPrimary")};
 `
 
 const alternative = css`
-  color: ${palette.brand.primary};
-  background: ${palette.overlay.light};
+  color: ${theme("colorBrandPrimary")};
+  background: ${theme("colorOverlayLight")};
 `
 
-export const Button = styled.button.attrs(mergeRight(defaultProps))`
+export const Button = styled.button<ButtonProps>`
   box-sizing: border-box;
   display: inline-block;
 
@@ -67,9 +62,9 @@ export const Button = styled.button.attrs(mergeRight(defaultProps))`
   border: none;
   padding: ${padding};
 
-  font-family: ${ui.fontFamily};
-  font-weight: ${ui.fontWeight};
-  line-height: ${ui.lineHeight};
+  font-family: ${theme("fontFamilyRegular")};
+  font-weight: ${theme("fontWeightBold")};
+  line-height: ${theme("lineHeightReset")};
 
   text-transform: uppercase;
   white-space: nowrap;
@@ -81,3 +76,11 @@ export const Button = styled.button.attrs(mergeRight(defaultProps))`
   ${styleWhen(isSecondary, secondary)}
   ${styleWhen(isAlternative, alternative)}
 `
+
+Button.defaultProps = {
+  theme: MasterTheme,
+  variant: "primary",
+  size: "large"
+}
+
+export default Button

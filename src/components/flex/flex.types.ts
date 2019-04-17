@@ -24,9 +24,9 @@ export interface FlexProps {
   width?: string
   height?: string
 
+  fillArea?: boolean
   fillWidth?: boolean
   fillHeight?: boolean
-  fill?: boolean
 
   background?: BackgroundProperty<0>
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { mergeRight, prop } from "ramda"
-import { FlexProps } from "./flex.props"
+import { FlexProps } from "./flex.types"
 
 const defaultProps: FlexProps = {
   display: "flex",
@@ -12,12 +12,12 @@ const defaultProps: FlexProps = {
 }
 
 const width = (props: FlexProps) => {
-  const fill = props.fill || props.fillWidth
+  const fill = props.fillArea || props.fillWidth
   return props.width || (fill && "100%")
 }
 
 const height = (props: FlexProps) => {
-  const fill = props.fill || props.fillHeight
+  const fill = props.fillArea || props.fillHeight
   return props.height || (fill && "100%")
 }
 
