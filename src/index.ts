@@ -2,7 +2,7 @@ import * as utils from "./core/utils"
 
 export { utils }
 
-export { ThemeProps } from "./themes/theme.types"
+export { Theme, ThemeProps } from "./themes/theme.types"
 export { MasterTheme } from "./themes/master.theme"
 export { DemoTheme } from "./themes/demo.theme"
 
