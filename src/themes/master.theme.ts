@@ -29,7 +29,7 @@ export const MasterTheme: Theme = {
   colorBackgroundPrimary: "#F7F4EF",
   colorBackgroundSecondary: "#DDDAD4",
   colorBackgroundContrast: "#FFFFFF",
-  colorBackgroundDebug: "rgba(0,153,255,0.5)",
+  colorBackgroundDebug: "rgba(0,153,255,0.25)",
 
   // Color: Text
   colorTextPrimary: "#202020",
