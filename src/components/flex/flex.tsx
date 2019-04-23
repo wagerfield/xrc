@@ -1,15 +1,6 @@
 import styled from "styled-components"
-import { mergeRight, prop } from "ramda"
+import { prop } from "../../core/utils"
 import { FlexProps } from "./flex.types"
-
-const defaultProps: FlexProps = {
-  display: "flex",
-  direction: "row",
-  alignItems: "stretch",
-  alignContent: "stretch",
-  justifyContent: "flex-start",
-  wrap: "nowrap"
-}
 
 const width = (props: FlexProps) => {
   const fill = props.fillArea || props.fillWidth
@@ -21,7 +12,7 @@ const height = (props: FlexProps) => {
   return props.height || (fill && "100%")
 }
 
-export const Flex = styled.div.attrs(mergeRight(defaultProps))`
+export const Flex = styled.div<FlexProps>`
   display: ${prop("display")};
 
   flex-direction: ${prop("direction")};
@@ -36,3 +27,12 @@ export const Flex = styled.div.attrs(mergeRight(defaultProps))`
   width: ${width};
   height: ${height};
 `
+
+Flex.defaultProps = {
+  display: "flex",
+  direction: "row",
+  alignItems: "stretch",
+  alignContent: "stretch",
+  justifyContent: "flex-start",
+  wrap: "nowrap"
+}
