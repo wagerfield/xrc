@@ -65,6 +65,6 @@
     "prettier": "1.17.0",
     "rimraf": "2.6.3",
     "tslint": "5.16.0",
-    "typescript": "3.3.4000"
+    "typescript": "3.4.5"
   }
 }
