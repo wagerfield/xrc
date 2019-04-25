@@ -12,6 +12,14 @@ const height = (props: FlexProps) => {
   return props.height || (fill && "100%")
 }
 
+const overflowX = (props: FlexProps) => {
+  return props.overflow || props.overflowX
+}
+
+const overflowY = (props: FlexProps) => {
+  return props.overflow || props.overflowY
+}
+
 export const Flex = styled.div<FlexProps>`
   display: ${prop("display")};
 
@@ -26,6 +34,9 @@ export const Flex = styled.div<FlexProps>`
 
   width: ${width};
   height: ${height};
+
+  overflow-x: ${overflowX};
+  overflow-y: ${overflowY};
 `
 
 Flex.defaultProps = {

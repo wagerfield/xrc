@@ -1,4 +1,4 @@
-import { BackgroundProperty } from "csstype"
+import { BackgroundProperty, OverflowProperty } from "csstype"
 
 export interface FlexProps {
   display?: "flex" | "inline-flex"
@@ -27,6 +27,10 @@ export interface FlexProps {
   fillArea?: boolean
   fillWidth?: boolean
   fillHeight?: boolean
+
+  overflow?: OverflowProperty
+  overflowX?: OverflowProperty
+  overflowY?: OverflowProperty
 
   background?: BackgroundProperty<0>
 }
