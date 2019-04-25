@@ -10,7 +10,9 @@
     "moduleResolution": "node",
 
     "lib": ["es2015", "dom"],
+
     "jsx": "react",
+    "jsxFactory": "jsx",
 
     "strict": true,
     "noUnusedLocals": true,
