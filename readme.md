@@ -1,6 +1,6 @@
 # XRC
 
-Library of React Components created with [TypeScript][typescript] and [Styled Components][styled-components].
+Library of React Components created with [TypeScript][typescript], [Emotion][emotion] and [Onno][onno].
 
 ## Usage
 
@@ -21,4 +21,5 @@ ReactDOM.render(<Button>Hello XRC</Button>, root)
 3. Run `yarn dev` to start the TypeScript compiler in watch mode
 
 [typescript]: https://www.typescriptlang.org
-[styled-components]: https://www.styled-components.com
+[emotion]: https://emotion.sh
+[onno]: https://onnojs.com
