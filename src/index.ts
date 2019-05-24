@@ -5,4 +5,3 @@ export * from "./themes/black"
 
 // Components
 export * from "./components/box"
-export * from "./components/button"

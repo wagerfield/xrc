@@ -10,6 +10,7 @@
     "jsxFactory": "jsx",
     "strict": true,
     "noUnusedLocals": true,
-    "declaration": true
+    "declaration": true,
+    "declarationDir": "types"
   }
 }

@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react"
-import { jsx } from "@emotion/core"
+import { jsx, css } from "@emotion/core"
 import {
   compose,
   colorSet,
@@ -10,12 +10,17 @@ import {
   LayoutSetStyle,
   spaceSet,
   SpaceSetProps,
-  SpaceSetStyle
-} from "onno"
+  SpaceSetStyle,
+  propTypes
+} from "onno-react"
 
 export type BoxProps = ColorSetProps & LayoutSetProps & SpaceSetProps
 
 export type BoxStyle = ColorSetStyle & LayoutSetStyle & SpaceSetStyle
+
+export const boxStyles = css({
+  boxSizing: "border-box"
+})
 
 export const boxSet = compose<BoxProps, BoxStyle>(
   colorSet,
@@ -23,11 +28,8 @@ export const boxSet = compose<BoxProps, BoxStyle>(
   spaceSet
 )
 
-export const Box: FunctionComponent = () => <div />
+export const Box: FunctionComponent<BoxProps> = (props) => (
+  <div css={[boxStyles, boxSet(props)]} />
+)
 
-// export const Box = styled.div<BoxProps>(
-//   {
-//     boxSizing: "border-box"
-//   },
-//   boxSet
-// )
+Box.propTypes = propTypes(boxSet)

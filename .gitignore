@@ -1,5 +1,8 @@
 # folders
 node_modules
+types
+cjs
+esm
 lib
 tmp
 
