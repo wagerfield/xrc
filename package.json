@@ -49,14 +49,10 @@
   },
   "dependencies": {
     "@emotion/core": "10.0.10",
-    "@types/ramda": "0.26.8",
-    "@types/react": "16.8.14",
-    "csstype": "2.6.4",
-    "emotion-theming": "10.0.10",
-    "ramda": "0.26.1",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "styled-system": "4.1.0"
+    "@emotion/styled": "10.0.11",
+    "@types/react": "16.8.18",
+    "onno-react": "0.0.8",
+    "react": "16.8.6"
   },
   "devDependencies": {
     "@commitlint/cli": "7.5.2",
