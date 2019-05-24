@@ -1,22 +1,15 @@
 {
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["src/**/*.spec.tsx", "src/**/*.stories.tsx"],
+  "include": ["src"],
   "compilerOptions": {
-    "rootDir": "src",
     "outDir": "lib",
-
     "target": "es2015",
     "module": "es2015",
     "moduleResolution": "node",
-
     "lib": ["es2015", "dom"],
-
     "jsx": "react",
     "jsxFactory": "jsx",
-
     "strict": true,
     "noUnusedLocals": true,
-
     "declaration": true
   }
 }
