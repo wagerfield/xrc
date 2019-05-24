@@ -1,6 +1,7 @@
-export { Theme, ThemeProps } from "./types/theme.types"
+// Themes
+export { MasterTheme } from "./themes/master"
+export { BlackTheme } from "./themes/black"
 
-export { MasterTheme } from "./themes/master.theme"
-
-export { Flex } from "./components/flex/flex"
-export { FlexProps } from "./components/flex/flex.types"
+// Components
+export { Box } from "./components/box"
+export { Button } from "./components/button"
