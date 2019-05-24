@@ -1,7 +1,8 @@
 // Themes
-export { MasterTheme } from "./themes/master"
-export { BlackTheme } from "./themes/black"
+export * from "./themes/theme"
+export * from "./themes/master"
+export * from "./themes/black"
 
 // Components
-export { Box } from "./components/box"
-export { Button } from "./components/button"
+export * from "./components/box"
+export * from "./components/button"

@@ -1,48 +1,58 @@
-import { Theme as OnnoTheme, ThemeArray, ThemeObject } from "onno-react"
+import { Theme as BaseTheme, ThemeArray, ThemeObject } from "onno-react"
 
-export interface Colors extends ThemeObject {
-  brand: {
-    primary: string
-    secondary: string
-  }
-}
-
-export interface FontFamilies extends ThemeObject {
-  main: string
-}
-
-export interface LineHeights extends ThemeObject {
-  main: number
-  heading: number
-  single: 1
-}
-
-export interface Borders extends ThemeObject {
-  divider: string
-  button: string
-  input: string
-}
-
-export interface Shadows extends ThemeObject {
-  drop: ThemeArray
-  inset: {
-    upper: string
-    lower: string
-  }
-}
-
-export interface TextStyles extends ThemeObject {
-  caps: ThemeObject
-}
-
-export interface Theme extends OnnoTheme {
+export interface Theme extends BaseTheme {
   sizes: ThemeArray
   radii: ThemeArray
-  colors: Colors
-  fontFamilies: FontFamilies
+  colors: {
+    brand: {
+      primary: string
+      secondary: string
+    }
+    text: {
+      main: string
+      alt: string
+      inv: string
+    }
+    background: {
+      main: string
+      alt: string
+      inv: string
+      invAlt: string
+      debug: string
+    }
+    feedback: {
+      neutral: string
+      positive: string
+      negative: string
+    }
+    overlay: {
+      dark: string
+      medium: string
+      light: string
+    }
+  }
+  fontFamilies: {
+    main: string
+  }
   fontSizes: ThemeArray
-  lineHeights: LineHeights
-  borders: Borders
-  shadows: Shadows
-  textStyles: TextStyles
+  lineHeights: {
+    main: number
+    heading: number
+    single: 1
+  }
+  borders: {
+    divider: string
+    button: string
+    input: string
+  }
+  shadows: {
+    drop: ThemeArray
+    inset: {
+      upper: string
+      lower: string
+    }
+  }
+  textStyles: {
+    caps: ThemeObject
+  }
 }

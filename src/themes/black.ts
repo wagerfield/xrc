@@ -17,7 +17,8 @@ export const BlackTheme: Theme = {
       main: "#253238",
       alt: "#12191C",
       inv: "#FFFFFF",
-      invAlt: "#455A64"
+      invAlt: "#455A64",
+      debug: "rgba(0,153,255,0.25)"
     },
     feedback: {
       neutral: "#90CAF9",
