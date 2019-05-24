@@ -51,7 +51,7 @@
     "@emotion/core": "10.0.10",
     "@emotion/styled": "10.0.11",
     "@types/react": "16.8.18",
-    "onno-react": "0.0.8",
+    "onno-react": "0.0.11",
     "react": "16.8.6"
   },
   "devDependencies": {
