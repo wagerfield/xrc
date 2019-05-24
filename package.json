@@ -22,9 +22,9 @@
   ],
   "scripts": {
     "clean": "rimraf cjs esm lib types",
+    "build": "tsc",
+    "types": "tsc --emitDeclarationOnly",
     "dev": "tsc --watch --skipLibCheck",
-    "build": "tsc --noEmitOnError",
-    "types": "tsc --noEmitOnError --emitDeclarationOnly",
     "bundle": "rollup --config",
     "format": "prettier --write '**/*.{json,js,md,ts,tsx}'",
     "lint": "tslint --fix --format codeFrame 'src/**/*.{ts,tsx}'",
