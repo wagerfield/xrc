@@ -1,5 +1,5 @@
 import { ElementType, FunctionComponent } from "react"
-// import { elementType, oneOfType, string } from "prop-types"
+import { elementType, oneOfType, string } from "prop-types"
 import { css, jsx } from "@emotion/core"
 import {
   compose,
@@ -24,6 +24,9 @@ import {
   flexSet,
   FlexSetProps,
   FlexSetStyle,
+  gridSet,
+  GridSetProps,
+  GridSetStyle,
   layoutSet,
   LayoutSetProps,
   LayoutSetStyle,
@@ -45,6 +48,7 @@ type BoxSetProps = BackgroundSetProps &
   ColorStyleProps &
   DisplaySetProps &
   FlexSetProps &
+  GridSetProps &
   LayoutSetProps &
   SpaceSetProps &
   TextSetProps &
@@ -56,6 +60,7 @@ type BoxSetStyle = BackgroundSetStyle &
   ColorSetStyle &
   DisplaySetStyle &
   FlexSetStyle &
+  GridSetStyle &
   LayoutSetStyle &
   SpaceSetStyle &
   TextSetStyle
@@ -76,6 +81,7 @@ const boxSet = compose<BoxSetProps, BoxSetStyle>(
   colorStyle,
   displaySet,
   flexSet,
+  gridSet,
   layoutSet,
   spaceSet,
   textSet,
@@ -87,8 +93,8 @@ export const Box: FunctionComponent<BoxProps> = (props) => (
 )
 
 Box.propTypes = {
-  ...propTypes(boxSet)
-  // as: oneOfType([elementType, string])
+  ...propTypes(boxSet),
+  as: oneOfType([elementType, string])
 }
 
 Box.defaultProps = {
