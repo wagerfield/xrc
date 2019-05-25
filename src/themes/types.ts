@@ -6,8 +6,6 @@ export interface ColorVariant extends ThemeObject {
 }
 
 export interface Theme extends BaseTheme {
-  sizes: ThemeArray
-  radii: ThemeArray
   colors: {
     brand: {
       primary: string
@@ -38,20 +36,20 @@ export interface Theme extends BaseTheme {
   }
   fontFamilies: {
     main: string
+    code: string
   }
   fontSizes: ThemeArray
   lineHeights: ThemeArray
+  sizes: ThemeArray
+  radii: ThemeArray
   borders: {
     divider: string
     button: string
     input: string
   }
   boxShadows: {
-    drop: ThemeArray
-    inset: {
-      upper: string
-      lower: string
-    }
+    outer: ThemeArray
+    inner: ThemeArray
   }
   colorStyles: {
     primary: ColorVariant
@@ -60,5 +58,5 @@ export interface Theme extends BaseTheme {
   textStyles: {
     caps: ThemeObject
   }
-  global: ThemeObject
+  globalStyles: ThemeObject
 }

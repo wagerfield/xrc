@@ -1,52 +1,6 @@
 import { Theme } from "./types"
 
-const AVENIR_NEXT = "Avenir Next, system-ui, sans-serif"
-
 export const MasterTheme: Theme = {
-  sizes: [
-    {
-      alias: "zero",
-      value: 0
-    },
-    {
-      alias: "fill",
-      value: "100%"
-    },
-    {
-      alias: "icon",
-      value: 24
-    },
-    {
-      alias: "sm",
-      value: 32
-    },
-    {
-      alias: "md",
-      value: 40
-    },
-    {
-      alias: "lg",
-      value: 48
-    }
-  ],
-  radii: [
-    {
-      alias: "none",
-      value: 0
-    },
-    {
-      alias: "sm",
-      value: 16
-    },
-    {
-      alias: "md",
-      value: 20
-    },
-    {
-      alias: "lg",
-      value: 24
-    }
-  ],
   colors: {
     brand: {
       primary: "#00B67D",
@@ -76,43 +30,36 @@ export const MasterTheme: Theme = {
     }
   },
   fontFamilies: {
-    main: AVENIR_NEXT
+    main: "Avenir Next, system-ui, sans-serif",
+    code: "Monaco, monospace"
   },
   fontSizes: [
-    {
-      alias: "sm",
-      value: 14
-    },
-    {
-      alias: "main",
-      value: 16
-    },
-    {
-      alias: "h3",
-      value: 24
-    },
-    {
-      alias: "h2",
-      value: 28
-    },
-    {
-      alias: "h1",
-      value: 32
-    }
+    { alias: "small", value: 14 },
+    { alias: "main", value: 16 },
+    { alias: "h3", value: 24 },
+    { alias: "h2", value: 28 },
+    { alias: "h1", value: 32 }
   ],
   lineHeights: [
-    {
-      alias: "single",
-      value: 1
-    },
-    {
-      alias: "main",
-      value: 1.5
-    },
-    {
-      alias: "heading",
-      value: 1.25
-    }
+    { alias: "single", value: 1 },
+    { alias: "heading", value: 1.2 },
+    { alias: "main", value: 1.5 }
+  ],
+  sizes: [
+    { alias: "zero", value: 0 },
+    { alias: "fill", value: "100%" },
+    { alias: "icon", value: 24 },
+    { alias: "sm", value: 32 },
+    { alias: "md", value: 40 },
+    { alias: "lg", value: 48 }
+  ],
+  radii: [
+    { alias: "none", value: 0 },
+    { alias: "fill", value: "100%" },
+    { alias: "icon", value: 12 },
+    { alias: "sm", value: 16 },
+    { alias: "md", value: 20 },
+    { alias: "lg", value: 24 }
   ],
   borders: {
     divider: "1px solid",
@@ -120,20 +67,23 @@ export const MasterTheme: Theme = {
     input: "2px solid"
   },
   boxShadows: {
-    drop: ["none", "0 2px 4px rgba(0,0,0,0.16)", "0 2px 16px rgba(0,0,0,0.5)"],
-    inset: {
-      upper: "0 4px 4px inset",
-      lower: "0 -4px 0 inset"
-    }
+    outer: [
+      { alias: "sm", value: "0 2px 4px rgba(0,0,0,0.16)" },
+      { alias: "lg", value: "0 2px 16px rgba(0,0,0,0.5)" }
+    ],
+    inner: [
+      { alias: "static", value: "inset 0 -4px 0 rgba(0,0,0,0.32)" },
+      { alias: "active", value: "inset 0 -2px 0 rgba(0,0,0,0.32)" }
+    ]
   },
   colorStyles: {
     primary: {
-      background: "#00B67D",
-      color: "#FFFFFF"
+      background: "brand.primary",
+      color: "text.inv"
     },
     secondary: {
-      background: "#FF6A00",
-      color: "#FFFFFF"
+      background: "brand.secondary",
+      color: "text.inv"
     }
   },
   textStyles: {
@@ -142,24 +92,31 @@ export const MasterTheme: Theme = {
       textTransform: "uppercase"
     }
   },
-  global: {
+  globalStyles: {
     "html": {
-      fontFamily: AVENIR_NEXT,
-      fontSize: "16px",
-      lineHeight: 1.5,
-      color: "#202020"
+      fontSize: "main",
+      fontFamily: "main",
+      lineHeight: "main",
+      color: "text.main"
+    },
+    "body": {
+      margin: 0
     },
     "h1,h2,h3": {
-      lineHeight: 1.25
+      lineHeight: "heading",
+      margin: 0
     },
     "h1": {
-      fontSize: "32px"
+      fontSize: "h1"
     },
     "h2": {
-      fontSize: "28px"
+      fontSize: "h2"
     },
     "h3": {
-      fontSize: "24px"
+      fontSize: "h3"
+    },
+    "p": {
+      margin: 0
     }
   }
 }
