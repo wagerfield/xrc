@@ -1,5 +1,10 @@
 import { Theme as BaseTheme, ThemeArray, ThemeObject } from "onno-react"
 
+export interface ColorVariant extends ThemeObject {
+  background: string
+  color: string
+}
+
 export interface Theme extends BaseTheme {
   sizes: ThemeArray
   radii: ThemeArray
@@ -13,7 +18,7 @@ export interface Theme extends BaseTheme {
       alt: string
       inv: string
     }
-    background: {
+    fill: {
       main: string
       alt: string
       inv: string
@@ -21,9 +26,9 @@ export interface Theme extends BaseTheme {
       debug: string
     }
     feedback: {
-      neutral: string
       positive: string
       negative: string
+      neutral: string
     }
     overlay: {
       dark: string
@@ -35,24 +40,25 @@ export interface Theme extends BaseTheme {
     main: string
   }
   fontSizes: ThemeArray
-  lineHeights: {
-    main: number
-    heading: number
-    single: 1
-  }
+  lineHeights: ThemeArray
   borders: {
     divider: string
     button: string
     input: string
   }
-  shadows: {
+  boxShadows: {
     drop: ThemeArray
     inset: {
       upper: string
       lower: string
     }
   }
+  colorStyles: {
+    primary: ColorVariant
+    secondary: ColorVariant
+  }
   textStyles: {
     caps: ThemeObject
   }
+  global: ThemeObject
 }

@@ -1,7 +1,9 @@
-import { FunctionComponent } from "react"
+import { ElementType, FunctionComponent } from "react"
+// import { elementType, oneOfType, string } from "prop-types"
 import { css, jsx } from "@emotion/core"
 import {
   compose,
+  propTypes,
   backgroundSet,
   BackgroundSetProps,
   BackgroundSetStyle,
@@ -14,55 +16,82 @@ import {
   colorSet,
   ColorSetProps,
   ColorSetStyle,
+  colorStyle,
+  ColorStyleProps,
   displaySet,
   DisplaySetProps,
   DisplaySetStyle,
+  flexSet,
+  FlexSetProps,
+  FlexSetStyle,
   layoutSet,
   LayoutSetProps,
   LayoutSetStyle,
   spaceSet,
   SpaceSetProps,
   SpaceSetStyle,
-  propTypes
+  textSet,
+  TextSetProps,
+  TextSetStyle,
+  textStyle,
+  TextStyleProps
 } from "onno-react"
 import { MasterTheme } from "../themes/master"
 
-export type BoxProps = BackgroundSetProps &
+type BoxSetProps = BackgroundSetProps &
   BorderSetProps &
   BoxShadowProps &
   ColorSetProps &
+  ColorStyleProps &
   DisplaySetProps &
+  FlexSetProps &
   LayoutSetProps &
-  SpaceSetProps
+  SpaceSetProps &
+  TextSetProps &
+  TextStyleProps
 
-export type BoxStyle = BackgroundSetStyle &
+type BoxSetStyle = BackgroundSetStyle &
   BorderSetStyle &
   BoxShadowStyle &
   ColorSetStyle &
   DisplaySetStyle &
+  FlexSetStyle &
   LayoutSetStyle &
-  SpaceSetStyle
+  SpaceSetStyle &
+  TextSetStyle
+
+export interface BoxProps extends BoxSetProps {
+  as: ElementType
+}
 
 const boxStyles = css({
   boxSizing: "border-box"
 })
 
-const boxSet = compose<BoxProps, BoxStyle>(
+const boxSet = compose<BoxSetProps, BoxSetStyle>(
   backgroundSet,
   borderSet,
   boxShadow,
   colorSet,
+  colorStyle,
   displaySet,
+  flexSet,
   layoutSet,
-  spaceSet
+  spaceSet,
+  textSet,
+  textStyle
 )
 
 export const Box: FunctionComponent<BoxProps> = (props) => (
-  <div css={[boxStyles, boxSet(props)]} children={props.children} />
+  <props.as css={[boxStyles, boxSet(props)]} children={props.children} />
 )
 
-Box.propTypes = propTypes(boxSet)
+Box.propTypes = {
+  ...propTypes(boxSet)
+  // as: oneOfType([elementType, string])
+}
 
 Box.defaultProps = {
-  theme: MasterTheme
+  theme: MasterTheme,
+  as: "div"
 }

@@ -1,10 +1,52 @@
-import { Theme } from "./theme"
+import { Theme } from "./types"
 
 const AVENIR_NEXT = "Avenir Next, system-ui, sans-serif"
 
 export const MasterTheme: Theme = {
-  sizes: [0, "100%", 24, 32, 40, 48],
-  radii: [0, 16, 20, 24],
+  sizes: [
+    {
+      alias: "zero",
+      value: 0
+    },
+    {
+      alias: "fill",
+      value: "100%"
+    },
+    {
+      alias: "icon",
+      value: 24
+    },
+    {
+      alias: "sm",
+      value: 32
+    },
+    {
+      alias: "md",
+      value: 40
+    },
+    {
+      alias: "lg",
+      value: 48
+    }
+  ],
+  radii: [
+    {
+      alias: "none",
+      value: 0
+    },
+    {
+      alias: "sm",
+      value: 16
+    },
+    {
+      alias: "md",
+      value: 20
+    },
+    {
+      alias: "lg",
+      value: 24
+    }
+  ],
   colors: {
     brand: {
       primary: "#00B67D",
@@ -15,7 +57,7 @@ export const MasterTheme: Theme = {
       alt: "#666666",
       inv: "#FFFFFF"
     },
-    background: {
+    fill: {
       main: "#F7F4EF",
       alt: "#DDDAD4",
       inv: "#FFFFFF",
@@ -23,9 +65,9 @@ export const MasterTheme: Theme = {
       debug: "rgba(0,153,255,0.25)"
     },
     feedback: {
-      neutral: "#0277BD",
       positive: "#00B67D",
-      negative: "#D50000"
+      negative: "#D50000",
+      neutral: "#0277BD"
     },
     overlay: {
       dark: "rgba(0,0,0,0.6)",
@@ -38,7 +80,7 @@ export const MasterTheme: Theme = {
   },
   fontSizes: [
     {
-      alias: "small",
+      alias: "sm",
       value: 14
     },
     {
@@ -58,25 +100,45 @@ export const MasterTheme: Theme = {
       value: 32
     }
   ],
-  lineHeights: {
-    main: 1.5,
-    heading: 1.25,
-    single: 1
-  },
+  lineHeights: [
+    {
+      alias: "single",
+      value: 1
+    },
+    {
+      alias: "main",
+      value: 1.5
+    },
+    {
+      alias: "heading",
+      value: 1.25
+    }
+  ],
   borders: {
     divider: "1px solid",
     button: "2px solid",
     input: "2px solid"
   },
-  shadows: {
+  boxShadows: {
     drop: ["none", "0 2px 4px rgba(0,0,0,0.16)", "0 2px 16px rgba(0,0,0,0.5)"],
     inset: {
       upper: "0 4px 4px inset",
       lower: "0 -4px 0 inset"
     }
   },
+  colorStyles: {
+    primary: {
+      background: "#00B67D",
+      color: "#FFFFFF"
+    },
+    secondary: {
+      background: "#FF6A00",
+      color: "#FFFFFF"
+    }
+  },
   textStyles: {
     caps: {
+      fontWeight: "bold",
       textTransform: "uppercase"
     }
   },
