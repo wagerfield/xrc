@@ -24,5 +24,5 @@ export default {
       printInfo: false
     })
   ],
-  external: ["@emotion/core", "onno-react"]
+  external: ["@emotion/core", "onno-react", "prop-types"]
 }
