@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "xrc-repl",
+  "description": "XRC REPL",
+  "version": "0.3.0",
+  "license": "MIT",
+  "author": "Matthew Wagerfield <matthew@wagerfield.com>",
+  "browserslist": [
+    ">0.2%"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-live": "2.1.2",
+    "react-scripts": "3.0.1"
+  }
+}
