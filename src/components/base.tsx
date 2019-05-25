@@ -14,13 +14,8 @@ const globalStyle = variant({
   renderers: [colorSet, spaceSet, textSet]
 })
 
-export const Base: FunctionComponent<BaseProps> = (props) => (
-  <Global
-    styles={globalStyle({
-      global: [],
-      theme: props.theme
-    })}
-  />
+export const Base: FunctionComponent<BaseProps> = ({ theme }) => (
+  <Global styles={globalStyle({ theme, global: [] })} />
 )
 
 Base.defaultProps = {
