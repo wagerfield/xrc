@@ -25,6 +25,7 @@ import {
   SpaceSetStyle,
   propTypes
 } from "onno-react"
+import { MasterTheme } from "../themes/master"
 
 export type BoxProps = BackgroundSetProps &
   BorderSetProps &
@@ -61,3 +62,7 @@ export const Box: FunctionComponent<BoxProps> = (props) => (
 )
 
 Box.propTypes = propTypes(boxSet)
+
+Box.defaultProps = {
+  theme: MasterTheme
+}
