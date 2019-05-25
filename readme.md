@@ -1,6 +1,6 @@
 # XRC
 
-Library of React Components created with [TypeScript][typescript], [Emotion][emotion] and [Onno][onno].
+Library of React Components created with [TypeScript][typescript], [emotion][emotion] and [onno][onno].
 
 ## Usage
 
