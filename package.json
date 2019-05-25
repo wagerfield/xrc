@@ -28,7 +28,8 @@
     "bundle": "rollup --config",
     "format": "prettier --write '**/*.{json,js,md,ts,tsx}'",
     "lint": "tslint --fix --format codeFrame 'src/**/*.{ts,tsx}'",
-    "prepublishOnly": "yarn clean && yarn types && yarn bundle && yarn format"
+    "preflight": "yarn clean && yarn types && yarn bundle && yarn format",
+    "prepublishOnly": "yarn preflight"
   },
   "husky": {
     "hooks": {
@@ -55,7 +56,7 @@
   "dependencies": {
     "@emotion/core": "10.0.10",
     "@types/react": "16.8.18",
-    "onno-react": "0.0.11",
+    "onno-react": "0.0.12",
     "react": "16.8.6"
   },
   "devDependencies": {
