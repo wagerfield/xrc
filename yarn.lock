@@ -4016,9 +4016,9 @@ symbol-observable@^1.1.0:
   integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
 
 synchronous-promise@^2.0.5:
-  version "2.0.8"
-  resolved "https://registry.npmjs.org/synchronous-promise/-/synchronous-promise-2.0.8.tgz#01fd026fffdbf2d3d39ec06ee1a7c971578136f7"
-  integrity sha512-xYavZtFC1vKgJu0AOSYdrLeikNCsNwmUeZaV1XF9cMqEhBVVxLq6rEbYzOGrF1MV2MNPkhsJqqiXuQ4a76CEUg==
+  version "2.0.9"
+  resolved "https://registry.npmjs.org/synchronous-promise/-/synchronous-promise-2.0.9.tgz#b83db98e9e7ae826bf9c8261fd8ac859126c780a"
+  integrity sha512-LO95GIW16x69LuND1nuuwM4pjgFGupg7pZ/4lU86AmchPKrhk0o2tpMU2unXRrqo81iAFe1YJ0nAGEVwsrZAgg==
 
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.3"
@@ -4147,7 +4147,7 @@ trim-off-newlines@^1.0.0:
   resolved "https://registry.npmjs.org/trim-off-newlines/-/trim-off-newlines-1.0.1.tgz#9f9ba9d9efa8764c387698bcbfeb2c848f11adb3"
   integrity sha1-n5up2e+odkw4dpi8v+sshI8RrbM=
 
-tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@1.9.3, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.9.3"
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
