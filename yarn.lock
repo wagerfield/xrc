@@ -1224,7 +1224,12 @@ crypto-browserify@^3.11.0:
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
-csstype@2.6.4, csstype@^2.2.0, csstype@^2.5.7:
+csstype@2.6.5:
+  version "2.6.5"
+  resolved "https://registry.npmjs.org/csstype/-/csstype-2.6.5.tgz#1cd1dff742ebf4d7c991470ae71e12bb6751e034"
+  integrity sha512-JsTaiksRsel5n7XwqPAfB0l3TFKdpjW/kgAELf9vrb5adGA7UCPLajKK5s3nFrcFm3Rkyp/Qkgl73ENc1UY3cA==
+
+csstype@^2.2.0, csstype@^2.5.7:
   version "2.6.4"
   resolved "https://registry.npmjs.org/csstype/-/csstype-2.6.4.tgz#d585a6062096e324e7187f80e04f92bd0f00e37f"
   integrity sha512-lAJUJP3M6HxFXbqtGRc0iZrdyeN+WzOWeY0q/VnFzI+kqVrYIzC7bWlKqCW7oCIdzoPkvfp82EVvrTlQ8zsWQg==
@@ -2953,21 +2958,21 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-onno-react@0.0.13:
-  version "0.0.13"
-  resolved "https://registry.npmjs.org/onno-react/-/onno-react-0.0.13.tgz#357814d97c9aa8bf291968ceb2c221a1217d4c1e"
-  integrity sha512-E1hVK6n1lV2kY+i6oASctztW8tKCFDwR1hNZizXBoqA8jJ7Yr57/caXpVy9T00Y5P4Wcb5UvOHkMJZxYiybTJw==
+onno-react@0.0.15:
+  version "0.0.15"
+  resolved "https://registry.npmjs.org/onno-react/-/onno-react-0.0.15.tgz#35626f462fbc0ebbc7a58573283e4424e598e003"
+  integrity sha512-DOlPEjxOjgwSUX26AbL2+fcIwO2JYSIv9wfwhCLoZZhbvO7HUJmOukSV9YybQbPY/BZPhtC9yrcmz9vtzZCNFg==
   dependencies:
     "@types/prop-types" "15.7.1"
-    onno "0.0.13"
+    onno "0.0.15"
     prop-types "15.7.2"
 
-onno@0.0.13:
-  version "0.0.13"
-  resolved "https://registry.npmjs.org/onno/-/onno-0.0.13.tgz#acf10b04820ff1747a727df36c25a02b86724bfe"
-  integrity sha512-D2kjULtrQUURQmCFEGaWH+ldBVlHxWpGH1MhiGyAnGYgz/BPR+Y3ajZDHEQ58+C4X/3evVDxrUr5vDu6JjJRuw==
+onno@0.0.15:
+  version "0.0.15"
+  resolved "https://registry.npmjs.org/onno/-/onno-0.0.15.tgz#4c5a105482d0c04cba066dd70cf656303950b14e"
+  integrity sha512-muWbLBGLFgQlGl5i76gZySq7Z+KawwTf7ofFEe3nGWNDktgqsq9yQ2SxhbP3szpMKxknUo09dRC9wVcw5UAqkQ==
   dependencies:
-    csstype "2.6.4"
+    csstype "2.6.5"
 
 os-browserify@^0.3.0:
   version "0.3.0"

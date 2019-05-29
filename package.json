@@ -57,7 +57,7 @@
   "dependencies": {
     "@emotion/core": "10.0.10",
     "@types/react": "16.8.18",
-    "onno-react": "0.0.13",
+    "onno-react": "0.0.15",
     "prop-types": "15.7.2",
     "react": "16.8.6"
   },
