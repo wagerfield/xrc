@@ -8,6 +8,7 @@ export default () => (
     <nav>
       <Link to="/">Index</Link>
       <Link to="/about">About</Link>
+      <Link to="/testing">Testing</Link>
     </nav>
     <main className="content">
       <React.Suspense fallback={<Loading />}>
