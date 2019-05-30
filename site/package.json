@@ -21,18 +21,10 @@
     "react-static-plugin-mdx": "7.0.10",
     "react-static-plugin-reach-router": "7.0.10",
     "react-static-plugin-source-filesystem": "7.0.10",
-    "react-static-plugin-typescript": "7.0.10",
     "xrc": "0.4.2"
   },
   "devDependencies": {
-    "@babel/core": "7.4.5",
-    "@types/reach__router": "1.2.4",
-    "@types/react": "16.8.19",
-    "@types/react-dom": "16.8.4",
-    "@types/react-hot-loader": "4.1.0",
-    "@types/webpack-env": "1.13.9",
     "glob": "7.1.4",
-    "serve": "11.0.1",
-    "typescript": "3.5.1"
+    "serve": "11.0.1"
   }
 }

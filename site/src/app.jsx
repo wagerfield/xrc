@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Root, Routes } from "react-static"
 import { Link, Router } from "@reach/router"
 import { Loading } from "components/loading"
@@ -10,7 +10,7 @@ export default () => (
       <Link to="/docs">Docs</Link>
       <Link to="/repl">REPL</Link>
     </nav>
-    <main className="content">
+    <main>
       <React.Suspense fallback={<Loading />}>
         <Router>
           <Routes path="*" />

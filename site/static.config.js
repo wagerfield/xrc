@@ -10,7 +10,7 @@ const ROUTE_MAP = {
 const mapFileName = (name) => ROUTE_MAP[name] || name
 
 export default {
-  entry: "index.tsx",
+  entry: "index.jsx",
   getRoutes() {
     return sync(join(DOCS_DIR, "*")).map((path) => ({
       path: mapFileName(parse(path).name),
@@ -18,7 +18,6 @@ export default {
     }))
   },
   plugins: [
-    ["react-static-plugin-typescript"],
     ["react-static-plugin-reach-router"],
     ["react-static-plugin-source-filesystem", { location: PAGES_DIR }],
     ["react-static-plugin-mdx", { includePaths: [DOCS_DIR] }]

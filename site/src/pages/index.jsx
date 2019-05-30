@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Provider, Editor, Error, Preview } from "components/live"
 
 export const code = `
