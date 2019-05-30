@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Provider, Preview, Editor, Error } from "components/live"
+import { Provider, Editor, Error, Preview } from "components/live"
 
 export const code = `
 <Base>
