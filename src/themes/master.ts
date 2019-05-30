@@ -1,5 +1,8 @@
 import { Theme } from "./types"
 
+const FF_MAIN = "Avenir Next,system-ui,sans-serif"
+const FF_MONO = "SFMono-Regular,Consolas,Menlo,monospace"
+
 export const MasterTheme: Theme = {
   colors: {
     brand: {
@@ -18,10 +21,10 @@ export const MasterTheme: Theme = {
       invAlt: "#D8D8D8",
       debug: "rgba(0,153,255,0.25)"
     },
-    feedback: {
-      positive: "#00B67D",
-      negative: "#D50000",
-      neutral: "#0277BD"
+    status: {
+      info: "#0277BD",
+      success: "#00B67D",
+      failure: "#D50000"
     },
     overlay: {
       dark: "rgba(0,0,0,0.6)",
@@ -30,8 +33,13 @@ export const MasterTheme: Theme = {
     }
   },
   fontFamilies: {
-    main: "Avenir Next, system-ui, sans-serif",
-    code: "Monaco, monospace"
+    heading: FF_MAIN,
+    main: FF_MAIN,
+    code: FF_MONO
+  },
+  fontWeights: {
+    normal: 400,
+    bold: 700
   },
   fontSizes: [
     { alias: "small", value: 14 },
@@ -42,7 +50,7 @@ export const MasterTheme: Theme = {
   ],
   lineHeights: [
     { alias: "single", value: 1 },
-    { alias: "heading", value: 1.2 },
+    { alias: "heading", value: 1.25 },
     { alias: "main", value: 1.5 }
   ],
   sizes: [
@@ -53,7 +61,7 @@ export const MasterTheme: Theme = {
     { alias: "md", value: 40 },
     { alias: "lg", value: 48 }
   ],
-  radii: [
+  borderRadii: [
     { alias: "none", value: 0 },
     { alias: "fill", value: "100%" },
     { alias: "icon", value: 12 },
@@ -66,16 +74,7 @@ export const MasterTheme: Theme = {
     button: "2px solid",
     input: "2px solid"
   },
-  boxShadows: {
-    outer: [
-      { alias: "sm", value: "0 2px 4px rgba(0,0,0,0.16)" },
-      { alias: "lg", value: "0 2px 16px rgba(0,0,0,0.5)" }
-    ],
-    inner: [
-      { alias: "static", value: "inset 0 -4px 0 rgba(0,0,0,0.32)" },
-      { alias: "active", value: "inset 0 -2px 0 rgba(0,0,0,0.32)" }
-    ]
-  },
+  boxShadows: [{ alias: "main", value: "0 2px 16px rgba(0,0,0,0.5)" }],
   colorStyles: {
     primary: {
       background: "brand.primary",
@@ -99,12 +98,12 @@ export const MasterTheme: Theme = {
       lineHeight: "main",
       color: "text.main"
     },
-    "body": {
+    "body,h1,h2,h3,p": {
       margin: 0
     },
     "h1,h2,h3": {
-      lineHeight: "heading",
-      margin: 0
+      fontFamily: "heading",
+      lineHeight: "heading"
     },
     "h1": {
       fontSize: "h1"
@@ -115,8 +114,12 @@ export const MasterTheme: Theme = {
     "h3": {
       fontSize: "h3"
     },
-    "p": {
-      margin: 0
+    "pre,code": {
+      fontSize: "85%",
+      fontFamily: "code",
+      borderRadius: "3px",
+      padding: "0.2em 0.4em",
+      background: "rgba(32,32,32,0.05)"
     }
   }
 }

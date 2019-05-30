@@ -1,56 +1,84 @@
-import { Theme as BaseTheme, ThemeArray, ThemeObject } from "onno-react"
+import { Primitive, ThemeObject, Theme as BaseTheme } from "onno-react"
+
+export type Color = string
 
 export interface ColorVariant extends ThemeObject {
-  background: string
-  color: string
+  background: Color
+  color: Color
 }
 
 export interface Theme extends BaseTheme {
   colors: {
     brand: {
-      primary: string
-      secondary: string
+      primary: Color
+      secondary: Color
     }
     text: {
-      main: string
-      alt: string
-      inv: string
+      main: Color
+      alt: Color
+      inv: Color
     }
     fill: {
-      main: string
-      alt: string
-      inv: string
-      invAlt: string
-      debug: string
+      main: Color
+      alt: Color
+      inv: Color
+      invAlt: Color
+      debug: Color
     }
-    feedback: {
-      positive: string
-      negative: string
-      neutral: string
+    status: {
+      info: Color
+      success: Color
+      failure: Color
     }
     overlay: {
-      dark: string
-      medium: string
-      light: string
+      dark: Color
+      medium: Color
+      light: Color
     }
   }
   fontFamilies: {
+    heading: string
     main: string
     code: string
   }
-  fontSizes: ThemeArray
-  lineHeights: ThemeArray
-  sizes: ThemeArray
-  radii: ThemeArray
+  fontWeights: {
+    normal: number
+    bold: number
+  }
+  fontSizes: [
+    { alias: "small"; value: Primitive },
+    { alias: "main"; value: Primitive },
+    { alias: "h3"; value: Primitive },
+    { alias: "h2"; value: Primitive },
+    { alias: "h1"; value: Primitive }
+  ]
+  lineHeights: [
+    { alias: "single"; value: 1 },
+    { alias: "heading"; value: Primitive },
+    { alias: "main"; value: Primitive }
+  ]
+  sizes: [
+    { alias: "zero"; value: 0 },
+    { alias: "fill"; value: "100%" },
+    { alias: "icon"; value: Primitive },
+    { alias: "sm"; value: Primitive },
+    { alias: "md"; value: Primitive },
+    { alias: "lg"; value: Primitive }
+  ]
+  borderRadii: [
+    { alias: "none"; value: 0 },
+    { alias: "fill"; value: "100%" },
+    { alias: "icon"; value: Primitive },
+    { alias: "sm"; value: Primitive },
+    { alias: "md"; value: Primitive },
+    { alias: "lg"; value: Primitive }
+  ]
   borders: {
     divider: string
     button: string
     input: string
   }
-  boxShadows: {
-    outer: ThemeArray
-    inner: ThemeArray
-  }
+  boxShadows: [{ alias: "main"; value: string }]
   colorStyles: {
     primary: ColorVariant
     secondary: ColorVariant

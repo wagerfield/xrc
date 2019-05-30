@@ -20,25 +20,15 @@ export const BlackTheme: Theme = {
       invAlt: "#455A64",
       debug: "rgba(0,153,255,0.25)"
     },
-    feedback: {
-      positive: "#AED581",
-      negative: "#E57373",
-      neutral: "#90CAF9"
+    status: {
+      info: "#90CAF9",
+      success: "#AED581",
+      failure: "#E57373"
     },
     overlay: {
       dark: "rgba(0,0,0,0.6)",
       medium: "rgba(0,0,0,0.3)",
       light: "rgba(0,0,0,0.16)"
-    }
-  },
-  colorStyles: {
-    primary: {
-      background: "#80CBC4",
-      color: "#FFFFFF"
-    },
-    secondary: {
-      background: "#CE93D8",
-      color: "#FFFFFF"
     }
   }
 }
