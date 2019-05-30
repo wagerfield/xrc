@@ -1,6 +1,6 @@
 # XRC
 
-Library of React Components created with [TypeScript][typescript], [emotion][emotion] and [onno][onno].
+React component library written in [TypeScript][typescript] and styled with [emotion][emotion] and [onno][onno].
 
 ## Usage
 
@@ -13,12 +13,6 @@ const root = document.getElementById("root")
 
 ReactDOM.render(<Button>Hello XRC</Button>, root)
 ```
-
-## Development
-
-1. Clone the repository and `cd` into it
-2. Run `yarn` to install the project dependencies
-3. Run `yarn dev` to start the TypeScript compiler in watch mode
 
 [typescript]: https://www.typescriptlang.org
 [emotion]: https://emotion.sh
