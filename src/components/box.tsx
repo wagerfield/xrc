@@ -1,9 +1,8 @@
 import { ElementType, FunctionComponent } from "react"
-import { elementType, oneOfType, string } from "prop-types"
+import { withTheme } from "emotion-theming"
 import { css, jsx } from "@emotion/core"
 import {
   compose,
-  propTypes,
   backgroundSet,
   BackgroundSetProps,
   BackgroundSetStyle,
@@ -39,7 +38,6 @@ import {
   textStyle,
   TextStyleProps
 } from "onno-react"
-import { MasterTheme } from "../themes/master"
 
 type BoxSetProps = BackgroundSetProps &
   BorderSetProps &
@@ -66,7 +64,7 @@ type BoxSetStyle = BackgroundSetStyle &
   TextSetStyle
 
 export interface BoxProps extends BoxSetProps {
-  as: ElementType
+  as?: ElementType
 }
 
 const boxStyles = css({
@@ -88,16 +86,10 @@ const boxSet = compose<BoxSetProps, BoxSetStyle>(
   textStyle
 )
 
-export const Box: FunctionComponent<BoxProps> = (props) => (
+export const Box: FunctionComponent<BoxProps> = withTheme((props) => (
   <props.as css={[boxStyles, boxSet(props)]} children={props.children} />
-)
-
-Box.propTypes = {
-  ...propTypes(boxSet),
-  as: oneOfType([elementType, string])
-}
+))
 
 Box.defaultProps = {
-  theme: MasterTheme,
   as: "div"
 }
