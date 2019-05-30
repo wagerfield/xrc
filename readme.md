@@ -1,4 +1,4 @@
-# XRC
+# `xrc`
 
 React component library written in [TypeScript][typescript] and styled with [emotion][emotion] and [onno][onno].
 
