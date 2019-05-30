@@ -114,12 +114,12 @@ export const MasterTheme: Theme = {
     "h3": {
       fontSize: "h3"
     },
-    "pre,code": {
+    "code": {
       fontSize: "85%",
       fontFamily: "code",
-      borderRadius: "3px",
+      borderRadius: "4px",
       padding: "0.2em 0.4em",
-      background: "rgba(32,32,32,0.05)"
+      background: "rgba(32,32,32,0.1)"
     }
   }
 }
