@@ -21,14 +21,14 @@
     "types"
   ],
   "scripts": {
-    "clean": "rimraf cjs esm lib types",
     "build": "tsc",
     "types": "tsc --emitDeclarationOnly",
     "dev": "tsc --watch --skipLibCheck",
-    "watch": "rollup --config --watch",
     "bundle": "rollup --config",
+    "watch": "rollup --config --watch",
     "format": "prettier --write '**/*.{json,js,md,ts,tsx}'",
     "lint": "tslint --fix --format codeFrame 'src/**/*.{ts,tsx}'",
+    "clean": "rimraf cjs esm lib types 'site/{artifacts,dist,tmp}'",
     "preflight": "yarn clean && yarn types && yarn bundle && yarn format",
     "prepublishOnly": "yarn preflight"
   },

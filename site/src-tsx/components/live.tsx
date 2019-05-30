@@ -1,6 +1,6 @@
 import * as React from "react"
 import theme from "prism-react-renderer/themes/oceanicNext"
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
+import { LiveError, LiveEditor, LivePreview, LiveProvider } from "react-live"
 import * as scope from "xrc"
 
 const { colors, fontFamilies, fontSizes } = scope.MasterTheme
@@ -26,7 +26,12 @@ const errorStyles = {
   padding
 }
 
-export const Provider = (props) => (
+export interface ProviderProps {
+  disabled?: boolean
+  code: string
+}
+
+export const Provider: React.FC<ProviderProps> = (props) => (
   <LiveProvider
     {...props}
     scope={scope}
@@ -35,10 +40,8 @@ export const Provider = (props) => (
   />
 )
 
-export const Editor = (props) => (
-  <LiveEditor {...props} style={editorStyles} padding={padding} />
-)
+export const Preview: React.FC = () => <LivePreview />
 
-export const Error = (props) => <LiveError {...props} style={errorStyles} />
+export const Editor: React.FC = () => <LiveEditor style={editorStyles} />
 
-export const Preview = (props) => <LivePreview {...props} />
+export const Error: React.FC = () => <LiveError style={errorStyles} />

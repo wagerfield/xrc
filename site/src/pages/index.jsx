@@ -1,7 +1,7 @@
 import * as React from "react"
-import { Provider, Editor, Error, Preview } from "components/live"
+import { Provider, Preview, Editor, Error } from "components/live"
 
-const code = `
+export const code = `
 <Base>
   <h1>👋 Hejsan</h1>
   <p>Welcome to the <code>xrc</code> docs. Here you will find everything you need to get up and running.</p>

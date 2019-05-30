@@ -1,9 +1,10 @@
 import { resolve } from "path"
 
 export default {
-  entry: "index.tsx",
+  entry: "index.jsx",
+  // entry: "index.tsx",
   plugins: [
-    "react-static-plugin-typescript",
+    // "react-static-plugin-typescript",
     "react-static-plugin-reach-router",
     [
       "react-static-plugin-source-filesystem",
