@@ -1,21 +1,20 @@
-import { join, parse, resolve } from "path"
 import { sync } from "glob"
+import { join, resolve } from "path"
+import { mapPath } from "./src/core/utils"
 
 const DOCS_DIR = resolve("../docs")
 const PAGES_DIR = resolve("src/pages")
-const ROUTE_MAP = {
-  readme: "docs"
-}
-
-const mapFileName = (name) => ROUTE_MAP[name] || name
 
 export default {
   entry: "index.jsx",
   getRoutes() {
-    return sync(join(DOCS_DIR, "*")).map((path) => ({
-      path: mapFileName(parse(path).name),
-      template: path
-    }))
+    return sync(join(DOCS_DIR, "**/*")).map((path) => {
+      // console.log(mapPath(path.replace(DOCS_DIR, "")))
+      return {
+        path: mapPath(path.replace(DOCS_DIR, "")),
+        template: path
+      }
+    })
   },
   plugins: [
     ["react-static-plugin-reach-router"],
