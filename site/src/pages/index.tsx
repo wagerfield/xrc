@@ -1,0 +1,18 @@
+import * as React from "react"
+import { Provider, Editor, Error, Preview } from "components/live"
+
+const code = `
+<Base>
+  <h1>👋 Hejsan</h1>
+  <p>Welcome to the <code>xrc</code> docs. Here you will find everything you need to get up and running.</p>
+  <button>Get started</button>
+</Base>
+`
+
+export default () => (
+  <Provider code={code}>
+    <Preview />
+    <Editor />
+    <Error />
+  </Provider>
+)

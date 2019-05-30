@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "name": "xrc-site",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Matthew Wagerfield <matthew@wagerfield.com>",
+  "scripts": {
+    "start": "react-static start",
+    "build": "react-static build",
+    "stage": "react-static build --staging",
+    "stats": "react-static build --analyze",
+    "serve": "serve dist"
+  },
+  "dependencies": {
+    "@reach/router": "1.2.1",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-hot-loader": "4.8.8",
+    "react-static": "7.0.10",
+    "react-static-plugin-reach-router": "7.0.10",
+    "react-static-plugin-source-filesystem": "7.0.10",
+    "react-static-plugin-typescript": "7.0.10",
+    "xrc": "^0.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.x",
+    "@types/reach__router": "1.2.4",
+    "@types/react": "16.8.19",
+    "@types/react-dom": "16.8.4",
+    "@types/react-hot-loader": "4.1.0",
+    "@types/webpack-env": "1.13.9",
+    "@typescript-eslint/eslint-plugin": "1.x",
+    "@typescript-eslint/parser": "1.x",
+    "babel-eslint": "10.x",
+    "eslint": "5.x",
+    "eslint-config-react-app": "4.x",
+    "eslint-plugin-flowtype": "2.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "1.x",
+    "serve": "11.x",
+    "typescript": "3.5.1"
+  }
+}
