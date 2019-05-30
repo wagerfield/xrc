@@ -2712,12 +2712,7 @@ csso@^3.5.1:
   dependencies:
     css-tree "1.0.0-alpha.29"
 
-csstype@2.6.4:
-  version "2.6.4"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.4.tgz#d585a6062096e324e7187f80e04f92bd0f00e37f"
-  integrity sha512-lAJUJP3M6HxFXbqtGRc0iZrdyeN+WzOWeY0q/VnFzI+kqVrYIzC7bWlKqCW7oCIdzoPkvfp82EVvrTlQ8zsWQg==
-
-csstype@^2.2.0, csstype@^2.5.7:
+csstype@2.6.5, csstype@^2.2.0, csstype@^2.5.7:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.5.tgz#1cd1dff742ebf4d7c991470ae71e12bb6751e034"
   integrity sha512-JsTaiksRsel5n7XwqPAfB0l3TFKdpjW/kgAELf9vrb5adGA7UCPLajKK5s3nFrcFm3Rkyp/Qkgl73ENc1UY3cA==
@@ -3116,6 +3111,15 @@ emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
   integrity sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
+
+emotion-theming@10.0.10:
+  version "10.0.10"
+  resolved "https://registry.yarnpkg.com/emotion-theming/-/emotion-theming-10.0.10.tgz#efe8751119751bdc70fdc1795fe4cde0fb0cf14c"
+  integrity sha512-E4SQ3Y91avxxydDgubi/po/GaC5MM1XHm8kcClKg1PA/TeOye0PiLBzAzlgt9dBzDRV9+qHDunsayPvzVYIYng==
+  dependencies:
+    "@emotion/weak-memoize" "0.2.2"
+    hoist-non-react-statics "^3.3.0"
+    object-assign "^4.1.1"
 
 encodeurl@~1.0.2:
   version "1.0.2"
@@ -5679,21 +5683,21 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-onno-react@0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/onno-react/-/onno-react-0.0.12.tgz#f07a8936cf6d64f1b5e8ef5b8009cd18f92750e9"
-  integrity sha512-oxTMBfNEH2Ey4Ln02gX+oaBD2Zk8OUf0aPrxrX/VbEUYTeWrVhCvcY5CZyDaO5EWRf5ohyhbPFJeNwjjoLfisg==
+onno-react@0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/onno-react/-/onno-react-0.0.15.tgz#35626f462fbc0ebbc7a58573283e4424e598e003"
+  integrity sha512-DOlPEjxOjgwSUX26AbL2+fcIwO2JYSIv9wfwhCLoZZhbvO7HUJmOukSV9YybQbPY/BZPhtC9yrcmz9vtzZCNFg==
   dependencies:
     "@types/prop-types" "15.7.1"
-    onno "0.0.12"
+    onno "0.0.15"
     prop-types "15.7.2"
 
-onno@0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/onno/-/onno-0.0.12.tgz#5cf9f60418b11d2f04c4947a5fc2a5df05fcc444"
-  integrity sha512-1A7+F+S0NKrigg3Y2IDldh46NY2cXoX3rMzoAK5JsipFrgfrBqO5SAh5lUckB373qk67u0C+MDTSNC8CetvhNA==
+onno@0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/onno/-/onno-0.0.15.tgz#4c5a105482d0c04cba066dd70cf656303950b14e"
+  integrity sha512-muWbLBGLFgQlGl5i76gZySq7Z+KawwTf7ofFEe3nGWNDktgqsq9yQ2SxhbP3szpMKxknUo09dRC9wVcw5UAqkQ==
   dependencies:
-    csstype "2.6.4"
+    csstype "2.6.5"
 
 opener@^1.5.1:
   version "1.5.1"
@@ -8536,15 +8540,15 @@ xmlhttprequest-ssl@~1.5.4:
   resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.5.tgz#c2876b06168aadc40e57d97e81191ac8f4398b3e"
   integrity sha1-wodrBhaKrcQOV9l+gRkayPQ5iz4=
 
-xrc@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/xrc/-/xrc-0.4.1.tgz#1651f744d0087e3088c48d49946777a21c9b063a"
-  integrity sha512-DSyFOkhEPa2PR00vqkr+Nl7AM3z2FfMBA0WovBP7SObv/hMJS6XY6wUtDyZ4gMsbRh/4qQMBHjOibxI9YQkjSg==
+xrc@0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/xrc/-/xrc-0.4.2.tgz#5ee4a5bf5828397ee887445935ca7fa5fb372a0c"
+  integrity sha512-O7KtCHHWXaDvKv/cqIqE2zSrf5rerlbEZW3RrpOx+K2Q9dnTqcSydGa8ML9x/Fz8Xar2KqHjysJ85m/N6h7SQA==
   dependencies:
     "@emotion/core" "10.0.10"
     "@types/react" "16.8.18"
-    onno-react "0.0.12"
-    react "16.8.6"
+    emotion-theming "10.0.10"
+    onno-react "0.0.15"
 
 xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.1"
