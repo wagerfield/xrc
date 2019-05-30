@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react"
+import { ThemeProvider } from "emotion-theming"
 import { jsx, Global } from "@emotion/core"
-import { colorSet, spaceSet, textSet, variant } from "onno-react"
+import { globalStyle } from "onno-react"
 import { MasterTheme } from "../themes/master"
 import { Theme } from "../themes/types"
 
@@ -8,14 +9,11 @@ export interface BaseProps {
   theme: Theme
 }
 
-const globalStyle = variant({
-  propsKeys: ["global"],
-  themeKeys: ["globalStyles"],
-  renderers: [colorSet, spaceSet, textSet]
-})
-
-export const Base: FunctionComponent<BaseProps> = ({ theme }) => (
-  <Global styles={globalStyle({ theme, global: [] })} />
+export const Base: FunctionComponent<BaseProps> = ({ children, theme }) => (
+  <ThemeProvider theme={theme}>
+    <Global styles={globalStyle({ theme })} />
+    {children}
+  </ThemeProvider>
 )
 
 Base.defaultProps = {
