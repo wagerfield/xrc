@@ -1,7 +1,4 @@
-import { Code } from "components/code"
-import { Link } from "components/link"
+import { Code as code } from "components/code"
+import { Link as a } from "components/link"
 
-export const components = {
-  a: Link,
-  code: Code
-}
+export const components = { a, code }
