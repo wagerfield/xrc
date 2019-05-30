@@ -2,6 +2,7 @@
 node_modules
 artifacts
 types
+dist
 cjs
 esm
 lib
