@@ -58,7 +58,8 @@
     "@emotion/core": "10.0.10",
     "@types/react": "16.8.18",
     "emotion-theming": "10.0.10",
-    "onno-react": "0.0.16"
+    "onno-react": "0.0.16",
+    "react": "16.8.6"
   },
   "devDependencies": {
     "@commitlint/cli": "7.5.2",
