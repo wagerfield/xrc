@@ -25,13 +25,9 @@ export default {
   siteRoot: "https://xrc.netlify.com",
   getRoutes({ stage }) {
     if (stage !== "prod") watchFiles()
-    return sync(DOCS_GLOB).reduce((result, path) => {
-      if (MD_REGEX.test(path)) {
-        result.push({
-          path: mapPath(relative(DOCS_DIR, path)),
-          template: path
-        })
-      }
+    return sync(DOCS_GLOB).reduce((result, template) => {
+      const path = mapPath(relative(DOCS_DIR, template))
+      if (MD_REGEX.test(template)) result.push({ path, template })
       return result
     }, [])
   },
