@@ -5376,6 +5376,11 @@ normalize-url@^3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
 
+normalize.css@8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
+  integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
+
 npm-bundled@^1.0.1:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-1.0.6.tgz#e7ba9aadcef962bb61248f91721cd932b3fe6bdd"
@@ -8470,14 +8475,15 @@ xmlhttprequest-ssl@~1.5.4:
   resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.5.tgz#c2876b06168aadc40e57d97e81191ac8f4398b3e"
   integrity sha1-wodrBhaKrcQOV9l+gRkayPQ5iz4=
 
-xrc@0.4.3:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/xrc/-/xrc-0.4.3.tgz#08e847b939bbda310e19bfddda7502bc4687db02"
-  integrity sha512-PZDXhOYtwA/iubxjmNPEzcJowC8AHA4BUXizA0Enb2rcc8Bp483461kKNsqzmUrSbbtDbBX3bz1zQhzMolM1gg==
+xrc@0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/xrc/-/xrc-0.4.4.tgz#9085a3f732c5e6758941934d59a001db0b9343af"
+  integrity sha512-vUkUDame2JaXJkGCs0ZErcvuTKXgrRTB86ue+/Ng3jn68oe0JURi/sn1XS7eGJxbDqlxEM+bHzYtfYhnWjZeVQ==
   dependencies:
     "@emotion/core" "10.0.10"
     "@types/react" "16.8.18"
     emotion-theming "10.0.10"
+    normalize.css "8.0.1"
     onno-react "0.0.16"
     react "16.8.6"
 
