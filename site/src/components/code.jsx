@@ -1,16 +1,21 @@
 import React from "react"
 import { Provider, Editor, Error, Preview } from "components/live"
 
-export const Code = ({ children, className }) => {
-  const match = className && className.match(/\w+$/)
-  const language = match && match[0]
-  return language === "jsx" ? (
-    <Provider code={children} language={language}>
-      <Preview />
+const getLang = ({ className }) =>
+  className && className.replace("language-", "")
+
+export const Code = (props) => {
+  const providerProps = {
+    language: getLang(props),
+    noInline: !!props.inline,
+    disabled: !props.edit,
+    code: props.children
+  }
+  return (
+    <Provider {...providerProps}>
+      {props.preview && <Preview />}
       <Editor />
-      <Error />
+      {props.edit && <Error />}
     </Provider>
-  ) : (
-    <code>{children}</code>
   )
 }
