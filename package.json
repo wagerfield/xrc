@@ -64,7 +64,7 @@
   "devDependencies": {
     "@commitlint/cli": "8.0.0",
     "@commitlint/config-conventional": "8.0.0",
-    "husky": "2.1.0",
+    "husky": "2.3.0",
     "lint-staged": "8.1.5",
     "prettier": "1.17.0",
     "rimraf": "2.6.3",
