@@ -1,3 +1,4 @@
 import React from "react"
+import { REPL } from "components/repl"
 
-export default () => <h1>REPL</h1>
+export default () => <REPL />

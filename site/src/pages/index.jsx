@@ -1,5 +1,5 @@
 import React from "react"
-import { Provider, Editor, Error, Preview } from "components/live"
+import { REPL } from "components/repl"
 
 export const code = `
 <Base>
@@ -9,10 +9,4 @@ export const code = `
 </Base>
 `
 
-export default () => (
-  <Provider code={code}>
-    <Preview />
-    <Editor />
-    <Error />
-  </Provider>
-)
+export default () => <REPL code={code} />

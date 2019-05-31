@@ -26,12 +26,23 @@ const errorStyles = {
   padding
 }
 
-export const Provider = (props) => (
+const trim = (string) => string && string.trim()
+
+export const Provider = ({
+  code = "<h1>Hello world</h1>",
+  language = "jsx",
+  disabled = false,
+  inline = false,
+  children
+}) => (
   <LiveProvider
-    {...props}
     scope={scope}
     theme={theme}
-    code={props.code.trim()}
+    children={children}
+    disabled={disabled}
+    language={language}
+    noInline={inline}
+    code={trim(code)}
   />
 )
 

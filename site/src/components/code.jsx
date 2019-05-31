@@ -1,5 +1,5 @@
 import React from "react"
-import { Provider, Editor, Error, Preview } from "components/live"
+import { Provider, Preview, Editor, Error } from "components/live"
 
 const getLang = ({ className }) =>
   className && className.replace("language-", "")
@@ -7,8 +7,8 @@ const getLang = ({ className }) =>
 export const Code = (props) => {
   const providerProps = {
     language: getLang(props),
-    noInline: !!props.inline,
     disabled: !props.edit,
+    inline: !!props.inline,
     code: props.children
   }
   return (
