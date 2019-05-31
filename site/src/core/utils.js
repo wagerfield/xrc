@@ -1,4 +1,7 @@
+const README_REGEX = /(\/)?(readme)?(\.mdx)?$/
+
 export const mapPath = (path) => {
-  const result = path.replace(/(\/readme)?\.mdx$/, "")
-  return result === "" ? "/docs" : result
+  let mappedPath = path.replace(README_REGEX, "")
+  if (mappedPath === "") mappedPath = "docs"
+  return mappedPath
 }

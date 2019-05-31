@@ -24,6 +24,7 @@
     "xrc": "0.4.4"
   },
   "devDependencies": {
+    "chokidar": "3.0.0",
     "glob": "7.1.4",
     "serve": "11.0.1"
   }
