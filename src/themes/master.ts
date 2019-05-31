@@ -98,8 +98,9 @@ export const MasterTheme: Theme = {
       lineHeight: "main",
       color: "text.main"
     },
-    "body,h1,h2,h3,p": {
-      margin: 0
+    "h1,h2,h3,p": {
+      margin: 0,
+      marginBottom: 4
     },
     "h1,h2,h3": {
       fontFamily: "heading",
