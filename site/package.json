@@ -21,7 +21,7 @@
     "react-static-plugin-mdx": "7.0.10",
     "react-static-plugin-reach-router": "7.0.10",
     "react-static-plugin-source-filesystem": "7.0.10",
-    "xrc": "0.4.3"
+    "xrc": "0.4.4"
   },
   "devDependencies": {
     "glob": "7.1.4",
