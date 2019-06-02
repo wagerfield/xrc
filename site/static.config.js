@@ -1,7 +1,7 @@
 import React from "react"
 import { sync } from "glob"
 import { watch } from "chokidar"
-import { join, resolve, relative } from "path"
+import { join, resolve } from "path"
 import { rebuildRoutes } from "react-static/node"
 import { mapPath } from "./src/core/utils"
 
@@ -26,7 +26,7 @@ export default {
   getRoutes({ stage }) {
     if (stage !== "prod") watchFiles()
     return sync(DOCS_GLOB).reduce((result, template) => {
-      const path = mapPath(relative(DOCS_DIR, template))
+      const path = mapPath(template, DOCS_DIR)
       if (MD_REGEX.test(template)) result.push({ path, template })
       return result
     }, [])
