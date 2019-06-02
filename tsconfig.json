@@ -9,6 +9,7 @@
     "jsx": "react",
     "jsxFactory": "jsx",
     "strict": true,
+    "allowSyntheticDefaultImports": true,
     "removeComments": true,
     "noUnusedLocals": true,
     "noEmitOnError": true,
