@@ -17,11 +17,11 @@ export interface FontFaceOptions {
 }
 
 export interface FontFaceObject {
-  "src": string
-  "font-family": string
-  "font-display"?: FontFaceFontDisplayProperty
-  "font-weight"?: FontFaceFontWeightProperty
-  "font-style"?: FontFaceFontStyleProperty
+  src: string
+  fontFamily: string
+  fontDisplay?: FontFaceFontDisplayProperty
+  fontWeight?: FontFaceFontWeightProperty
+  fontStyle?: FontFaceFontStyleProperty
 }
 
 export interface FontFaceStyle {
@@ -47,12 +47,12 @@ export function renderFonts(fonts: FontFaceOptions[]): FontFaceStyle[] {
       return `url('${url}') format('${format}')`
     })
     const fontFace: FontFaceObject = {
-      "font-family": font.family,
-      "src": sources.join(", ")
+      fontFamily: font.family,
+      src: sources.join(", ")
     }
-    if (font.display) fontFace["font-display"] = font.display
-    if (font.weight) fontFace["font-weight"] = font.weight
-    if (font.style) fontFace["font-style"] = font.style
+    if (font.display) fontFace.fontDisplay = font.display
+    if (font.weight) fontFace.fontWeight = font.weight
+    if (font.style) fontFace.fontStyle = font.style
     return { "@font-face": fontFace }
   })
 }
