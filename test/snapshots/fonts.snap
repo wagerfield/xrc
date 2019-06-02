@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`maps font face options correctly 1`] = `
+Array [
+  Object {
+    "@font-face": Object {
+      "font-display": "swap",
+      "font-family": "Some Font",
+      "font-weight": "bold",
+      "src": "url('/some/path/SomeFont-Bold.eot') format('embedded-opentype'), url('/some/path/SomeFont-Bold.ttf') format('truetype')",
+    },
+  },
+  Object {
+    "@font-face": Object {
+      "font-family": "Another Font",
+      "font-style": "italic",
+      "font-weight": 700,
+      "src": "url('/another/path/SomeFont-Bold.svg') format('svg'), url('/another/path/SomeFont-Bold.woff') format('woff'), url('/another/path/SomeFont-Bold.woff2') format('woff2')",
+    },
+  },
+]
+`;
+
+exports[`returns an array of font face styles 1`] = `
+Array [
+  Object {
+    "@font-face": Object {
+      "font-family": "Some Font",
+      "src": "url('/some/path/SomeFont-Bold.eot') format('embedded-opentype'), url('/some/path/SomeFont-Bold.ttf') format('truetype')",
+    },
+  },
+]
+`;
