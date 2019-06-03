@@ -60,17 +60,20 @@ export type BoxSetStyle = BackgroundSetStyle &
   SpaceSetStyle &
   TextSetStyle
 
-export const boxSet = compose<BoxSetProps, BoxSetStyle>(
-  backgroundSet,
-  borderSet,
-  boxShadow,
-  colorSet,
-  colorStyle,
-  displaySet,
-  flexSet,
-  gridSet,
-  layoutSet,
-  spaceSet,
-  textSet,
-  textStyle
-)
+export const boxSet = compose<BoxSetProps, BoxSetStyle>({
+  name: "box",
+  renderers: [
+    backgroundSet,
+    borderSet,
+    boxShadow,
+    colorSet,
+    colorStyle,
+    displaySet,
+    flexSet,
+    gridSet,
+    layoutSet,
+    spaceSet,
+    textSet,
+    textStyle
+  ]
+})
