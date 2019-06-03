@@ -21,7 +21,7 @@
     "react-static-plugin-mdx": "7.0.10",
     "react-static-plugin-reach-router": "7.0.10",
     "react-static-plugin-source-filesystem": "7.0.10",
-    "xrc": "0.4.5"
+    "xrc": "0.5.0"
   },
   "devDependencies": {
     "chokidar": "3.0.1",
