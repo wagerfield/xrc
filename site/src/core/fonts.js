@@ -1,26 +1,26 @@
-const FILE = "AvenirNext"
-const BASE = {
+export const fonts = [
+  {
+    file: "AvenirNext-Regular",
+    weight: 400
+  },
+  {
+    file: "AvenirNext-Italic",
+    style: "italic",
+    weight: 400
+  },
+  {
+    file: "AvenirNext-Bold",
+    weight: 700
+  },
+  {
+    file: "AvenirNext-BoldItalic",
+    style: "italic",
+    weight: 700
+  }
+].map((font) => ({
+  ...font,
   path: "/fonts",
   family: "Avenir Next",
   formats: ["woff", "woff2"],
   display: "swap"
-}
-
-export const fonts = [
-  {
-    file: `${FILE}-Regular`
-  },
-  {
-    file: `${FILE}-Italic`,
-    style: "italic"
-  },
-  {
-    file: `${FILE}-Bold`,
-    weight: "bold"
-  },
-  {
-    file: `${FILE}-BoldItalic`,
-    style: "italic",
-    weight: "bold"
-  }
-].map((font) => Object.assign(font, BASE))
+}))
