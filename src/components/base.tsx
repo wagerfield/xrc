@@ -3,7 +3,7 @@ import { isArray, globalStyle } from "onno-react"
 import { jsx, InterpolationWithTheme } from "@emotion/core"
 import { Theme } from "../themes/types"
 import { MasterTheme } from "../themes/master"
-import { normalize as normalizeStyle } from "../core/normalize"
+import { normalize as normalizeStyles } from "../core/normalize"
 import { renderFonts, FontFaceOptions } from "../core/fonts"
 import { Provider, ProviderProps } from "./provider"
 import { Global } from "./global"
@@ -21,7 +21,7 @@ export const Base: FunctionComponent<BaseProps> = ({
 }) => {
   const styles: InterpolationWithTheme<Theme> = globalStyle({ theme }) || []
   if (isArray(fonts)) styles.unshift.apply(styles, renderFonts(fonts) as any)
-  if (normalize) styles.unshift(normalizeStyle as any)
+  if (normalize) styles.unshift(normalizeStyles as any)
   return (
     <Provider theme={theme}>
       <Global styles={styles} />
