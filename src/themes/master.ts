@@ -1,8 +1,5 @@
 import { Theme } from "./types"
 
-const FF_MAIN = "Avenir Next,system-ui,sans-serif"
-const FF_MONO = "SFMono-Regular,Consolas,Menlo,monospace"
-
 export const MasterTheme: Theme = {
   colors: {
     brand: {
@@ -33,9 +30,8 @@ export const MasterTheme: Theme = {
     }
   },
   fontFamilies: {
-    heading: FF_MAIN,
-    main: FF_MAIN,
-    code: FF_MONO
+    main: "Avenir Next,system-ui,sans-serif",
+    code: "SFMono-Regular,Consolas,Menlo,monospace"
   },
   fontWeights: {
     normal: 400,
@@ -103,8 +99,9 @@ export const MasterTheme: Theme = {
       marginBottom: 4
     },
     "h1,h2,h3": {
-      fontFamily: "heading",
-      lineHeight: "heading"
+      fontFamily: "main",
+      lineHeight: "heading",
+      fontWeight: "bold"
     },
     "h1": {
       fontSize: "h1"

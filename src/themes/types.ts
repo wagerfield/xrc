@@ -37,7 +37,6 @@ export interface Theme extends BaseTheme {
     }
   }
   fontFamilies: {
-    heading: string
     main: string
     code: string
   }
