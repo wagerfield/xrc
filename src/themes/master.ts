@@ -117,8 +117,11 @@ export const MasterTheme: Theme = {
       fontSize: "85%",
       fontFamily: "code",
       borderRadius: "4px",
-      padding: "0.2em 0.4em",
-      background: "rgba(32,32,32,0.1)"
+      background: "rgba(32,32,32,0.1)",
+      padding: "0.2em 0.4em"
+    },
+    "b,strong": {
+      fontWeight: "bold"
     }
   }
 }
