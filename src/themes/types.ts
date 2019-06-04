@@ -15,6 +15,7 @@ export interface Theme extends BaseTheme {
     }
     text: {
       main: Color
+      link: Color
       alt: Color
       inv: Color
     }

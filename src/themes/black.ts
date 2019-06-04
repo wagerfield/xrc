@@ -10,6 +10,7 @@ export const BlackTheme: Theme = {
     },
     text: {
       main: "#ECEFF1",
+      link: "#90CAF9",
       alt: "#90A4AE",
       inv: "#12191C"
     },

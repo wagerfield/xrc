@@ -8,6 +8,7 @@ export const MasterTheme: Theme = {
     },
     text: {
       main: "#202020",
+      link: "#0277BD",
       alt: "#666666",
       inv: "#FFFFFF"
     },
