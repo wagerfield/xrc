@@ -19,7 +19,7 @@ export default () => (
         <React.Suspense fallback={<Loading />}>
           <MDXProvider components={components}>
             <Router>
-              <Routes path="*" />
+              <Routes default />
             </Router>
           </MDXProvider>
         </React.Suspense>
