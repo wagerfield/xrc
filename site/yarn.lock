@@ -5526,19 +5526,19 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-onno-react@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/onno-react/-/onno-react-0.2.1.tgz#75c4d0defcfe8889e31690c1f83da546eca74d68"
-  integrity sha512-N4uOufO4cN1RogqtFlPdHanAmMrBz6VqGfeRm70Vpg1jbWWRKsIMEm2v7FERqqzxYA2zNkEl9BGIxlBAXAHpsw==
+onno-react@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/onno-react/-/onno-react-0.2.2.tgz#7d601d5416fa6d06f22697037abc78e32eb29d42"
+  integrity sha512-aObkiIcjrlBSs8gD39NKcbQy+OZUi+S4aCkI740V1SemKXpR1LrtYMB76pPtULJxVGQaDM3D88QaVgPZHvmOdg==
   dependencies:
     "@types/prop-types" "15.7.1"
-    onno "0.2.1"
+    onno "0.2.2"
     prop-types "15.7.2"
 
-onno@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/onno/-/onno-0.2.1.tgz#abf6e0d7b7f4866997131818e66af8aeed56ca7a"
-  integrity sha512-CUAUvMW6MWBW76Et4B5tkWrdnroVmlIkMn3ZMfkQ/fHmapgoNKc/VxJ0+t3ajqb1EHlHmDLH2puqhOXetwMFaw==
+onno@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/onno/-/onno-0.2.2.tgz#bcb3e88e6799f9a13bfb85fce09a16ae6e44a0b7"
+  integrity sha512-XTvpQtybwvpIoD31DUsH0NpvGw5az6K5x2uY+74IB77epirv/AbxdAfNt/OCC75s91ojUKoGMJpdro6Idq9rHA==
   dependencies:
     csstype "2.6.5"
 
@@ -8473,15 +8473,15 @@ xmlhttprequest-ssl@~1.5.4:
   resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.5.tgz#c2876b06168aadc40e57d97e81191ac8f4398b3e"
   integrity sha1-wodrBhaKrcQOV9l+gRkayPQ5iz4=
 
-xrc@0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/xrc/-/xrc-0.5.4.tgz#03886ddabba5c12f683278d077284a7befa4608c"
-  integrity sha512-c2evhN9zr/igPxfpQXI5Cz6ZLOvSuWtL9Hrb4PbyH/H7GZTninh+U2maO78lJwvrDz0O4lcr5KjL+7VDCqt5lw==
+xrc@0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/xrc/-/xrc-0.5.5.tgz#9ce622e7884fae8e20621a2fef80664bc9806106"
+  integrity sha512-4LlJLvIWugTbPWca1GZGoyi+msH2zIAAhGPYyNrbUdtV6n06D32OecxM8R33gMpgqbgNGeaW2Ey6jrK+qk6ABA==
   dependencies:
     "@emotion/core" "10.0.10"
     "@types/react" "16.8.18"
     emotion-theming "10.0.10"
-    onno-react "0.2.1"
+    onno-react "0.2.2"
     react "16.8.6"
 
 xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:
