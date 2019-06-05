@@ -50,8 +50,5 @@ export const Box = createComponent<BoxProps>({
     layoutSet,
     spaceSet,
     textSet
-  ],
-  defaultProps: {
-    as: "div"
-  }
+  ]
 })
