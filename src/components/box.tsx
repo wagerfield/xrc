@@ -1,36 +1,57 @@
-import { interpolate, omit } from "onno-react"
-import { withTheme } from "emotion-theming"
-import { css, jsx, InterpolationWithTheme } from "@emotion/core"
-import { ElementType, FunctionComponent } from "react"
-import { boxSet, BoxSetProps } from "../core/renderers"
-import { Theme } from "../themes/types"
+import {
+  backgroundSet,
+  BackgroundSetProps,
+  borderSet,
+  BorderSetProps,
+  boxShadow,
+  BoxShadowProps,
+  colorSet,
+  ColorSetProps,
+  displaySet,
+  DisplaySetProps,
+  flexSet,
+  FlexSetProps,
+  gridSet,
+  GridSetProps,
+  layoutSet,
+  LayoutSetProps,
+  spaceSet,
+  SpaceSetProps,
+  textSet,
+  TextSetProps
+} from "onno-react"
+import { createComponent, ComponentProps } from "./factory"
 
-export interface BoxProps extends BoxSetProps {
-  css?: InterpolationWithTheme<Theme>
-  as?: ElementType
-}
+export type BoxProps = ComponentProps &
+  BackgroundSetProps &
+  BorderSetProps &
+  BoxShadowProps &
+  ColorSetProps &
+  DisplaySetProps &
+  FlexSetProps &
+  GridSetProps &
+  LayoutSetProps &
+  SpaceSetProps &
+  TextSetProps
 
-const styles = css({
-  boxSizing: "border-box"
-})
-
-const sanitize = omit({
-  propsKeys: ["as", "css"],
-  renderers: [boxSet]
-})
-
-const render = interpolate({
+export const Box = createComponent<BoxProps>({
   name: "box",
-  renderers: [boxSet]
+  styles: {
+    boxSizing: "border-box"
+  },
+  renderers: [
+    backgroundSet,
+    borderSet,
+    boxShadow,
+    colorSet,
+    displaySet,
+    flexSet,
+    gridSet,
+    layoutSet,
+    spaceSet,
+    textSet
+  ],
+  defaultProps: {
+    as: "div"
+  }
 })
-
-export const Box: FunctionComponent<BoxProps> = withTheme((props) => (
-  <props.as
-    css={[styles, boxSet(props), render(props.css, props.theme)]}
-    {...sanitize(props)}
-  />
-))
-
-Box.defaultProps = {
-  as: "div"
-}
