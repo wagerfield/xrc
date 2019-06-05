@@ -80,11 +80,17 @@ export interface Theme extends BaseTheme {
   }
   boxShadows: [{ alias: "main"; value: string }]
   colorStyles: {
-    primary: ColorVariant
-    secondary: ColorVariant
+    main: ColorVariant
   }
   textStyles: {
+    main: ThemeObject
+    heading: ThemeObject
     caps: ThemeObject
+  }
+  buttonStyles: {
+    primary: ThemeObject
+    secondary: ThemeObject
+    alternative: ThemeObject
   }
   globalStyles: ThemeObject
 }

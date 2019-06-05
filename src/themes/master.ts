@@ -1,4 +1,13 @@
+import { ThemeObject } from "onno-react"
 import { Theme } from "./types"
+
+const buttonStyles = (styles: ThemeObject) => ({
+  borderRadius: "lg",
+  lineHeight: "single",
+  padding: "16px 32px",
+  textStyle: "caps",
+  ...styles
+})
 
 export const MasterTheme: Theme = {
   colors: {
@@ -8,7 +17,7 @@ export const MasterTheme: Theme = {
     },
     text: {
       main: "#202020",
-      link: "#0277BD",
+      link: "#00B67D",
       alt: "#666666",
       inv: "#FFFFFF"
     },
@@ -73,36 +82,57 @@ export const MasterTheme: Theme = {
   },
   boxShadows: [{ alias: "main", value: "0 2px 16px rgba(0,0,0,0.5)" }],
   colorStyles: {
-    primary: {
-      background: "brand.primary",
-      color: "text.inv"
-    },
-    secondary: {
-      background: "brand.secondary",
-      color: "text.inv"
+    main: {
+      background: "fill.main",
+      color: "text.main"
     }
   },
   textStyles: {
+    main: {
+      fontSize: "main",
+      fontFamily: "main",
+      fontWeight: "normal",
+      lineHeight: "main"
+    },
+    heading: {
+      fontFamily: "main",
+      fontWeight: "bold",
+      lineHeight: "heading"
+    },
     caps: {
       fontWeight: "bold",
       textTransform: "uppercase"
     }
   },
+  buttonStyles: {
+    primary: buttonStyles({
+      background: "brand.primary",
+      boxShadow: "inset 0 -4px 0 rgba(0,0,0,0.32)",
+      color: "text.inv"
+    }),
+    secondary: buttonStyles({
+      background: "transparent",
+      border: "button",
+      borderColor: "brand.primary",
+      color: "brand.primary",
+      padding: "14px 30px"
+    }),
+    alternative: buttonStyles({
+      background: "rgba(0,0,0,0.04)",
+      color: "brand.primary"
+    })
+  },
   globalStyles: {
     "html": {
-      fontSize: "main",
-      fontFamily: "main",
-      lineHeight: "main",
-      color: "text.main"
+      color: "text.main",
+      textStyle: "main"
     },
     "h1,h2,h3,p": {
       margin: 0,
       marginBottom: 4
     },
     "h1,h2,h3": {
-      fontFamily: "main",
-      lineHeight: "heading",
-      fontWeight: "bold"
+      textStyle: "heading"
     },
     "h1": {
       fontSize: "h1"
@@ -122,6 +152,13 @@ export const MasterTheme: Theme = {
     },
     "b,strong": {
       fontWeight: "bold"
+    },
+    "a": {
+      color: "text.link",
+      textDecoration: "none"
+    },
+    "button": {
+      buttonStyle: "primary"
     }
   }
 }
