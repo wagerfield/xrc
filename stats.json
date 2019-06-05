@@ -1,11 +1,11 @@
 {
   "cjs/index.js": {
-    "bundled": 10079,
+    "bundled": 9731,
     "minified": 6744,
     "gzipped": 2602
   },
   "esm/index.js": {
-    "bundled": 9864,
+    "bundled": 9516,
     "minified": 6516,
     "gzipped": 2537,
     "treeshaked": {
