@@ -5528,7 +5528,7 @@ onetime@^2.0.0:
 
 onno-react@0.1.1:
   version "0.1.1"
-  resolved "https://registry.npmjs.org/onno-react/-/onno-react-0.1.1.tgz#794cec1289ff7d53faffcaf1a4f5ce7b769f07bb"
+  resolved "https://registry.yarnpkg.com/onno-react/-/onno-react-0.1.1.tgz#794cec1289ff7d53faffcaf1a4f5ce7b769f07bb"
   integrity sha512-JhfcNROfPP/ix4AJ5UI2XMJZr+geX9mwkN3rh3Pd4lSpgvCnnOy4vMASvdwwM2dUuN3mHGgOMHkUfNdQAXBXpw==
   dependencies:
     "@types/prop-types" "15.7.1"
@@ -5537,7 +5537,7 @@ onno-react@0.1.1:
 
 onno@0.1.1:
   version "0.1.1"
-  resolved "https://registry.npmjs.org/onno/-/onno-0.1.1.tgz#fbde22607bf2bd571aff4616231e0d90205924c5"
+  resolved "https://registry.yarnpkg.com/onno/-/onno-0.1.1.tgz#fbde22607bf2bd571aff4616231e0d90205924c5"
   integrity sha512-0y8OFlrKpZqqZjra1c1X+a00BVk1ufvF6WjM29baz/tvvLB8kZct/PjsIcK6LULwl091fHkygXQq+GnmmO8arA==
   dependencies:
     csstype "2.6.5"
@@ -8475,7 +8475,7 @@ xmlhttprequest-ssl@~1.5.4:
 
 xrc@0.5.2:
   version "0.5.2"
-  resolved "https://registry.npmjs.org/xrc/-/xrc-0.5.2.tgz#96e0292257c701aab5a31b6ab3ffb9966a06a671"
+  resolved "https://registry.yarnpkg.com/xrc/-/xrc-0.5.2.tgz#96e0292257c701aab5a31b6ab3ffb9966a06a671"
   integrity sha512-OlnBpPfwtT53p+/bwykbCG7tf+E9warY6nyEVZF2Ao5I52d0OMg0Q10p6nNo5dD18UMaKNu1EPgkUNHfIldUfA==
   dependencies:
     "@emotion/core" "10.0.10"
