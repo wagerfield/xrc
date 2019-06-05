@@ -6,6 +6,7 @@ const buttonStyles = (styles: ThemeObject) => ({
   lineHeight: "single",
   padding: "16px 32px",
   textStyle: "caps",
+  border: "none",
   ...styles
 })
 
@@ -123,7 +124,7 @@ export const MasterTheme: Theme = {
     })
   },
   globalStyles: {
-    "html": {
+    "html,button": {
       color: "text.main",
       textStyle: "main"
     },
@@ -158,7 +159,8 @@ export const MasterTheme: Theme = {
       textDecoration: "none"
     },
     "button": {
-      buttonStyle: "primary"
+      buttonStyle: "primary",
+      cursor: "pointer"
     }
   }
 }
