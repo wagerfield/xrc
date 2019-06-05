@@ -40,11 +40,12 @@ export function createComponent<P extends ComponentProps>({
   const transform = interpolate({ name, renderers })
   const component: FunctionComponent<P> = withTheme((props) => {
     const baseStyles = isFunction(styles) ? styles(props) : styles
-    const propStyles = transform(props, props.theme)
-    const userStyles = transform(props.css, props.theme)
+    const propStyles = transform.renderer(props)
+    const userStyles = props.css && transform(props.css, props.theme)
     const styleArray = [baseStyles, propStyles, userStyles]
     return <props.as css={styleArray} {...sanitize(props)} />
   })
+  Object.defineProperty(component, "name", { value: name })
   component.defaultProps = defaultProps
   return component
 }

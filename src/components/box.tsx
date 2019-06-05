@@ -35,7 +35,7 @@ export type BoxProps = ComponentProps &
   TextSetProps
 
 export const Box = createComponent<BoxProps>({
-  name: "box",
+  name: "Box",
   styles: {
     boxSizing: "border-box"
   },
