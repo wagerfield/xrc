@@ -1,3 +1,4 @@
+import { omit } from "onno-react"
 import { css, jsx } from "@emotion/core"
 import { withTheme } from "emotion-theming"
 import { ElementType, FunctionComponent } from "react"
@@ -11,8 +12,13 @@ const boxStyles = css({
   boxSizing: "border-box"
 })
 
+const sanitize = omit({
+  propsKeys: ["as"],
+  renderers: [boxSet]
+})
+
 export const Box: FunctionComponent<BoxProps> = withTheme((props) => (
-  <props.as css={[boxStyles, boxSet(props)]} children={props.children} />
+  <props.as css={[boxStyles, boxSet(props)]} {...sanitize(props)} />
 ))
 
 Box.defaultProps = {
