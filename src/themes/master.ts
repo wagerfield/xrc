@@ -154,6 +154,9 @@ export const MasterTheme: Theme = {
     "h3": {
       fontSize: "h3"
     },
+    "pre": {
+      margin: 0
+    },
     "code": {
       fontSize: "85%",
       fontFamily: "code",
