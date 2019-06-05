@@ -109,6 +109,7 @@ export const MasterTheme: Theme = {
     primary: buttonStyles({
       "color": "text.inv",
       "background": "brand.primary",
+      "fontSmoothing": "antialiased",
       "boxShadow": [
         "0 -4px 0 rgba(0,0,0,0.32) inset", // inner
         "0 2px 4px rgba(0,0,0,0.16)" // outer
