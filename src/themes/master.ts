@@ -107,9 +107,18 @@ export const MasterTheme: Theme = {
   },
   buttonStyles: {
     primary: buttonStyles({
-      background: "brand.primary",
-      boxShadow: "inset 0 -4px 0 rgba(0,0,0,0.32)",
-      color: "text.inv"
+      "color": "text.inv",
+      "background": "brand.primary",
+      "boxShadow": [
+        "0 -4px 0 rgba(0,0,0,0.32) inset", // inner
+        "0 2px 4px rgba(0,0,0,0.16)" // outer
+      ].join(", "),
+      ":hover": {
+        background: "#08C98D"
+      },
+      ":active": {
+        background: "brand.primary"
+      }
     }),
     secondary: buttonStyles({
       background: "transparent",
@@ -161,6 +170,11 @@ export const MasterTheme: Theme = {
     "button": {
       buttonStyle: "primary",
       cursor: "pointer"
+    },
+    ":focus": {
+      outline: "3px solid rgba(0,155,255,0.6)",
+      outlineOffset: "3px",
+      zIndex: 1
     }
   }
 }
