@@ -1,9 +1,12 @@
 import React from "react"
 import theme from "prism-react-renderer/themes/oceanicNext"
 import { LiveError, LiveEditor, LivePreview, LiveProvider } from "react-live"
-import * as scope from "xrc"
+import { Link } from "@reach/router"
+import * as xrc from "xrc"
 
-const { colors, fontFamilies, fontSizes } = scope.MasterTheme
+const { colors, fontFamilies, fontSizes } = xrc.MasterTheme
+
+const scope = { Link, ...xrc }
 
 const padding = "16px"
 
