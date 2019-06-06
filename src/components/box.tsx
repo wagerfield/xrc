@@ -3,36 +3,27 @@ import {
   BackgroundSetProps,
   borderSet,
   BorderSetProps,
-  boxShadow,
-  BoxShadowProps,
-  colorSet,
-  ColorSetProps,
   displaySet,
   DisplaySetProps,
   flexSet,
   FlexSetProps,
   gridSet,
   GridSetProps,
+  globalSet,
+  GlobalSetProps,
   layoutSet,
-  LayoutSetProps,
-  spaceSet,
-  SpaceSetProps,
-  textSet,
-  TextSetProps
+  LayoutSetProps
 } from "onno-react"
 import { createComponent, ComponentProps } from "./factory"
 
 export type BoxProps = ComponentProps &
   BackgroundSetProps &
   BorderSetProps &
-  BoxShadowProps &
-  ColorSetProps &
   DisplaySetProps &
-  FlexSetProps &
-  GridSetProps &
   LayoutSetProps &
-  SpaceSetProps &
-  TextSetProps
+  GlobalSetProps &
+  FlexSetProps &
+  GridSetProps
 
 export const Box = createComponent<BoxProps>({
   name: "Box",
@@ -42,14 +33,11 @@ export const Box = createComponent<BoxProps>({
   renderers: [
     backgroundSet,
     borderSet,
-    boxShadow,
-    colorSet,
     displaySet,
-    flexSet,
-    gridSet,
     layoutSet,
-    spaceSet,
-    textSet
+    globalSet,
+    flexSet,
+    gridSet
   ],
   defaultProps: {
     as: "div"
