@@ -79,6 +79,14 @@ export interface Theme extends BaseTheme {
     button: string
     input: string
   }
+  outlines: {
+    main: string
+  }
+  outlineOffsets: {
+    main: number
+    outer: number
+    inner: number
+  }
   boxShadows: [{ alias: "main"; value: string }]
   colorStyles: {
     main: ColorVariant

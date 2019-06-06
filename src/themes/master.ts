@@ -82,6 +82,14 @@ export const MasterTheme: Theme = {
     button: "2px solid",
     input: "2px solid"
   },
+  outlines: {
+    main: "3px solid rgba(64,128,255,0.8)"
+  },
+  outlineOffsets: {
+    main: 0,
+    outer: 3,
+    inner: -3
+  },
   boxShadows: [{ alias: "main", value: "0 2px 16px rgba(0,0,0,0.5)" }],
   colorStyles: {
     main: {
@@ -177,10 +185,11 @@ export const MasterTheme: Theme = {
       cursor: "pointer"
     },
     ":focus": {
-      outline: "3px solid rgba(0,155,255,0.6)"
+      outline: "main",
+      outlineOffset: "main"
     },
     "button:focus": {
-      outlineOffset: "3px"
+      outlineOffset: "outer"
     }
   }
 }
