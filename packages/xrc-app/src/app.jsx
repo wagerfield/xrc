@@ -8,12 +8,14 @@ import { Nav } from "./components/nav"
 import { fonts } from "./core/fonts"
 // import { components } from "./core/mdx"
 
+// <MDXProvider components={components}>
+
 export default () => (
   <Root>
     <Base fonts={fonts}>
       <Nav />
       <React.Suspense fallback={<Loading />}>
-        <Router>
+        <Router component="main">
           <Routes default />
         </Router>
       </React.Suspense>
