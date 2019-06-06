@@ -3,6 +3,8 @@ import {
   BackgroundSetProps,
   borderSet,
   BorderSetProps,
+  colorStyle,
+  ColorStyleProps,
   displaySet,
   DisplaySetProps,
   flexSet,
@@ -12,7 +14,9 @@ import {
   globalSet,
   GlobalSetProps,
   layoutSet,
-  LayoutSetProps
+  LayoutSetProps,
+  textStyle,
+  TextStyleProps
 } from "onno-react"
 import { createComponent, ComponentProps } from "./factory"
 
@@ -22,6 +26,8 @@ export type BoxProps = ComponentProps &
   DisplaySetProps &
   LayoutSetProps &
   GlobalSetProps &
+  ColorStyleProps &
+  TextStyleProps &
   FlexSetProps &
   GridSetProps
 
@@ -36,6 +42,8 @@ export const Box = createComponent<BoxProps>({
     displaySet,
     layoutSet,
     globalSet,
+    colorStyle,
+    textStyle,
     flexSet,
     gridSet
   ],
