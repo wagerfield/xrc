@@ -20,7 +20,7 @@
     "react-static": "7.0.10",
     "react-static-plugin-mdx": "7.0.10",
     "react-static-plugin-source-filesystem": "7.0.10",
-    "xrc": "0.5.7"
+    "xrc": "0.5.8"
   },
   "devDependencies": {
     "serve": "11.0.1"
