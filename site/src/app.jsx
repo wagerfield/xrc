@@ -1,29 +1,24 @@
 import React from "react"
 import { Base } from "xrc"
+import { Router } from "@reach/router"
+import { Routes, Root } from "react-static"
 import { MDXProvider } from "@mdx-js/react"
-import { Root, Routes } from "react-static"
-import { Link, Router } from "@reach/router"
 import { Loading } from "components/loading"
-import { components } from "./core/mdx"
+import { Nav } from "components/nav"
 import { fonts } from "./core/fonts"
+import { components } from "./core/mdx"
 
 export default () => (
   <Root>
     <Base fonts={fonts}>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/docs">Docs</Link>
-        <Link to="/repl">REPL</Link>
-      </nav>
-      <main>
-        <React.Suspense fallback={<Loading />}>
-          <MDXProvider components={components}>
-            <Router>
-              <Routes default />
-            </Router>
-          </MDXProvider>
-        </React.Suspense>
-      </main>
+      <Nav />
+      <React.Suspense fallback={<Loading />}>
+        <MDXProvider components={components}>
+          <Router component="main">
+            <Routes default />
+          </Router>
+        </MDXProvider>
+      </React.Suspense>
     </Base>
   </Root>
 )
