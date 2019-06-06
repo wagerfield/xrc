@@ -1,9 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "packages",
-    "paths": {
-      "xrc": ["xrc/src"]
-    },
     "target": "es2015",
     "module": "es2015",
     "moduleResolution": "node",
