@@ -19,6 +19,11 @@
     "build": "lerna exec --ignore xrc-app -- tsc",
     "bundle": "rollup --config",
     "bundle:watch": "rollup --config --watch",
+    "app:start": "lerna run start --parallel --scope xrc-app",
+    "app:build": "lerna run build --parallel --scope xrc-app",
+    "app:stage": "lerna run stage --parallel --scope xrc-app",
+    "app:stats": "lerna run stats --parallel --scope xrc-app",
+    "app:serve": "lerna run serve --parallel --scope xrc-app",
     "preflight": "yarn clean && yarn types && yarn bundle && yarn format:write",
     "prepublishOnly": "yarn preflight",
     "release": "lerna publish"
