@@ -17,12 +17,11 @@
     "clean": "rimraf coverage 'packages/**/{artifacts,cjs,dist,esm,lib,tmp,types}'",
     "types": "lerna exec --ignore xrc-app -- tsc --emitDeclarationOnly",
     "build": "lerna exec --ignore xrc-app -- tsc",
-    "setup": "lerna bootstrap",
     "bundle": "rollup --config",
     "bundle:watch": "rollup --config --watch",
-    "release": "lerna publish",
     "preflight": "yarn clean && yarn types && yarn bundle && yarn format:write",
-    "prepublishOnly": "yarn preflight"
+    "prepublishOnly": "yarn preflight",
+    "release": "lerna publish"
   },
   "workspaces": [
     "packages/*"
