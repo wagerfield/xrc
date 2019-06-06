@@ -1,0 +1,13 @@
+{
+  "version": "0.5.8",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "packages": ["packages/*"],
+  "command": {
+    "version": {
+      "message": "chore(release): publish %v",
+      "tagVersionPrefix": "",
+      "exact": true
+    }
+  }
+}

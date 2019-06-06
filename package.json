@@ -1,38 +1,32 @@
 {
-  "name": "xrc",
-  "description": "xrc",
-  "version": "0.5.8",
+  "private": true,
+  "name": "xrc-repo",
+  "version": "0.1.0",
   "license": "MIT",
   "author": "Matthew Wagerfield <matthew@wagerfield.com>",
-  "homepage": "https://github.com/wagerfield/xrc#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wagerfield/xrc.git"
-  },
-  "bugs": {
-    "url": "https://github.com/wagerfield/xrc/issues"
-  },
-  "main": "cjs/index.js",
-  "module": "esm/index.js",
-  "types": "types/index.d.ts",
-  "files": [
-    "cjs",
-    "esm",
-    "types"
-  ],
   "scripts": {
     "test": "jest",
-    "build": "tsc",
-    "types": "tsc --emitDeclarationOnly",
-    "dev": "tsc --watch --skipLibCheck",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "tslint 'packages/**/*.ts' --format codeFrame",
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier '**/*.{js,jsx,json,ts,tsx,md}'",
+    "format:check": "yarn format --check",
+    "format:write": "yarn format --write",
+    "copy": "cpx readme.md packages/xrc && cpx readme.md packages/xrc-app",
+    "clean": "rimraf coverage reports 'packages/**/{artifacts,cjs,dist,esm,lib,tmp,types}'",
+    "types": "lerna exec --ignore xrc-app -- tsc --emitDeclarationOnly",
+    "build": "lerna exec --ignore xrc-app -- tsc",
+    "setup": "lerna bootstrap",
     "bundle": "rollup --config",
-    "watch": "rollup --config --watch",
-    "format": "prettier --write '**/*.{json,js,md,ts,tsx}'",
-    "lint": "tslint --fix --format codeFrame 'src/**/*.{ts,tsx}'",
-    "clean": "rimraf cjs esm lib types 'site/{artifacts,dist,tmp}'",
-    "preflight": "yarn clean && yarn types && yarn bundle && yarn format",
+    "bundle:watch": "rollup --config --watch",
+    "release": "lerna publish",
+    "preflight": "yarn clean && yarn types && yarn bundle && yarn format:write",
     "prepublishOnly": "yarn preflight"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -46,7 +40,7 @@
       "jest --findRelatedTests",
       "git add"
     ],
-    "**/*.{json,md}": [
+    "**/*.{js,jsx,json,md}": [
       "prettier --write",
       "git add"
     ]
@@ -56,19 +50,15 @@
       "@commitlint/config-conventional"
     ]
   },
-  "dependencies": {
-    "@emotion/core": "10.0.10",
-    "@types/react": "16.8.18",
-    "emotion-theming": "10.0.10",
-    "onno-react": "0.4.0",
-    "react": "16.8.6"
-  },
   "devDependencies": {
     "@commitlint/cli": "8.0.0",
     "@commitlint/config-conventional": "8.0.0",
     "@types/jest": "24.0.13",
+    "cpx": "1.5.0",
+    "glob": "7.1.4",
     "husky": "2.4.0",
     "jest": "24.8.0",
+    "lerna": "3.14.1",
     "lint-staged": "8.2.0",
     "prettier": "1.17.1",
     "rimraf": "2.6.3",

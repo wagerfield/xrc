@@ -2,7 +2,7 @@ import React from "react"
 import { resolve } from "path"
 import { mapPath } from "./src/core/utils"
 
-const DOCS_DIR = resolve("../docs")
+const DOCS_DIR = resolve("../../docs")
 const PAGES_DIR = resolve("src/pages")
 
 export default {

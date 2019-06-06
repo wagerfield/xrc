@@ -1,0 +1,30 @@
+{
+  "name": "xrc",
+  "version": "0.5.8",
+  "license": "MIT",
+  "description": "React Components",
+  "author": "Matthew Wagerfield <matthew@wagerfield.com>",
+  "homepage": "https://github.com/wagerfield/xrc#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wagerfield/xrc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wagerfield/xrc/issues"
+  },
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "cjs",
+    "esm",
+    "types"
+  ],
+  "dependencies": {
+    "@emotion/core": "10.0.10",
+    "@types/react": "16.8.18",
+    "emotion-theming": "10.0.10",
+    "onno-react": "0.4.0",
+    "react": "16.8.6"
+  }
+}
