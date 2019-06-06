@@ -1,6 +1,7 @@
 # folders
 node_modules
 artifacts
+coverage
 types
 dist
 cjs
