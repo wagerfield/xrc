@@ -9,29 +9,30 @@ export default {
   entry: "index.jsx",
   siteRoot: "https://xrc.netlify.com",
   plugins: [
-    [
-      "react-static-plugin-source-filesystem",
-      {
-        location: PAGES_DIR
-      }
-    ],
-    [
-      "react-static-plugin-source-filesystem",
-      {
-        location: DOCS_DIR,
-        pathPrefix: "docs",
-        createRoute(route) {
-          route.path = mapPath(route.path)
-          return route
-        }
-      }
-    ],
+    "react-static-plugin-xrc",
     [
       "react-static-plugin-mdx",
       {
         includePaths: [DOCS_DIR]
       }
+    ],
+    [
+      "react-static-plugin-source-filesystem",
+      {
+        location: PAGES_DIR
+      }
     ]
+    // [
+    //   "react-static-plugin-source-filesystem",
+    //   {
+    //     location: DOCS_DIR,
+    //     pathPrefix: "docs",
+    //     createRoute(route) {
+    //       route.path = mapPath(route.path)
+    //       return route
+    //     }
+    //   }
+    // ]
   ],
   devServer: {
     host: "0.0.0.0",
