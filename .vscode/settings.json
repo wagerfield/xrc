@@ -1,7 +1,6 @@
 {
   "editor.formatOnSave": true,
   "files.exclude": {
-    "**/node_modules": true,
-    "**/artifacts": true
+    "**/node_modules": true
   }
 }
