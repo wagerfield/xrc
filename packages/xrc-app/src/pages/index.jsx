@@ -1,5 +1,5 @@
 import React from "react"
-import { REPL } from "components/repl"
+import { REPL } from "../components/repl"
 
 export const code = `
 <Box background="fill.main">

@@ -1,5 +1,5 @@
 import React from "react"
-import { Provider, Preview, Editor, Error } from "components/live"
+import { Provider, Preview, Editor, Error } from "./live"
 
 export const REPL = (props) => (
   <Provider {...props}>
