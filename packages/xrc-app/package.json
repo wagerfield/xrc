@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "xrc-app",
-  "version": "0.5.8",
+  "version": "0.6.0",
   "license": "MIT",
   "author": "Matthew Wagerfield <matthew@wagerfield.com>",
   "scripts": {
@@ -20,7 +20,7 @@
     "react-static": "7.0.10",
     "react-static-plugin-mdx": "7.0.10",
     "react-static-plugin-source-filesystem": "7.0.10",
-    "xrc": "0.5.8"
+    "xrc": "0.6.0"
   },
   "devDependencies": {
     "serve": "11.0.1"
