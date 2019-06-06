@@ -49,7 +49,8 @@ export const MasterTheme: Theme = {
     bold: 700
   },
   fontSizes: [
-    { alias: "small", value: 14 },
+    { alias: "xs", value: 12 },
+    { alias: "sm", value: 14 },
     { alias: "main", value: 16 },
     { alias: "h3", value: 24 },
     { alias: "h2", value: 28 },
@@ -176,9 +177,10 @@ export const MasterTheme: Theme = {
       cursor: "pointer"
     },
     ":focus": {
-      outline: "3px solid rgba(0,155,255,0.6)",
-      outlineOffset: "3px",
-      zIndex: 1
+      outline: "3px solid rgba(0,155,255,0.6)"
+    },
+    "button:focus": {
+      outlineOffset: "3px"
     }
   }
 }

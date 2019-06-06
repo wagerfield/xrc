@@ -46,7 +46,8 @@ export interface Theme extends BaseTheme {
     bold: number
   }
   fontSizes: [
-    { alias: "small"; value: Primitive },
+    { alias: "xs"; value: Primitive },
+    { alias: "sm"; value: Primitive },
     { alias: "main"; value: Primitive },
     { alias: "h3"; value: Primitive },
     { alias: "h2"; value: Primitive },
