@@ -87,7 +87,11 @@ export interface Theme extends BaseTheme {
     outer: number
     inner: number
   }
-  boxShadows: [{ alias: "main"; value: string }]
+  // prettier-ignore
+  boxShadows: [
+    { alias: "sm"; value: string },
+    { alias: "lg"; value: string }
+  ]
   colorStyles: {
     main: ColorVariant
   }

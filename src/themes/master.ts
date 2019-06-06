@@ -90,7 +90,10 @@ export const MasterTheme: Theme = {
     outer: 3,
     inner: -3
   },
-  boxShadows: [{ alias: "main", value: "0 2px 16px rgba(0,0,0,0.5)" }],
+  boxShadows: [
+    { alias: "sm", value: "0 2px 4px rgba(0,0,0,0.08)" },
+    { alias: "lg", value: "0 2px 16px rgba(0,0,0,0.5)" }
+  ],
   colorStyles: {
     main: {
       background: "fill.main",
