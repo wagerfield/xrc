@@ -64,7 +64,7 @@
     "jest": "24.8.0",
     "lerna": "3.14.1",
     "lint-staged": "8.2.0",
-    "prettier": "1.17.1",
+    "prettier": "1.18.0",
     "rimraf": "2.6.3",
     "rollup": "1.14.2",
     "rollup-plugin-prettier": "0.6.0",
