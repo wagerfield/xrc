@@ -9,29 +9,28 @@ const { Box } = xrc
 const scope = { Link, ...xrc }
 
 const editor = {
-  // forward: ["padding"],
-  // padding: 4,
-  // style: {
-  //   fontFamily: "code",
-  //   fontSize: "sm"
-  // },
-  // css: {
-  //   "textarea:focus": {
-  //     outline: "3px solid #48F",
-  //     outlineOffset: "-3px"
-  //   }
-  // }
+  forward: ["padding"],
+  padding: 16,
+  style: {
+    fontFamily: "code",
+    fontSize: "sm"
+  },
+  css: {
+    "textarea:focus": {
+      outlineOffset: "inner"
+    }
+  }
 }
 
 const error = {
-  // style: {
-  //   ...editor.style,
-  //   padding: editor.padding,
-  //   overflow: "scroll",
-  //   background: "#C34",
-  //   color: "text.inv",
-  //   margin: 0
-  // }
+  style: {
+    ...editor.style,
+    padding: editor.padding,
+    background: "#C34",
+    overflow: "auto",
+    color: "text.inv",
+    margin: 0
+  }
 }
 
 const trim = (string) => string && string.trim()
