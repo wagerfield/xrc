@@ -4,29 +4,34 @@ import { LiveError, LiveEditor, LivePreview, LiveProvider } from "react-live"
 import { Link } from "@reach/router"
 import * as xrc from "xrc"
 
-const { colors, fontFamilies, fontSizes } = xrc.MasterTheme
+const { Box } = xrc
 
 const scope = { Link, ...xrc }
 
-const padding = "16px"
-
-// editor textarea:focus {
-//   outline: 4px solid #48F;
-//   outline-offset: -4px;
-//   z-index: 1;
-// }
-
-const editorStyles = {
-  fontFamily: fontFamilies.code,
-  fontSize: fontSizes[0].value
+const editor = {
+  // forward: ["padding"],
+  // padding: 4,
+  // style: {
+  //   fontFamily: "code",
+  //   fontSize: "sm"
+  // },
+  // css: {
+  //   "textarea:focus": {
+  //     outline: "3px solid #48F",
+  //     outlineOffset: "-3px"
+  //   }
+  // }
 }
 
-const errorStyles = {
-  ...editorStyles,
-  color: colors.text.inv,
-  background: "#C34",
-  margin: 0,
-  padding
+const error = {
+  // style: {
+  //   ...editor.style,
+  //   padding: editor.padding,
+  //   overflow: "scroll",
+  //   background: "#C34",
+  //   color: "text.inv",
+  //   margin: 0
+  // }
 }
 
 const trim = (string) => string && string.trim()
@@ -49,10 +54,8 @@ export const Provider = ({
   />
 )
 
-export const Preview = () => <LivePreview />
+export const Preview = (props) => <Box as={LivePreview} {...props} />
 
-export const Editor = () => (
-  <LiveEditor style={editorStyles} padding={padding} />
-)
+export const Editor = (props) => <Box as={LiveEditor} {...props} {...editor} />
 
-export const Error = () => <LiveError style={errorStyles} />
+export const Error = (props) => <Box as={LiveError} {...props} {...error} />
