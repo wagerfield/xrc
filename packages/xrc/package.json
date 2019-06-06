@@ -24,7 +24,9 @@
     "@emotion/core": "10.0.10",
     "@types/react": "16.8.18",
     "emotion-theming": "10.0.10",
-    "onno-react": "0.4.0",
+    "onno-react": "0.4.0"
+  },
+  "peerDependencies": {
     "react": "16.8.6"
   }
 }
