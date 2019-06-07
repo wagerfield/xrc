@@ -10485,10 +10485,10 @@ react-static-plugin-mdx@7.0.10:
   dependencies:
     "@mdx-js/loader" "^1.0.14"
 
-react-static-plugin-source-filesystem@7.0.10:
-  version "7.0.10"
-  resolved "https://registry.npmjs.org/react-static-plugin-source-filesystem/-/react-static-plugin-source-filesystem-7.0.10.tgz#11fe5fd5803bed9f019829ced54c85f0ca1ee9b1"
-  integrity sha512-b3D1Rk9KAIQoCwnPDz+96m7i48DfeUcfWd7MuVxK90/uhKttsOSrC+pwQ+aSUCwkS9RJgbKmZWWVv0YVlJJsng==
+react-static-plugin-source-filesystem@7.1.0:
+  version "7.1.0"
+  resolved "https://registry.npmjs.org/react-static-plugin-source-filesystem/-/react-static-plugin-source-filesystem-7.1.0.tgz#41ed385f6b01a4c53bebd918281a7bcb03423e85"
+  integrity sha512-HI7yVBNDTQz5aYsFWJfTUsCgOVjUU9+s+vLPEd8BxeqGAJ0TPKymkmKJJLJYFo8TGm20Wn0yqXiEvuXEOYDoEg==
   dependencies:
     chokidar "^2.1.5"
     glob "^7.1.3"
