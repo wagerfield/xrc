@@ -1,5 +1,5 @@
 import { MasterTheme } from "./master"
-import { Theme } from "./types"
+import { Theme } from "../types"
 
 export const BlackTheme: Theme = {
   ...MasterTheme,
@@ -20,6 +20,10 @@ export const BlackTheme: Theme = {
       inv: "#FFFFFF",
       invAlt: "#455A64",
       debug: "rgba(0,153,255,0.25)"
+    },
+    highlight: {
+      main: "rgba(32,32,32,0.1)",
+      inv: "rgba(255,255,255,0.1)"
     },
     status: {
       info: "#90CAF9",

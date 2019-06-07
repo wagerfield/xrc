@@ -1,11 +1,11 @@
 import { ThemeObject } from "onno-react"
-import { Theme } from "./types"
+import { Theme } from "../types"
 
 const buttonStyles = (styles: ThemeObject) => ({
-  borderRadius: "lg",
-  lineHeight: "single",
   padding: "16px 32px",
   textStyle: "caps",
+  lineHeight: "single",
+  borderRadius: "lg",
   border: "none",
   ...styles
 })
@@ -29,6 +29,10 @@ export const MasterTheme: Theme = {
       invAlt: "#D8D8D8",
       debug: "rgba(0,153,255,0.25)"
     },
+    highlight: {
+      main: "rgba(32,32,32,0.1)",
+      inv: "rgba(255,255,255,0.1)"
+    },
     status: {
       info: "#0277BD",
       success: "#00B67D",
@@ -40,6 +44,7 @@ export const MasterTheme: Theme = {
       light: "rgba(0,0,0,0.04)"
     }
   },
+  // Typography
   fontFamilies: {
     main: "Avenir Next,system-ui,sans-serif",
     code: "SFMono-Regular,Consolas,Menlo,monospace"
@@ -61,10 +66,12 @@ export const MasterTheme: Theme = {
     { alias: "heading", value: 1.25 },
     { alias: "main", value: 1.5 }
   ],
+  // Layout
   sizes: [
     { alias: "zero", value: 0 },
     { alias: "fill", value: "100%" },
     { alias: "icon", value: 24 },
+    { alias: "xs", value: 16 },
     { alias: "sm", value: 32 },
     { alias: "md", value: 40 },
     { alias: "lg", value: 48 }
@@ -73,10 +80,12 @@ export const MasterTheme: Theme = {
     { alias: "none", value: 0 },
     { alias: "fill", value: "100%" },
     { alias: "icon", value: 12 },
+    { alias: "xs", value: 4 },
     { alias: "sm", value: 16 },
     { alias: "md", value: 20 },
     { alias: "lg", value: 24 }
   ],
+  // Display
   borders: {
     divider: "1px solid",
     button: "2px solid",
@@ -94,6 +103,7 @@ export const MasterTheme: Theme = {
     { alias: "sm", value: "0 2px 4px rgba(0,0,0,0.08)" },
     { alias: "lg", value: "0 2px 16px rgba(0,0,0,0.5)" }
   ],
+  // Variants
   colorStyles: {
     main: {
       background: "fill.main",
@@ -101,16 +111,20 @@ export const MasterTheme: Theme = {
     }
   },
   textStyles: {
+    heading: {
+      fontFamily: "main",
+      fontWeight: "bold",
+      lineHeight: "heading"
+    },
     main: {
       fontSize: "main",
       fontFamily: "main",
       fontWeight: "normal",
       lineHeight: "main"
     },
-    heading: {
-      fontFamily: "main",
-      fontWeight: "bold",
-      lineHeight: "heading"
+    code: {
+      fontSize: "85%",
+      fontFamily: "code"
     },
     caps: {
       fontWeight: "bold",
@@ -145,16 +159,19 @@ export const MasterTheme: Theme = {
       color: "brand.primary"
     })
   },
+  // Global
   globalStyles: {
-    "html,button": {
+    "html, button": {
       color: "text.main",
       textStyle: "main"
     },
-    "h1,h2,h3,p": {
+    // Text
+    "h1, h2, h3, p": {
       margin: 0,
       marginBottom: 4
     },
-    "h1,h2,h3": {
+    // Headings
+    "h1, h2, h3": {
       textStyle: "heading"
     },
     "h1": {
@@ -166,33 +183,87 @@ export const MasterTheme: Theme = {
     "h3": {
       fontSize: "h3"
     },
+    // Code
     "pre": {
       margin: 0
     },
     "code": {
-      fontSize: "85%",
-      fontFamily: "code",
-      borderRadius: "4px",
-      background: "rgba(32,32,32,0.1)",
+      textStyle: "code",
+      borderRadius: "xs",
+      background: "highlight.main",
       padding: "0.2em 0.4em"
     },
-    "b,strong": {
+    // Formatting
+    "b, strong": {
       fontWeight: "bold"
     },
+    // Links
     "a": {
       color: "text.link",
       textDecoration: "none"
     },
+    // Lists
+    "ol, ul": {
+      listStyle: "disc outer none",
+      padding: 0,
+      margin: 0
+    },
+    "ol ol, ul ul": {
+      listStyleType: "disc",
+      marginLeft: 28
+    },
+    // Button
     "button": {
       buttonStyle: "primary",
       cursor: "pointer"
     },
-    ":focus": {
-      outline: "main",
-      outlineOffset: "main"
+    // Pseudo
+    "*": {
+      outline: "none"
+    }
+  },
+  // Components
+  components: {
+    box: {
+      main: {
+        background: "fill.main"
+      },
+      alt: {
+        background: "fill.alt"
+      }
     },
-    "button:focus": {
-      outlineOffset: "outer"
+    text: {
+      main: {
+        textStyle: "main"
+      },
+      code: {
+        textStyle: "code"
+      }
+    },
+    heading: {
+      h1: {
+        fontSize: "h1",
+        textStyle: "heading"
+      },
+      h2: {
+        fontSize: "h2",
+        textStyle: "heading"
+      },
+      h3: {
+        fontSize: "h3",
+        textStyle: "heading"
+      }
+    },
+    button: {
+      primary: {
+        buttonStyle: "primary"
+      },
+      secondary: {
+        buttonStyle: "secondary"
+      },
+      alternative: {
+        buttonStyle: "alternative"
+      }
     }
   }
 }

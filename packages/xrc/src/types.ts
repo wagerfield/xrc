@@ -1,4 +1,15 @@
-import { Primitive, ThemeObject, Theme as BaseTheme } from "onno-react"
+import {
+  Primitive,
+  ThemeProps,
+  VariantProp,
+  ThemeObject,
+  Theme as BaseTheme
+} from "onno-react"
+
+export interface VariantProps extends ThemeProps {
+  variant?: VariantProp
+  var?: VariantProp
+}
 
 export type Color = string
 
@@ -25,6 +36,10 @@ export interface Theme extends BaseTheme {
       inv: Color
       invAlt: Color
       debug: Color
+    }
+    highlight: {
+      main: Color
+      inv: Color
     }
     status: {
       info: Color
@@ -62,6 +77,7 @@ export interface Theme extends BaseTheme {
     { alias: "zero"; value: 0 },
     { alias: "fill"; value: "100%" },
     { alias: "icon"; value: Primitive },
+    { alias: "xs"; value: Primitive },
     { alias: "sm"; value: Primitive },
     { alias: "md"; value: Primitive },
     { alias: "lg"; value: Primitive }
@@ -70,6 +86,7 @@ export interface Theme extends BaseTheme {
     { alias: "none"; value: 0 },
     { alias: "fill"; value: "100%" },
     { alias: "icon"; value: Primitive },
+    { alias: "xs"; value: Primitive },
     { alias: "sm"; value: Primitive },
     { alias: "md"; value: Primitive },
     { alias: "lg"; value: Primitive }
@@ -96,8 +113,9 @@ export interface Theme extends BaseTheme {
     main: ColorVariant
   }
   textStyles: {
-    main: ThemeObject
     heading: ThemeObject
+    main: ThemeObject
+    code: ThemeObject
     caps: ThemeObject
   }
   buttonStyles: {
@@ -106,4 +124,24 @@ export interface Theme extends BaseTheme {
     alternative: ThemeObject
   }
   globalStyles: ThemeObject
+  components: {
+    box: {
+      main: ThemeObject
+      alt: ThemeObject
+    }
+    text: {
+      main: ThemeObject
+      code: ThemeObject
+    }
+    heading: {
+      h1: ThemeObject
+      h2: ThemeObject
+      h3: ThemeObject
+    }
+    button: {
+      primary: ThemeObject
+      secondary: ThemeObject
+      alternative: ThemeObject
+    }
+  }
 }
