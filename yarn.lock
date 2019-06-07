@@ -10478,10 +10478,10 @@ react-simple-code-editor@^0.9.0:
   resolved "https://registry.npmjs.org/react-simple-code-editor/-/react-simple-code-editor-0.9.10.tgz#1ab5ea7215687ed918c6d0dae90736cf01890905"
   integrity sha512-80LJwRQS7Wi9Ugh/e6FRHWdcg4oQOpMBDFxyDpORILffrHdV3EIQ1IeX5x7488r05iFgLbVDV4nQ1LRKjgCm0g==
 
-react-static-plugin-mdx@7.0.10:
-  version "7.0.10"
-  resolved "https://registry.npmjs.org/react-static-plugin-mdx/-/react-static-plugin-mdx-7.0.10.tgz#3503af101ef8510d39a8aeaa8d846a296d25d60c"
-  integrity sha512-G8AW08duPf/ol+n1kMD3Ka0vYIjpa75m1yuiMJcnWJyxaPEL+md9GwOiOKPiiHVgMO0Mj7XO5BUhYbVst2hYKA==
+react-static-plugin-mdx@7.1.0:
+  version "7.1.0"
+  resolved "https://registry.npmjs.org/react-static-plugin-mdx/-/react-static-plugin-mdx-7.1.0.tgz#eb39e07a4e1ce09bd276d6b7e74d5c99d5ef26ba"
+  integrity sha512-jwFKfpE6beFx/ItCjXx/X5RMMy8UAFprRygoBU+4nVOdb0+4grY2Kidirpi/iKCxBQ4/lEl7OFdL2OXfKzaesA==
   dependencies:
     "@mdx-js/loader" "^1.0.14"
 
