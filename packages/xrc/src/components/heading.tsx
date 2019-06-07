@@ -1,0 +1,27 @@
+import { variant } from "onno-react"
+import { createComponent, ComponentProps } from "./factory"
+import { textSet, TextSetProps } from "../renderers/text"
+import { VariantProps } from "../types"
+import { test } from "../core/utils"
+
+export type HeadingProps = ComponentProps & VariantProps & TextSetProps
+
+export const headingVariant = variant<VariantProps, any>({
+  propsKeys: ["variant", "var"],
+  themeKeys: ["components.heading"],
+  renderers: [textSet]
+})
+
+const isHeading = test(/^h[123]$/)
+
+export const Heading = createComponent<HeadingProps>({
+  name: "Heading",
+  styles: (props) => ({
+    boxSizing: "border-box",
+    variant: isHeading(props.as) ? props.as : "h1"
+  }),
+  renderers: [headingVariant, textSet],
+  defaultProps: {
+    as: "h1"
+  }
+})

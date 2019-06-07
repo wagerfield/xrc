@@ -1,12 +1,12 @@
 import { FunctionComponent } from "react"
 import { isArray, globalStyle } from "onno-react"
 import { jsx, InterpolationWithTheme } from "@emotion/core"
-import { Theme } from "../themes/types"
-import { MasterTheme } from "../themes/master"
 import { normalize as normalizeStyles } from "../core/normalize"
 import { renderFonts, FontFaceOptions } from "../core/fonts"
 import { Provider, ProviderProps } from "./provider"
+import { MasterTheme } from "../themes/master"
 import { Global } from "./global"
+import { Theme } from "../types"
 
 export interface BaseProps extends ProviderProps {
   fonts?: FontFaceOptions[]

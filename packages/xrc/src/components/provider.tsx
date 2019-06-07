@@ -1,7 +1,7 @@
 import { jsx } from "@emotion/core"
 import { ThemeProvider } from "emotion-theming"
 import { FunctionComponent } from "react"
-import { Theme } from "../themes/types"
+import { Theme } from "../types"
 
 export interface ProviderProps {
   theme: Theme

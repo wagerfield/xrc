@@ -1,5 +1,6 @@
+export * from "./types"
+
 // Themes
-export * from "./themes/types"
 export * from "./themes/master"
 export * from "./themes/black"
 
@@ -9,3 +10,6 @@ export * from "./components/provider"
 export * from "./components/global"
 export * from "./components/base"
 export * from "./components/box"
+export * from "./components/text"
+export * from "./components/heading"
+export * from "./components/image"

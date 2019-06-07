@@ -1,52 +1,22 @@
-import {
-  backgroundSet,
-  BackgroundSetProps,
-  borderSet,
-  BorderSetProps,
-  colorStyle,
-  ColorStyleProps,
-  displaySet,
-  DisplaySetProps,
-  flexSet,
-  FlexSetProps,
-  gridSet,
-  GridSetProps,
-  globalSet,
-  GlobalSetProps,
-  layoutSet,
-  LayoutSetProps,
-  textStyle,
-  TextStyleProps
-} from "onno-react"
+import { variant } from "onno-react"
 import { createComponent, ComponentProps } from "./factory"
+import { boxSet, BoxSetProps } from "../renderers/box"
+import { VariantProps } from "../types"
 
-export type BoxProps = ComponentProps &
-  BackgroundSetProps &
-  BorderSetProps &
-  DisplaySetProps &
-  LayoutSetProps &
-  GlobalSetProps &
-  ColorStyleProps &
-  TextStyleProps &
-  FlexSetProps &
-  GridSetProps
+export type BoxProps = ComponentProps & VariantProps & BoxSetProps
+
+export const boxVariant = variant<VariantProps, any>({
+  propsKeys: ["variant", "var"],
+  themeKeys: ["components.box"],
+  renderers: [boxSet]
+})
 
 export const Box = createComponent<BoxProps>({
   name: "Box",
   styles: {
     boxSizing: "border-box"
   },
-  renderers: [
-    backgroundSet,
-    borderSet,
-    displaySet,
-    layoutSet,
-    globalSet,
-    colorStyle,
-    textStyle,
-    flexSet,
-    gridSet
-  ],
+  renderers: [boxVariant, boxSet],
   defaultProps: {
     as: "div"
   }

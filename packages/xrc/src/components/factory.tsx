@@ -1,24 +1,25 @@
 import { ElementType, FunctionComponent } from "react"
-import { jsx, InterpolationWithTheme, ObjectInterpolation } from "@emotion/core"
 import { withTheme } from "emotion-theming"
+import { jsx } from "@emotion/core"
 import {
   omit,
   pick,
+  merge,
   isType,
   interpolate,
+  StyleObject,
   ThemeProps,
   AnyRenderFunction
 } from "onno-react"
-import { Theme } from "../themes/types"
 
-export type Interpolation = InterpolationWithTheme<Theme>
+export type Interpolation = StyleObject<any>
 
 export type InterpolationFunction<P> = (props: P) => Interpolation
 
 export interface ComponentProps extends ThemeProps {
   as?: ElementType
-  css?: ObjectInterpolation<any>
-  style?: ObjectInterpolation<any>
+  css?: Interpolation
+  style?: Interpolation
   forward?: string[]
 }
 
@@ -41,19 +42,24 @@ export function createComponent<P extends ComponentProps>({
   renderers,
   defaultProps
 }: ComponentOptions<P>): FunctionComponent<P> {
-  const sanitize = omit<P>({ propsKeys, renderers })
-  const transform = interpolate<P, any>({ name, renderers })
   const isFunction = isType<InterpolationFunction<P>>("function")
+  const transform = interpolate<P, any>({ name, renderers })
+  const sanitize = omit<P>({ propsKeys, renderers })
 
   // Create themed component
   const component: FunctionComponent<P> = withTheme((props) => {
+    const { css, style, theme } = props
+
+    // Resolve base styles
     const baseStyles = isFunction(styles) ? styles(props) : styles
-    const userStyles = transform(props.css, props.theme)
-    const propStyles = transform.renderer(props)
 
     // Prepare component styles
-    const injectedStyles = [baseStyles, propStyles, userStyles]
-    const inlineStyles = transform(props.style, props.theme)
+    const inlineStyles = transform(style, theme)
+    const injectedStyles = merge([
+      transform(baseStyles, theme),
+      transform.renderer(props),
+      transform(css, theme)
+    ])
 
     // Prepare component props
     const forward = pick<P>({ propsKeys: props.forward })

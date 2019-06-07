@@ -4,7 +4,7 @@ import {
   Global as GlobalStyles
 } from "@emotion/core"
 import { FunctionComponent } from "react"
-import { Theme } from "../themes/types"
+import { Theme } from "../types"
 
 export interface GlobalProps {
   styles: InterpolationWithTheme<Theme>
