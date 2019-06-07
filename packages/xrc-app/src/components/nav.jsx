@@ -1,8 +1,23 @@
 import React from "react"
-import { Box } from "xrc"
+import { Box, Text } from "xrc"
 import { Link } from "@reach/router"
 
-// export const NavLink = (props) => <Box as={Link} display="block" padding="3" {...props} />
+export const NavLink = ({ to, children, justifySelf }) => (
+  <Text
+    as={Link}
+    to={to}
+    children={children}
+    paddingX={12}
+    paddingY={3}
+    borderRadius="4px"
+    lineHeight="single"
+    css={{
+      ":active,:hover": {
+        background: "highlight.main"
+      }
+    }}
+  />
+)
 
 export const Nav = () => (
   <Box
@@ -14,10 +29,9 @@ export const Nav = () => (
     width="1"
     textStyle="caps"
     background="fill.main"
-    boxShadow="sm"
   >
-    <Link to="/">Home</Link>
-    <Link to="/docs">Docs</Link>
-    <Link to="/repl">REPL</Link>
+    <NavLink to="/">Home</NavLink>
+    <NavLink to="/docs">Docs</NavLink>
+    <NavLink to="/repl">REPL</NavLink>
   </Box>
 )
