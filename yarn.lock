@@ -9123,19 +9123,19 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-onno-react@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/onno-react/-/onno-react-0.4.0.tgz#c5a94a494cd691228f80906baf1872e067c1a32c"
-  integrity sha512-405dh+WCuzlmmhX8ebDC5MdvI/qp4VQJHDY7hU3x7IXo4bH7sUaeC9zWxiD/CKMYabSTuOrcZ8FKbdeMmjEH3Q==
+onno-react@0.4.2:
+  version "0.4.2"
+  resolved "https://registry.npmjs.org/onno-react/-/onno-react-0.4.2.tgz#e5cf86939b0d4bb6caadd3e27553a7c204984621"
+  integrity sha512-/Mw5wTQbkDPjQJ+FcpJbeG8Uyi0HDXiNcL0mNwFJLsZNV5fdAgcHpjrGONdT1ptcIh5dQiddGB2mcFtAN1Cz2g==
   dependencies:
     "@types/prop-types" "15.7.1"
-    onno "0.4.0"
+    onno "0.4.2"
     prop-types "15.7.2"
 
-onno@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/onno/-/onno-0.4.0.tgz#fe006e4f119668f4d0a5e17305c5f94fcba7ffe0"
-  integrity sha512-og4nBv1jcpHyH/VjJYhOVIAJGJ3wuhw5cayneudhtGR9pfqnvAStU0vVB/p8xpq2NZ+NNwx77GLh0dWZqLy02Q==
+onno@0.4.2:
+  version "0.4.2"
+  resolved "https://registry.npmjs.org/onno/-/onno-0.4.2.tgz#aa5efcc594d323a5d71aaa330567e1a04739e9a1"
+  integrity sha512-zdKa9MzRj4x+jXuQRdpJeipDl4fLqQvRXwkNpqxJn7DLbA90tt7pvYR1Sl50/ybD6t/4gzdhof8pLcsusZYxsw==
   dependencies:
     csstype "2.6.5"
 
