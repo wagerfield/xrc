@@ -1,4 +1,4 @@
-import { ThemeObject } from "onno-react"
+import { ThemeObject } from "onno"
 import { Theme } from "../types"
 
 const buttonStyles = (styles: ThemeObject) => ({

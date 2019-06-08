@@ -9,7 +9,7 @@ import {
   maxWidth,
   MaxWidthProps,
   MaxWidthStyle
-} from "onno-react"
+} from "onno"
 
 export type WidthSetProps = WidthProps & MinWidthProps & MaxWidthProps
 

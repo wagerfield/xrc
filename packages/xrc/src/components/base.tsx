@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react"
-import { isArray, globalStyle } from "onno-react"
+import { isArray, globalStyle } from "onno"
 import { jsx, InterpolationWithTheme } from "@emotion/core"
 import { normalize as normalizeStyles } from "../core/normalize"
 import { renderFonts, FontFaceOptions } from "../core/fonts"

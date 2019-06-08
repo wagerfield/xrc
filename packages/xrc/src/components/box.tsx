@@ -1,4 +1,4 @@
-import { variant } from "onno-react"
+import { variant } from "onno"
 import { createComponent, ComponentProps } from "./factory"
 import { boxSet, BoxSetProps } from "../renderers/box"
 import { VariantProps } from "../types"

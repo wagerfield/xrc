@@ -28,5 +28,5 @@ export default sync("packages/!(xrc-app)").map((pkg) => ({
       printInfo: false
     })
   ],
-  external: ["@emotion/core", "emotion-theming", "onno-react", "react"]
+  external: ["@emotion/core", "emotion-theming", "onno", "react"]
 }))

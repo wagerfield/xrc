@@ -6,7 +6,7 @@ import {
   gridChildSet,
   GridChildSetProps,
   GridChildSetStyle
-} from "onno-react"
+} from "onno"
 
 export type ChildSetProps = FlexChildSetProps & GridChildSetProps
 

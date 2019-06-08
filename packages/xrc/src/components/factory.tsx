@@ -10,7 +10,7 @@ import {
   StyleObject,
   ThemeProps,
   AnyRenderFunction
-} from "onno-react"
+} from "onno"
 
 export type Interpolation = StyleObject<any>
 

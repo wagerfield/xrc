@@ -4,7 +4,7 @@ import {
   ThemeProps,
   ThemeObject,
   Theme as BaseTheme
-} from "onno-react"
+} from "onno"
 
 export interface VariantProps<T> extends ThemeProps {
   variant?: Prop<T>

@@ -1,4 +1,4 @@
-import { compose } from "onno-react"
+import { compose } from "onno"
 import { commonSet, CommonSetProps, CommonSetStyle } from "./common"
 
 export type TextSetProps = CommonSetProps

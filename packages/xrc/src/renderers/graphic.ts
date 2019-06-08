@@ -6,7 +6,7 @@ import {
   spaceSet,
   SpaceSetProps,
   SpaceSetStyle
-} from "onno-react"
+} from "onno"
 import { animationSet, AnimationSetProps, AnimationSetStyle } from "./animation"
 import { displaySet, DisplaySetProps, DisplaySetStyle } from "./display"
 import { childSet, ChildSetProps, ChildSetStyle } from "./child"

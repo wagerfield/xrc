@@ -1,4 +1,4 @@
-import { variant, buttonStyle } from "onno-react"
+import { variant, buttonStyle } from "onno"
 import { createComponent, ComponentProps } from "./factory"
 import { uiSet, UISetProps } from "../renderers/ui"
 import { VariantProps } from "../types"

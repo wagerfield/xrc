@@ -6,7 +6,7 @@ import {
   transition,
   TransitionProps,
   TransitionStyle
-} from "onno-react"
+} from "onno"
 
 export type AnimationSetProps = AnimationProps & TransitionProps
 

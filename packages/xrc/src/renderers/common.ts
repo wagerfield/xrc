@@ -28,7 +28,7 @@ import {
   transformSet,
   TransformSetProps,
   TransformSetStyle
-} from "onno-react"
+} from "onno"
 import { animationSet, AnimationSetProps, AnimationSetStyle } from "./animation"
 import { childSet, ChildSetProps, ChildSetStyle } from "./child"
 import { shadowSet, ShadowSetProps, ShadowSetStyle } from "./shadow"

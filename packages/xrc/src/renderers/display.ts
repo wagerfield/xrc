@@ -9,7 +9,7 @@ import {
   visibility,
   VisibilityProps,
   VisibilityStyle
-} from "onno-react"
+} from "onno"
 
 export type DisplaySetProps = DisplayProps & OpacityProps & VisibilityProps
 

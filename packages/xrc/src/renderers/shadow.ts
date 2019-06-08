@@ -6,7 +6,7 @@ import {
   textShadow,
   TextShadowProps,
   TextShadowStyle
-} from "onno-react"
+} from "onno"
 
 export type ShadowSetProps = BoxShadowProps & TextShadowProps
 

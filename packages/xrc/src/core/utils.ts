@@ -1,4 +1,4 @@
-import { isString } from "onno-react"
+import { isString } from "onno"
 
 export function test(regex: RegExp) {
   return (value: any): value is string => {

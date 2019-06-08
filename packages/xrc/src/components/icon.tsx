@@ -21,13 +21,13 @@ export interface IconProps
   scale?: number
 }
 
-const ICON_PATHS: IconPaths = {
-  camera: "",
-  close: "",
-  edit: "",
-  left: "",
-  right: ""
-}
+// const ICON_PATHS: IconPaths = {
+//   camera: "",
+//   close: "",
+//   edit: "",
+//   left: "",
+//   right: ""
+// }
 
 export const Icon = createComponent<IconProps>({
   name: "Icon",
