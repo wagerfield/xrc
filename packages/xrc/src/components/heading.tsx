@@ -16,11 +16,11 @@ const isHeading = test(/^h[123]$/)
 
 export const Heading = createComponent<HeadingProps>({
   name: "Heading",
+  renderers: [headingVariant, textSet],
   styles: (props) => ({
     boxSizing: "border-box",
     variant: isHeading(props.as) ? props.as : "h1"
   }),
-  renderers: [headingVariant, textSet],
   defaultProps: {
     as: "h1"
   }

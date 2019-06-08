@@ -16,12 +16,9 @@ const isCode = test(/^code$/)
 
 export const Text = createComponent<TextProps>({
   name: "Text",
+  renderers: [textVariant, textSet],
   styles: (props) => ({
     boxSizing: "border-box",
     variant: isCode(props.as) ? props.as : null
-  }),
-  renderers: [textVariant, textSet],
-  defaultProps: {
-    as: "div"
-  }
+  })
 })

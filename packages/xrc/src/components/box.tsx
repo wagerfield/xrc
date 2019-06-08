@@ -13,11 +13,8 @@ export const boxVariant = variant<VariantProps, any>({
 
 export const Box = createComponent<BoxProps>({
   name: "Box",
+  renderers: [boxVariant, boxSet],
   styles: {
     boxSizing: "border-box"
-  },
-  renderers: [boxVariant, boxSet],
-  defaultProps: {
-    as: "div"
   }
 })

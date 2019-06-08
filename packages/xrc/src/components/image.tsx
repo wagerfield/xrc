@@ -5,11 +5,11 @@ export type ImageProps = ComponentProps & ImageSetProps
 
 export const Image = createComponent<ImageProps>({
   name: "Image",
+  renderers: [imageSet],
   styles: {
     boxSizing: "border-box",
     maxWidth: "100%"
   },
-  renderers: [imageSet],
   defaultProps: {
     as: "img"
   }

@@ -30,7 +30,7 @@ export interface DefaultProps {
 export interface ComponentOptions<P extends ComponentProps> {
   name: string
   renderers: AnyRenderFunction[]
-  defaultProps: DefaultProps & Partial<P>
+  defaultProps?: DefaultProps & Partial<P>
   styles?: Interpolation | InterpolationFunction<P>
 }
 
@@ -71,7 +71,8 @@ export function createComponent<P extends ComponentProps>({
     }
 
     // Apply styles and sanitized props
-    return <props.as {...componentProps} />
+    const Element = props.as || "div"
+    return <Element {...componentProps} />
   })
 
   // Define component properties and return
