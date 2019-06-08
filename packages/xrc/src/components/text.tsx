@@ -4,9 +4,13 @@ import { textSet, TextSetProps } from "../renderers/text"
 import { VariantProps } from "../types"
 import { test } from "../core/utils"
 
-export type TextProps = ComponentProps & VariantProps & TextSetProps
+export type TextVariant = "main" | "code" | "caps"
 
-export const textVariant = variant<VariantProps, any>({
+export type TextVariantProps = VariantProps<TextVariant>
+
+export type TextProps = ComponentProps & TextVariantProps & TextSetProps
+
+export const textVariant = variant<TextVariantProps, any>({
   propsKeys: ["variant", "var"],
   themeKeys: ["components.text"],
   renderers: [textSet]

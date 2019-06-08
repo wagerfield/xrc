@@ -4,9 +4,13 @@ import { textSet, TextSetProps } from "../renderers/text"
 import { VariantProps } from "../types"
 import { test } from "../core/utils"
 
-export type HeadingProps = ComponentProps & VariantProps & TextSetProps
+export type HeadingVariant = "h1" | "h2" | "h3"
 
-export const headingVariant = variant<VariantProps, any>({
+export type HeadingVariantProps = VariantProps<HeadingVariant>
+
+export type HeadingProps = ComponentProps & HeadingVariantProps & TextSetProps
+
+export const headingVariant = variant<HeadingVariantProps, any>({
   propsKeys: ["variant", "var"],
   themeKeys: ["components.heading"],
   renderers: [textSet]

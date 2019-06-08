@@ -237,6 +237,9 @@ export const MasterTheme: Theme = {
       },
       code: {
         textStyle: "code"
+      },
+      caps: {
+        textStyle: "caps"
       }
     },
     heading: {

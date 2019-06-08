@@ -70,7 +70,7 @@ export function createComponent<P extends ComponentProps>({
       style: inlineStyles
     }
 
-    // Apply styles and sanitized props
+    // Return dynamic component
     const Element = props.as || "div"
     return <Element {...componentProps} />
   })

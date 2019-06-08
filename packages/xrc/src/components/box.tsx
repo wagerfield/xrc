@@ -3,9 +3,13 @@ import { createComponent, ComponentProps } from "./factory"
 import { boxSet, BoxSetProps } from "../renderers/box"
 import { VariantProps } from "../types"
 
-export type BoxProps = ComponentProps & VariantProps & BoxSetProps
+export type BoxVariant = "main" | "alt"
 
-export const boxVariant = variant<VariantProps, any>({
+export type BoxVariantProps = VariantProps<BoxVariant>
+
+export type BoxProps = ComponentProps & BoxVariantProps & BoxSetProps
+
+export const boxVariant = variant<BoxVariantProps, any>({
   propsKeys: ["variant", "var"],
   themeKeys: ["components.box"],
   renderers: [boxSet]

@@ -1,14 +1,14 @@
 import {
+  Prop,
   Primitive,
   ThemeProps,
-  VariantProp,
   ThemeObject,
   Theme as BaseTheme
 } from "onno-react"
 
-export interface VariantProps extends ThemeProps {
-  variant?: VariantProp
-  var?: VariantProp
+export interface VariantProps<T> extends ThemeProps {
+  variant?: Prop<T>
+  var?: Prop<T>
 }
 
 export type Color = string
@@ -128,6 +128,7 @@ export interface Theme extends BaseTheme {
     text: {
       main: ThemeObject
       code: ThemeObject
+      caps: ThemeObject
     }
     heading: {
       h1: ThemeObject
