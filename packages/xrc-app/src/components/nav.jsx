@@ -11,9 +11,10 @@ export const NavLink = ({ to, children, justifySelf }) => (
     paddingY={3}
     borderRadius="4px"
     lineHeight="single"
+    fontSmoothing="antialiased"
     css={{
       ":active,:hover": {
-        background: "highlight.main"
+        background: "overlay.light"
       }
     }}
   />

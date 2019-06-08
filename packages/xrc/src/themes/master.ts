@@ -2,11 +2,16 @@ import { ThemeObject } from "onno-react"
 import { Theme } from "../types"
 
 const buttonStyles = (styles: ThemeObject) => ({
+  border: "none",
+  borderRadius: "lg",
+  boxShadow: "none",
+  boxSizing: "border-box",
+  cursor: "pointer",
+  fontSmoothing: "antialiased",
+  lineHeight: "single",
   padding: "16px 32px",
   textStyle: "caps",
-  lineHeight: "single",
-  borderRadius: "lg",
-  border: "none",
+  userSelect: "none",
   ...styles
 })
 
@@ -29,10 +34,6 @@ export const MasterTheme: Theme = {
       invAlt: "#D8D8D8",
       debug: "rgba(0,153,255,0.25)"
     },
-    highlight: {
-      main: "rgba(32,32,32,0.1)",
-      inv: "rgba(255,255,255,0.1)"
-    },
     status: {
       info: "#0277BD",
       success: "#00B67D",
@@ -41,7 +42,7 @@ export const MasterTheme: Theme = {
     overlay: {
       dark: "rgba(0,0,0,0.6)",
       medium: "rgba(0,0,0,0.3)",
-      light: "rgba(0,0,0,0.04)"
+      light: "rgba(32,32,32,0.08)"
     }
   },
   // Typography
@@ -135,16 +136,15 @@ export const MasterTheme: Theme = {
     primary: buttonStyles({
       "color": "text.inv",
       "background": "brand.primary",
-      "fontSmoothing": "antialiased",
       "boxShadow": [
         "0 -4px 0 rgba(0,0,0,0.32) inset", // inner
         "0 2px 4px rgba(0,0,0,0.16)" // outer
       ].join(", "),
-      ":hover": {
-        background: "#08C98D"
-      },
       ":active": {
         background: "brand.primary"
+      },
+      ":hover": {
+        background: "#08C98D"
       }
     }),
     secondary: buttonStyles({
@@ -155,23 +155,27 @@ export const MasterTheme: Theme = {
       padding: "14px 30px"
     }),
     alternative: buttonStyles({
-      background: "rgba(0,0,0,0.04)",
+      background: "overlay.light",
       color: "brand.primary"
     })
   },
   // Global
   globalStyles: {
-    "html, button": {
+    "*": {
+      outline: "none",
+      WebkitTapHighlightColor: "rgba(0,0,0,0)"
+    },
+    // Text
+    "html,button": {
       color: "text.main",
       textStyle: "main"
     },
-    // Text
-    "h1, h2, h3, p": {
+    "h1,h2,h3,h4,h5,h6,p": {
       margin: 0,
       marginBottom: 4
     },
     // Headings
-    "h1, h2, h3": {
+    "h1,h2,h3,h4,h5,h6": {
       textStyle: "heading"
     },
     "h1": {
@@ -190,11 +194,11 @@ export const MasterTheme: Theme = {
     "code": {
       textStyle: "code",
       borderRadius: "xs",
-      background: "highlight.main",
+      background: "overlay.light",
       padding: "0.2em 0.4em"
     },
     // Formatting
-    "b, strong": {
+    "b,strong": {
       fontWeight: "bold"
     },
     // Links
@@ -203,23 +207,18 @@ export const MasterTheme: Theme = {
       textDecoration: "none"
     },
     // Lists
-    "ol, ul": {
+    "ol,ul": {
       listStyle: "disc outer none",
       padding: 0,
       margin: 0
     },
-    "ol ol, ul ul": {
+    "ol ol,ul ul": {
       listStyleType: "disc",
       marginLeft: 28
     },
     // Button
     "button": {
-      buttonStyle: "primary",
-      cursor: "pointer"
-    },
-    // Pseudo
-    "*": {
-      outline: "none"
+      buttonStyle: "primary"
     }
   },
   // Components

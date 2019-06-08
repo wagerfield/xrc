@@ -37,10 +37,6 @@ export interface Theme extends BaseTheme {
       invAlt: Color
       debug: Color
     }
-    highlight: {
-      main: Color
-      inv: Color
-    }
     status: {
       info: Color
       success: Color
