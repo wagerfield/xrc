@@ -9128,10 +9128,10 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-onno@0.4.6:
-  version "0.4.6"
-  resolved "https://registry.npmjs.org/onno/-/onno-0.4.6.tgz#6d196c654c885727ee566198b8627373f0622409"
-  integrity sha512-wWM4AjFb/M6CaGLIJIhy3ktRWEa31PMYOeCZr48qJUriD9/jV0TZOO4BunG5XnD+ZI04dmRkpzvTgW4KGQ86Yg==
+onno@0.4.7:
+  version "0.4.7"
+  resolved "https://registry.npmjs.org/onno/-/onno-0.4.7.tgz#462f7597030b1f970a47a867a55c7309fdb294ed"
+  integrity sha512-ugKGOqFinRiQkr/sxN78F+ZyQiIUuYt+AdxgY40Ifz5fj4ra3AdiamQs5FuN6G1//QMoTCTiyOQEgbo5SZ9S+Q==
   dependencies:
     csstype "2.6.5"
 
@@ -11084,6 +11084,13 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^3.0.0"
     inherits "^2.0.1"
+
+rollup-plugin-json@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-4.0.0.tgz#a18da0a4b30bf5ca1ee76ddb1422afbb84ae2b9e"
+  integrity sha512-hgb8N7Cgfw5SZAkb3jf0QXii6QX/FOkiIq2M7BAQIEydjHvTyxXHQiIzZaTFgx1GK0cRCHOCBHIyEkkLdWKxow==
+  dependencies:
+    rollup-pluginutils "^2.5.0"
 
 rollup-plugin-prettier@0.6.0:
   version "0.6.0"

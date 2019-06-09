@@ -3,6 +3,7 @@ import { sync } from "glob"
 import { sizeSnapshot } from "rollup-plugin-size-snapshot"
 import typescript from "rollup-plugin-typescript"
 import prettier from "rollup-plugin-prettier"
+import json from "rollup-plugin-json"
 
 export default sync("packages/!(xrc-app)").map((pkg) => ({
   input: join(pkg, "src/index.ts"),
@@ -17,6 +18,7 @@ export default sync("packages/!(xrc-app)").map((pkg) => ({
     }
   ],
   plugins: [
+    json(),
     typescript({
       removeComments: true
     }),
