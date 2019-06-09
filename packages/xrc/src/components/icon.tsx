@@ -1,7 +1,7 @@
-import { jsx } from "@emotion/core"
-import { ComponentProps, VariantProps } from "../types"
+import { VariantProps } from "../types"
+import { component } from "../core/component"
 import { graphicSet, GraphicSetProps } from "../renderers/graphic"
-import { createComponent } from "../core/component"
+import { createPolymorph, PolymorphProps } from "./polymorph"
 
 export interface IconPaths {
   camera: string
@@ -15,12 +15,11 @@ export type IconVariant = keyof IconPaths
 
 export type IconVariantProps = VariantProps<IconVariant>
 
-export interface IconProps
-  extends ComponentProps,
-    IconVariantProps,
-    GraphicSetProps {
-  scale?: number
-}
+export type IconProps = PolymorphProps &
+  IconVariantProps &
+  GraphicSetProps & {
+    scale?: number
+  }
 
 // const ICON_PATHS: IconPaths = {
 //   camera: "",
@@ -30,13 +29,12 @@ export interface IconProps
 //   right: ""
 // }
 
-export const Icon = createComponent<IconProps>({
+export const withIconStyles = component<IconProps>({
   name: "Icon",
   renderers: [graphicSet],
-  styles: () => ({
+  styles: {
     boxSizing: "border-box"
-  }),
-  render({ filtered }) {
-    return <svg {...filtered} />
   }
 })
+
+export const Icon = withIconStyles(createPolymorph("svg"))

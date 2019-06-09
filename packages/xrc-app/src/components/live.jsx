@@ -17,6 +17,7 @@ const editor = {
   },
   css: {
     "textarea:focus": {
+      outline: "main",
       outlineOffset: "inner"
     }
   }

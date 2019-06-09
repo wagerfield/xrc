@@ -1,8 +1,8 @@
-import { jsx } from "@emotion/core"
 import { variant, buttonStyle } from "onno"
-import { PolyComponentProps, VariantProps } from "../types"
+import { VariantProps } from "../types"
+import { component } from "../core/component"
 import { uiSet, UISetProps } from "../renderers/ui"
-import { createComponent } from "../core/component"
+import { createPolymorph, PolymorphProps } from "./polymorph"
 import { IconVariant } from "./icon"
 
 export type ButtonSize = "sm" | "md" | "lg"
@@ -11,14 +11,13 @@ export type ButtonVariant = "primary" | "secondary" | "alternative"
 
 export type ButtonVariantProps = VariantProps<ButtonVariant>
 
-export interface ButtonProps
-  extends PolyComponentProps,
-    ButtonVariantProps,
-    UISetProps {
-  text?: string
-  size?: ButtonSize
-  icon?: IconVariant
-}
+export type ButtonProps = PolymorphProps &
+  ButtonVariantProps &
+  UISetProps & {
+    text?: string
+    size?: ButtonSize
+    icon?: IconVariant
+  }
 
 export const buttonVariant = variant<ButtonVariantProps, any>({
   propsKeys: ["variant", "var"],
@@ -26,14 +25,12 @@ export const buttonVariant = variant<ButtonVariantProps, any>({
   renderers: [buttonStyle]
 })
 
-export const Button = createComponent<ButtonProps>({
+export const withButtonStyles = component<ButtonProps>({
   name: "Button",
-  renderers: [buttonVariant, uiSet],
-  styles: () => ({
+  renderers: [buttonStyle, uiSet],
+  styles: {
     variant: "primary"
-  }),
-  render({ filtered, original }) {
-    const Element = original.as || "button"
-    return <Element {...filtered} />
   }
 })
+
+export const Button = withButtonStyles(createPolymorph("button"))

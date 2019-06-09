@@ -1,18 +1,16 @@
-import { jsx } from "@emotion/core"
-import { ComponentProps } from "../types"
-import { createComponent } from "../core/component"
+import { component } from "../core/component"
 import { imageSet, ImageSetProps } from "../renderers/image"
+import { createPolymorph, PolymorphProps } from "./polymorph"
 
-export type ImageProps = ComponentProps & ImageSetProps
+export type ImageProps = PolymorphProps & ImageSetProps
 
-export const Image = createComponent<ImageProps>({
+export const withImageStyles = component<ImageProps>({
   name: "Image",
   renderers: [imageSet],
   styles: {
     boxSizing: "border-box",
     maxWidth: "100%"
-  },
-  render({ filtered }) {
-    return <img {...filtered} />
   }
 })
+
+export const Image = withImageStyles(createPolymorph("img"))

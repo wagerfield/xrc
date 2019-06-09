@@ -1,14 +1,14 @@
-import { jsx } from "@emotion/core"
 import { variant } from "onno"
-import { PolyComponentProps, VariantProps } from "../types"
+import { VariantProps } from "../types"
+import { component } from "../core/component"
 import { boxSet, BoxSetProps } from "../renderers/box"
-import { createComponent } from "../core/component"
+import { Polymorph, PolymorphProps } from "./polymorph"
 
 export type BoxVariant = "main" | "alt"
 
 export type BoxVariantProps = VariantProps<BoxVariant>
 
-export type BoxProps = PolyComponentProps & BoxVariantProps & BoxSetProps
+export type BoxProps = PolymorphProps & BoxVariantProps & BoxSetProps
 
 export const boxVariant = variant<BoxVariantProps, any>({
   propsKeys: ["variant", "var"],
@@ -16,14 +16,12 @@ export const boxVariant = variant<BoxVariantProps, any>({
   renderers: [boxSet]
 })
 
-export const Box = createComponent<BoxProps>({
+export const withBoxStyles = component<BoxProps>({
   name: "Box",
   renderers: [boxVariant, boxSet],
   styles: {
     boxSizing: "border-box"
-  },
-  render({ filtered, original }) {
-    const Element = original.as || "div"
-    return <Element {...filtered} />
   }
 })
+
+export const Box = withBoxStyles(Polymorph)
