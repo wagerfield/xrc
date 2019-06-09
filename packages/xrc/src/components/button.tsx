@@ -1,7 +1,8 @@
+import { jsx } from "@emotion/core"
 import { variant, buttonStyle } from "onno"
-import { createComponent, ComponentProps } from "./factory"
+import { PolyComponentProps, VariantProps } from "../types"
 import { uiSet, UISetProps } from "../renderers/ui"
-import { VariantProps } from "../types"
+import { createComponent } from "../core/component"
 import { IconVariant } from "./icon"
 
 export type ButtonSize = "sm" | "md" | "lg"
@@ -11,7 +12,7 @@ export type ButtonVariant = "primary" | "secondary" | "alternative"
 export type ButtonVariantProps = VariantProps<ButtonVariant>
 
 export interface ButtonProps
-  extends ComponentProps,
+  extends PolyComponentProps,
     ButtonVariantProps,
     UISetProps {
   text?: string
@@ -28,10 +29,11 @@ export const buttonVariant = variant<ButtonVariantProps, any>({
 export const Button = createComponent<ButtonProps>({
   name: "Button",
   renderers: [buttonVariant, uiSet],
-  styles: {
+  styles: () => ({
     variant: "primary"
-  },
-  defaultProps: {
-    as: "button"
+  }),
+  render(filteredProps, originalProps) {
+    const Element = originalProps.as || "button"
+    return <Element {...filteredProps} />
   }
 })

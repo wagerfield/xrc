@@ -1,14 +1,17 @@
+import { jsx } from "@emotion/core"
 import { variant } from "onno"
-import { createComponent, ComponentProps } from "./factory"
+import { PolyComponentProps, VariantProps } from "../types"
 import { textSet, TextSetProps } from "../renderers/text"
-import { VariantProps } from "../types"
+import { createComponent } from "../core/component"
 import { test } from "../core/utils"
 
 export type HeadingVariant = "h1" | "h2" | "h3"
 
 export type HeadingVariantProps = VariantProps<HeadingVariant>
 
-export type HeadingProps = ComponentProps & HeadingVariantProps & TextSetProps
+export type HeadingProps = PolyComponentProps &
+  HeadingVariantProps &
+  TextSetProps
 
 export const headingVariant = variant<HeadingVariantProps, any>({
   propsKeys: ["variant", "var"],
@@ -25,7 +28,8 @@ export const Heading = createComponent<HeadingProps>({
     boxSizing: "border-box",
     variant: isHeading(props.as) ? props.as : "h1"
   }),
-  defaultProps: {
-    as: "h1"
+  render(filteredProps, originalProps) {
+    const Element = originalProps.as || "h1"
+    return <Element {...filteredProps} />
   }
 })

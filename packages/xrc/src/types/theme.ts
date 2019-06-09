@@ -1,15 +1,4 @@
-import {
-  Prop,
-  Primitive,
-  ThemeProps,
-  ThemeObject,
-  Theme as BaseTheme
-} from "onno"
-
-export interface VariantProps<T> extends ThemeProps {
-  variant?: Prop<T>
-  var?: Prop<T>
-}
+import { Primitive, ThemeObject, Theme as BaseTheme } from "onno"
 
 export type Color = string
 

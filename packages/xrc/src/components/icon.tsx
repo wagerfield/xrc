@@ -1,6 +1,7 @@
-import { createComponent, ComponentProps } from "./factory"
+import { jsx } from "@emotion/core"
+import { ComponentProps, VariantProps } from "../types"
 import { graphicSet, GraphicSetProps } from "../renderers/graphic"
-import { VariantProps } from "../types"
+import { createComponent } from "../core/component"
 
 export interface IconPaths {
   camera: string
@@ -32,7 +33,10 @@ export interface IconProps
 export const Icon = createComponent<IconProps>({
   name: "Icon",
   renderers: [graphicSet],
-  defaultProps: {
-    as: "svg"
+  styles: () => ({
+    boxSizing: "border-box"
+  }),
+  render(filteredProps) {
+    return <svg {...filteredProps} />
   }
 })

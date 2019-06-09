@@ -1,14 +1,15 @@
+import { jsx } from "@emotion/core"
 import { variant } from "onno"
-import { createComponent, ComponentProps } from "./factory"
+import { PolyComponentProps, VariantProps } from "../types"
 import { textSet, TextSetProps } from "../renderers/text"
-import { VariantProps } from "../types"
+import { createComponent } from "../core/component"
 import { test } from "../core/utils"
 
 export type TextVariant = "main" | "code" | "caps"
 
 export type TextVariantProps = VariantProps<TextVariant>
 
-export type TextProps = ComponentProps & TextVariantProps & TextSetProps
+export type TextProps = PolyComponentProps & TextVariantProps & TextSetProps
 
 export const textVariant = variant<TextVariantProps, any>({
   propsKeys: ["variant", "var"],
@@ -24,5 +25,9 @@ export const Text = createComponent<TextProps>({
   styles: (props) => ({
     boxSizing: "border-box",
     variant: isCode(props.as) ? props.as : null
-  })
+  }),
+  render(filteredProps, originalProps) {
+    const Element = originalProps.as || "div"
+    return <Element {...filteredProps} />
+  }
 })

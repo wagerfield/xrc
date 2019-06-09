@@ -1,4 +1,6 @@
-import { createComponent, ComponentProps } from "./factory"
+import { jsx } from "@emotion/core"
+import { ComponentProps } from "../types"
+import { createComponent } from "../core/component"
 import { imageSet, ImageSetProps } from "../renderers/image"
 
 export type ImageProps = ComponentProps & ImageSetProps
@@ -10,7 +12,7 @@ export const Image = createComponent<ImageProps>({
     boxSizing: "border-box",
     maxWidth: "100%"
   },
-  defaultProps: {
-    as: "img"
+  render(props) {
+    return <img {...props} />
   }
 })
