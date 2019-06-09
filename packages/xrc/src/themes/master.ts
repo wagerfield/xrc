@@ -140,11 +140,11 @@ export const MasterTheme: Theme = {
         "0 -4px 0 rgba(0,0,0,0.32) inset", // inner
         "0 2px 4px rgba(0,0,0,0.16)" // outer
       ].join(", "),
-      ":active": {
-        background: "brand.primary"
-      },
       ":hover": {
         background: "#08C98D"
+      },
+      ":active": {
+        background: "brand.primary"
       }
     }),
     secondary: buttonStyles({
