@@ -56,9 +56,8 @@ export function element<P>(Element: ElementType): FunctionComponent<P> {
 export function polymorph(
   defaultElement: ElementType
 ): FunctionComponent<PolymorphProps> {
-  return (props) => {
-    const { as: Element = defaultElement, ...rest } = props
-    // console.log(Element, rest)
-    return <Element {...rest} />
+  return ({ as: Element = defaultElement, ...props }) => {
+    // console.log(Element, props)
+    return <Element {...props} />
   }
 }
