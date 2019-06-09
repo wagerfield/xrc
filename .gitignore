@@ -1,8 +1,8 @@
 # folders
+packages/*/types
 node_modules
 artifacts
 coverage
-types
 dist
 cjs
 esm
