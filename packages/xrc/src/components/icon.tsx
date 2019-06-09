@@ -21,7 +21,6 @@ export type IconProps = GraphicSetProps & {
   variant?: IconVariant
   var?: IconVariant
   scale?: number
-  fill?: string
 }
 
 export const withIconStyles = component<IconProps>({
@@ -38,14 +37,15 @@ export const Icon = withIconStyles((props) => {
   const isPath = path.startsWith("M")
   const Element = isPath ? "path" : "polygon"
   const svgProps = {
+    style: props.style,
+    className: props.className,
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: `0 0 ${SIZE} ${SIZE}`,
     height: size,
     width: size
   }
   const elementProps = {
-    [isPath ? "d" : "points"]: path,
-    fill: props.fill
+    [isPath ? "d" : "points"]: path
   }
   return (
     <svg {...svgProps}>

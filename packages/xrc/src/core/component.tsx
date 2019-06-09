@@ -1,7 +1,12 @@
-import { ComponentType, ElementType, FunctionComponent } from "react"
 import { interpolate, isType, merge, omit, pick } from "onno"
 import { withTheme } from "emotion-theming"
 import { jsx } from "@emotion/core"
+import {
+  ElementType,
+  ComponentType,
+  HTMLAttributes,
+  FunctionComponent
+} from "react"
 import {
   OmitKeys,
   ComponentProps,
@@ -18,7 +23,7 @@ export function component<P>({ name, styles, renderers }: ComponentOptions<P>) {
   const omitProps = omit<P>({ propsKeys: OMIT, renderers })
 
   // With styles function
-  return (Component: ComponentType<P>) => {
+  return (Component: ComponentType<P & HTMLAttributes<Element>>) => {
     return withTheme((props: ComponentProps<P>) => {
       const { css, style, theme, forward } = props
 
