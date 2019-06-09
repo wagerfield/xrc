@@ -14,7 +14,7 @@
     "format:check": "yarn format --check",
     "format:write": "yarn format --write",
     "copy": "cpx readme.md packages/xrc && cpx readme.md packages/xrc-app",
-    "clean": "rimraf coverage 'packages/**/{artifacts,cjs,dist,esm,lib,tmp,types}'",
+    "clean": "rimraf coverage 'packages/*/{artifacts,cjs,dist,esm,lib,tmp,types}'",
     "types": "lerna exec --ignore xrc-app -- tsc --emitDeclarationOnly",
     "build": "lerna exec --ignore xrc-app -- tsc",
     "bundle": "rollup --config",
