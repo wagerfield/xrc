@@ -1,7 +1,6 @@
 import { VariantProps } from "../types"
-import { component } from "../core/component"
+import { component, element } from "../core/component"
 import { graphicSet, GraphicSetProps } from "../renderers/graphic"
-import { createPolymorph, PolymorphProps } from "./polymorph"
 
 export interface IconPaths {
   camera: string
@@ -15,8 +14,7 @@ export type IconVariant = keyof IconPaths
 
 export type IconVariantProps = VariantProps<IconVariant>
 
-export type IconProps = PolymorphProps &
-  IconVariantProps &
+export type IconProps = IconVariantProps &
   GraphicSetProps & {
     scale?: number
   }
@@ -37,4 +35,4 @@ export const withIconStyles = component<IconProps>({
   }
 })
 
-export const Icon = withIconStyles(createPolymorph("svg"))
+export const Icon = withIconStyles(element("svg"))

@@ -1,10 +1,11 @@
-import { jsx } from "@emotion/core"
-import { ComponentType } from "react"
-import { withTheme } from "emotion-theming"
+import { ComponentType, ElementType, FunctionComponent } from "react"
 import { interpolate, isType, merge, omit, pick } from "onno"
+import { withTheme } from "emotion-theming"
+import { jsx } from "@emotion/core"
 import {
   OmitKeys,
   ComponentProps,
+  PolymorphProps,
   ComponentOptions,
   InterpolationFunction
 } from "../types"
@@ -42,5 +43,22 @@ export function component<P>({ name, styles, renderers }: ComponentOptions<P>) {
       // Render component with filtered props
       return <Component {...componentProps} />
     })
+  }
+}
+
+export function element<P>(Element: ElementType): FunctionComponent<P> {
+  return (props) => {
+    // console.log(Element, props)
+    return <Element {...props} />
+  }
+}
+
+export function polymorph(
+  defaultElement: ElementType
+): FunctionComponent<PolymorphProps> {
+  return (props) => {
+    const { as: Element = defaultElement, ...rest } = props
+    // console.log(Element, rest)
+    return <Element {...rest} />
   }
 }

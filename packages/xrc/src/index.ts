@@ -11,7 +11,6 @@ export * from "./themes/master"
 export * from "./themes/black"
 
 // Components
-export * from "./components/polymorph"
 export * from "./components/provider"
 export * from "./components/global"
 export * from "./components/base"

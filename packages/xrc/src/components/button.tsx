@@ -1,8 +1,7 @@
 import { variant, buttonStyle } from "onno"
-import { VariantProps } from "../types"
-import { component } from "../core/component"
+import { PolymorphProps, VariantProps } from "../types"
+import { component, polymorph } from "../core/component"
 import { uiSet, UISetProps } from "../renderers/ui"
-import { createPolymorph, PolymorphProps } from "./polymorph"
 import { IconVariant } from "./icon"
 
 export type ButtonSize = "sm" | "md" | "lg"
@@ -33,4 +32,4 @@ export const withButtonStyles = component<ButtonProps>({
   }
 })
 
-export const Button = withButtonStyles(createPolymorph("button"))
+export const Button = withButtonStyles(polymorph("button"))

@@ -1,5 +1,6 @@
 import { InterpolationWithTheme, ObjectInterpolation } from "@emotion/core"
 import { AnyRenderFunction, StyleObject, Prop } from "onno"
+import { ElementType } from "react"
 import { Theme } from "./theme"
 
 export type AnyStyleObject = StyleObject<any>
@@ -22,6 +23,10 @@ export interface ComponentProps<P> extends ThemeProps {
   css?: Interpolation<P>
   style?: Interpolation<P>
   forward?: string[]
+}
+
+export interface PolymorphProps {
+  as?: ElementType
 }
 
 export interface VariantProps<T> extends ThemeProps {

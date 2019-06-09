@@ -1,8 +1,7 @@
-import { component } from "../core/component"
+import { component, element } from "../core/component"
 import { imageSet, ImageSetProps } from "../renderers/image"
-import { createPolymorph, PolymorphProps } from "./polymorph"
 
-export type ImageProps = PolymorphProps & ImageSetProps
+export type ImageProps = ImageSetProps
 
 export const withImageStyles = component<ImageProps>({
   name: "Image",
@@ -13,4 +12,4 @@ export const withImageStyles = component<ImageProps>({
   }
 })
 
-export const Image = withImageStyles(createPolymorph("img"))
+export const Image = withImageStyles(element("img"))

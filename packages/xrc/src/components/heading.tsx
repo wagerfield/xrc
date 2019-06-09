@@ -1,8 +1,7 @@
 import { variant } from "onno"
-import { VariantProps } from "../types"
-import { component } from "../core/component"
+import { PolymorphProps, VariantProps } from "../types"
+import { component, polymorph } from "../core/component"
 import { textSet, TextSetProps } from "../renderers/text"
-import { createPolymorph, PolymorphProps } from "./polymorph"
 import { test } from "../core/utils"
 
 export type HeadingVariant = "h1" | "h2" | "h3"
@@ -28,4 +27,4 @@ export const withHeadingStyles = component<HeadingProps>({
   })
 })
 
-export const Heading = withHeadingStyles(createPolymorph("h1"))
+export const Heading = withHeadingStyles(polymorph("h1"))

@@ -1,8 +1,7 @@
 import { variant } from "onno"
-import { VariantProps } from "../types"
-import { component } from "../core/component"
+import { PolymorphProps, VariantProps } from "../types"
+import { component, polymorph } from "../core/component"
 import { boxSet, BoxSetProps } from "../renderers/box"
-import { Polymorph, PolymorphProps } from "./polymorph"
 
 export type BoxVariant = "main" | "alt"
 
@@ -24,4 +23,4 @@ export const withBoxStyles = component<BoxProps>({
   }
 })
 
-export const Box = withBoxStyles(Polymorph)
+export const Box = withBoxStyles(polymorph("div"))
