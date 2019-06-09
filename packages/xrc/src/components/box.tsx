@@ -22,8 +22,8 @@ export const Box = createComponent<BoxProps>({
   styles: {
     boxSizing: "border-box"
   },
-  render(filteredProps, originalProps) {
-    const Element = originalProps.as || "div"
-    return <Element {...filteredProps} />
+  render({ filtered, original }) {
+    const Element = original.as || "div"
+    return <Element {...filtered} />
   }
 })

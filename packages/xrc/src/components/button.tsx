@@ -32,8 +32,8 @@ export const Button = createComponent<ButtonProps>({
   styles: () => ({
     variant: "primary"
   }),
-  render(filteredProps, originalProps) {
-    const Element = originalProps.as || "button"
-    return <Element {...filteredProps} />
+  render({ filtered, original }) {
+    const Element = original.as || "button"
+    return <Element {...filtered} />
   }
 })

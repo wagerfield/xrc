@@ -28,8 +28,8 @@ export const Heading = createComponent<HeadingProps>({
     boxSizing: "border-box",
     variant: isHeading(props.as) ? props.as : "h1"
   }),
-  render(filteredProps, originalProps) {
-    const Element = originalProps.as || "h1"
-    return <Element {...filteredProps} />
+  render({ filtered, original }) {
+    const Element = original.as || "h1"
+    return <Element {...filtered} />
   }
 })

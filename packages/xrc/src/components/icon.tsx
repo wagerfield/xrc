@@ -36,7 +36,7 @@ export const Icon = createComponent<IconProps>({
   styles: () => ({
     boxSizing: "border-box"
   }),
-  render(filteredProps) {
-    return <svg {...filteredProps} />
+  render({ filtered }) {
+    return <svg {...filtered} />
   }
 })

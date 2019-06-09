@@ -3,7 +3,6 @@ import { FunctionComponent } from "react"
 import { interpolate, merge, omit, pick } from "onno"
 import {
   OmitKeys,
-  RenderProps,
   CSSProperties,
   AnyStyleObject,
   ComponentProps,
@@ -39,22 +38,22 @@ export function createComponent<P extends ComponentProps>({
     const omitProps = omit<P>({ propsKeys: OMIT, renderers })
     const pickProps = pick<P>({ propsKeys: forward })
 
-    // Prepare render props
-    const renderProps: RenderProps = {
-      ...omitProps(props),
-      ...pickProps(props),
-      css: injectedStyles as ThemedInterpolation,
-      style: inlineStyles as CSSProperties
-    }
-
-    // Call render function with filtered props
-    return render(renderProps, props)
+    // Call render function
+    return render({
+      original: props,
+      filtered: {
+        ...omitProps(props),
+        ...pickProps(props),
+        css: injectedStyles as ThemedInterpolation,
+        style: inlineStyles as CSSProperties
+      }
+    })
   }
 
   // Define component properties
-  Object.defineProperty(component, "name", { value: name })
   component.defaultProps = defaultProps
+  component.displayName = name
 
   // Wrap in themed HOC
-  return withTheme(component)
+  return withTheme(component) as FunctionComponent<P>
 }

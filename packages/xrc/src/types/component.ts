@@ -1,5 +1,5 @@
 import { Properties as CSSProperties } from "csstype"
-import { ElementType, ReactElement, PropsWithChildren } from "react"
+import { ElementType, FunctionComponent } from "react"
 import { InterpolationWithTheme, ObjectInterpolation } from "@emotion/core"
 import { AnyRenderFunction, Prop, ThemeProps, StyleObject } from "onno"
 import { Theme } from "./theme"
@@ -34,20 +34,18 @@ export interface VariantProps<T> extends ThemeProps {
 
 export type OmitKeys = keyof PolyComponentProps
 
-export interface RenderProps {
-  css: ThemedInterpolation
-  style: CSSProperties
+export interface RenderProps<P> {
+  original: P
+  filtered: {
+    css: ThemedInterpolation
+    style: CSSProperties
+  }
 }
-
-export type RenderFunction<P extends ComponentProps> = (
-  filteredProps: PropsWithChildren<RenderProps>,
-  originalProps: PropsWithChildren<P>
-) => ReactElement | null
 
 export interface ComponentOptions<P extends ComponentProps> {
   name: string
-  render: RenderFunction<P>
   renderers: AnyRenderFunction[]
+  render: FunctionComponent<RenderProps<P>>
   styles?: Interpolation<P> | InterpolationFunction<P>
   defaultProps?: Partial<P>
 }

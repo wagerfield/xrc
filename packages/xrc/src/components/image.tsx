@@ -12,7 +12,7 @@ export const Image = createComponent<ImageProps>({
     boxSizing: "border-box",
     maxWidth: "100%"
   },
-  render(props) {
-    return <img {...props} />
+  render({ filtered }) {
+    return <img {...filtered} />
   }
 })
