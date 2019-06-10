@@ -10,15 +10,20 @@ import { components } from "./core/mdx"
 
 export default () => (
   <Root>
-    <Base fonts={fonts}>
-      <MDXProvider components={components}>
-        <Nav />
+    <Base fonts={fonts("/fonts")}>
+      <Nav
+        links={[
+          { path: "/docs", text: "Docs", key: "docs" },
+          { path: "/repl", text: "REPL", key: "repl" }
+        ]}
+      />
+      {/* <MDXProvider components={components}>
         <React.Suspense fallback={<Loading />}>
           <Router component="main">
             <Routes default />
           </Router>
         </React.Suspense>
-      </MDXProvider>
+      </MDXProvider> */}
     </Base>
   </Root>
 )
