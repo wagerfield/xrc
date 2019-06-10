@@ -25,9 +25,9 @@ export const withLogoStyles = component<LogoProps>({
       height: iconSize,
       fontSize: iconSize,
       fontFamily: "system-ui",
-      lineHeight: 1.15,
+      lineHeight: 1.1,
       textAlign: "center",
-      display: "block"
+      display: "inline-block"
     }
   }
 })
