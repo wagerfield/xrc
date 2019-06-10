@@ -37,7 +37,7 @@ const error = {
 const trim = (string) => string && string.trim()
 
 export const Provider = ({
-  code = "<h1>Hello world</h1>",
+  code = "<Text>Hello world</Text>",
   language = "jsx",
   disabled = false,
   inline = false,
