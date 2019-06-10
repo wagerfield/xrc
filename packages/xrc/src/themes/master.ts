@@ -75,7 +75,8 @@ export const MasterTheme: Theme = {
     { alias: "xs", value: 16 },
     { alias: "sm", value: 32 },
     { alias: "md", value: 40 },
-    { alias: "lg", value: 48 }
+    { alias: "lg", value: 48 },
+    { alias: "xl", value: 64 }
   ],
   borderRadii: [
     { alias: "none", value: 0 },
@@ -229,6 +230,11 @@ export const MasterTheme: Theme = {
       },
       alt: {
         background: "fill.alt"
+      },
+      modal: {
+        background: "fill.main",
+        borderRadius: "lg",
+        boxShadow: "lg"
       }
     },
     text: {

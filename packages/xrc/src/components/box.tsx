@@ -3,7 +3,7 @@ import { PolymorphProps, VariantProps } from "../types"
 import { boxSet, BoxSetProps } from "../renderers/box"
 import { component, polymorph } from "./component"
 
-export type BoxVariant = "main" | "alt"
+export type BoxVariant = "main" | "alt" | "modal"
 
 export type BoxVariantProps = VariantProps<BoxVariant>
 

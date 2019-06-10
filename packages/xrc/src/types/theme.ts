@@ -65,7 +65,8 @@ export interface Theme extends BaseTheme {
     { alias: "xs"; value: Primitive },
     { alias: "sm"; value: Primitive },
     { alias: "md"; value: Primitive },
-    { alias: "lg"; value: Primitive }
+    { alias: "lg"; value: Primitive },
+    { alias: "xl"; value: Primitive }
   ]
   borderRadii: [
     { alias: "none"; value: 0 },
@@ -113,6 +114,7 @@ export interface Theme extends BaseTheme {
     box: {
       main: ThemeObject
       alt: ThemeObject
+      modal: ThemeObject
     }
     text: {
       main: ThemeObject
