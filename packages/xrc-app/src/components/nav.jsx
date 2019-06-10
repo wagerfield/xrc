@@ -22,6 +22,21 @@ const mapLink = (props, index) => (
   />
 )
 
+const NavLink = (props) => (
+  <Text
+    as={Link}
+    css={hoverStyles}
+    textStyle="caps"
+    lineHeight="single"
+    fontSmoothing="antialiased"
+    borderRadius="xs"
+    marginRight="3"
+    paddingX="12"
+    paddingY="3"
+    {...props}
+  />
+)
+
 export const Nav = (props) => (
   <Box
     as="nav"
@@ -38,19 +53,4 @@ export const Nav = (props) => (
     <Logo to="/" as={Link} css={hoverStyles} borderRadius="xs" padding="3" />
     {isArray(props.links) ? props.links.map(mapLink) : null}
   </Box>
-)
-
-export const NavLink = (props) => (
-  <Text
-    as={Link}
-    css={hoverStyles}
-    textStyle="caps"
-    lineHeight="single"
-    fontSmoothing="antialiased"
-    borderRadius="xs"
-    marginRight="3"
-    paddingX="12"
-    paddingY="3"
-    {...props}
-  />
 )
