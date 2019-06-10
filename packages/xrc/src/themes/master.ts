@@ -125,7 +125,6 @@ export const MasterTheme: Theme = {
       lineHeight: "main"
     },
     code: {
-      fontSize: "85%",
       fontFamily: "code"
     },
     caps: {
@@ -189,11 +188,12 @@ export const MasterTheme: Theme = {
       fontSize: "h3"
     },
     // Code
-    "pre": {
+    "pre,code": {
+      textStyle: "code",
       margin: 0
     },
     "code": {
-      textStyle: "code",
+      fontSize: "85%",
       borderRadius: "xs",
       background: "overlay.light",
       padding: "0.2em 0.4em"
