@@ -1,5 +1,5 @@
 import { jsx } from "@emotion/core"
-import { isNumberLike } from "onno"
+import { isNumberLike, omit } from "onno"
 import { graphicSet, GraphicSetProps } from "../renderers/graphic"
 import { component } from "./component"
 import ICONS from "./icons.json"
@@ -31,14 +31,17 @@ export const withIconStyles = component<IconProps>({
   }
 })
 
+const omitIconProps = omit({
+  propsKeys: ["scale", "var", "variant"]
+})
+
 export const Icon = withIconStyles((props) => {
   const path = ICONS[props.variant || props.var || "bug"]
   const size = isNumberLike(props.scale) ? props.scale! * SIZE : SIZE
   const isPath = path.startsWith("M")
   const Element = isPath ? "path" : "polygon"
+  const iconProps = omitIconProps(props)
   const svgProps = {
-    style: props.style,
-    className: props.className,
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: `0 0 ${SIZE} ${SIZE}`,
     height: size,
@@ -48,7 +51,7 @@ export const Icon = withIconStyles((props) => {
     [isPath ? "d" : "points"]: path
   }
   return (
-    <svg {...svgProps}>
+    <svg {...iconProps} {...svgProps}>
       <Element {...elementProps} />
     </svg>
   )
