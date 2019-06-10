@@ -1,15 +1,9 @@
-import {
-  jsx,
-  InterpolationWithTheme,
-  Global as GlobalStyles
-} from "@emotion/core"
-import { FunctionComponent } from "react"
+import { Global as GlobalStyles, InterpolationWithTheme } from "@emotion/core"
 import { Theme } from "../types"
+import { element } from "./component"
 
 export interface GlobalProps {
   styles: InterpolationWithTheme<Theme>
 }
 
-export const Global: FunctionComponent<GlobalProps> = (props) => (
-  <GlobalStyles {...props} />
-)
+export const Global = element<GlobalProps>(GlobalStyles)

@@ -1,12 +1,9 @@
-import { jsx } from "@emotion/core"
 import { ThemeProvider } from "emotion-theming"
-import { FunctionComponent } from "react"
 import { Theme } from "../types"
+import { element } from "./component"
 
 export interface ProviderProps {
   theme: Theme
 }
 
-export const Provider: FunctionComponent<ProviderProps> = (props) => (
-  <ThemeProvider {...props} />
-)
+export const Provider = element<ProviderProps>(ThemeProvider)

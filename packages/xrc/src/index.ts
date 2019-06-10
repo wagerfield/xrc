@@ -3,14 +3,12 @@ export * from "./types"
 // Emotion
 export { css, keyframes } from "@emotion/core"
 
-// Core
-export * from "./core/component"
-
 // Themes
 export * from "./themes/master"
 export * from "./themes/black"
 
 // Components
+export * from "./components/component"
 export * from "./components/provider"
 export * from "./components/global"
 export * from "./components/base"

@@ -1,7 +1,7 @@
 import { buttonStyle, variant } from "onno"
 import { PolymorphProps, VariantProps } from "../types"
-import { component, polymorph } from "../core/component"
 import { uiSet, UISetProps } from "../renderers/ui"
+import { component, polymorph } from "./component"
 import { IconVariant } from "./icon"
 
 export interface ButtonSizeMap {

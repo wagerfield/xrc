@@ -1,7 +1,7 @@
 import { variant } from "onno"
 import { PolymorphProps, VariantProps } from "../types"
-import { component, polymorph } from "../core/component"
 import { textSet, TextSetProps } from "../renderers/text"
+import { component, polymorph } from "./component"
 import { test } from "../core/utils"
 
 export type TextVariant = "main" | "code" | "caps"

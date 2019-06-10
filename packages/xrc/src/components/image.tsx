@@ -1,5 +1,5 @@
-import { component, element } from "../core/component"
 import { imageSet, ImageSetProps } from "../renderers/image"
+import { component, element } from "./component"
 
 export type ImageProps = ImageSetProps
 

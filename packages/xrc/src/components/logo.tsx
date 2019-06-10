@@ -1,6 +1,6 @@
 import { PolymorphProps, VariantProps } from "../types"
-import { component, polymorph } from "../core/component"
 import { graphicSet, GraphicSetProps } from "../renderers/graphic"
+import { component, polymorph } from "./component"
 
 export type LogoVariant = "a" | "b" | "c"
 
