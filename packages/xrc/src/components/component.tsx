@@ -33,7 +33,7 @@ export function component<P>({ name, styles, renderers }: ComponentOptions<P>) {
       // // Props filter functions
       const pickProps = pick<P>({ propsKeys: forward })
 
-      // Filter component props
+      // Prepare component props
       const componentProps: any = {
         ...omitProps(props as P),
         ...pickProps(props as P),
@@ -58,11 +58,13 @@ export function element<P>(Element: ElementType): FunctionComponent<P> {
   }
 }
 
+const omitPolymorphProps = omit({ propsKeys: ["as"] })
+
 export function polymorph(
   defaultElement: ElementType
 ): FunctionComponent<PolymorphProps> {
-  return ({ as: Element = defaultElement, ...props }) => {
-    // console.log(Element, props)
-    return <Element {...props} />
+  return (props) => {
+    const Element = props.as || defaultElement
+    return <Element {...omitPolymorphProps(props)} />
   }
 }
