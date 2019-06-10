@@ -1,3 +1,4 @@
+import { Style, StyleObject } from "onno"
 import {
   FontFaceFontDisplayProperty,
   FontFaceFontWeightProperty,
@@ -16,7 +17,7 @@ export interface FontFaceOptions {
   style?: FontFaceFontStyleProperty
 }
 
-export interface FontFaceObject {
+export interface FontFaceObject extends Style {
   src: string
   fontFamily: string
   fontDisplay?: FontFaceFontDisplayProperty
@@ -24,7 +25,7 @@ export interface FontFaceObject {
   fontStyle?: FontFaceFontStyleProperty
 }
 
-export interface FontFaceStyle {
+export interface FontFaceStyle extends StyleObject<FontFaceObject> {
   "@font-face": FontFaceObject
 }
 
