@@ -1,8 +1,8 @@
 import {
   compose,
-  colorSet,
-  ColorSetProps,
-  ColorSetStyle,
+  fill,
+  FillProps,
+  FillStyle,
   positionSet,
   PositionSetProps,
   PositionSetStyle,
@@ -16,26 +16,19 @@ import { childSet, ChildSetProps, ChildSetStyle } from "./child"
 
 export type GraphicSetProps = AnimationSetProps &
   ChildSetProps &
-  ColorSetProps &
   DisplaySetProps &
+  FillProps &
   PositionSetProps &
   SpaceSetProps
 
 export type GraphicSetStyle = AnimationSetStyle &
   ChildSetStyle &
-  ColorSetStyle &
   DisplaySetStyle &
+  FillStyle &
   PositionSetStyle &
   SpaceSetStyle
 
 export const graphicSet = compose<GraphicSetProps, GraphicSetStyle>({
   name: "graphic",
-  renderers: [
-    animationSet,
-    childSet,
-    colorSet,
-    displaySet,
-    positionSet,
-    spaceSet
-  ]
+  renderers: [animationSet, childSet, displaySet, fill, positionSet, spaceSet]
 })
