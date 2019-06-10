@@ -1,4 +1,10 @@
-export const fonts = [
+const FONT = {
+  family: "Avenir Next",
+  formats: ["woff", "woff2"],
+  display: "swap"
+}
+
+const FONTS = [
   {
     file: "AvenirNext-Regular",
     weight: 400
@@ -17,10 +23,10 @@ export const fonts = [
     style: "italic",
     weight: 700
   }
-].map((font) => ({
-  ...font,
-  path: "/fonts",
-  family: "Avenir Next",
-  formats: ["woff", "woff2"],
-  display: "swap"
-}))
+]
+
+export const fonts = (path) => {
+  return FONTS.map((font) => {
+    return Object.assign({ path }, font, FONT)
+  })
+}
