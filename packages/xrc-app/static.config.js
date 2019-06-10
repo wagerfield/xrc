@@ -21,18 +21,18 @@ export default {
       {
         location: PAGES_DIR
       }
-    ],
-    [
-      "react-static-plugin-source-filesystem",
-      {
-        location: DOCS_DIR,
-        pathPrefix: "docs",
-        createRoute(route) {
-          route.path = mapPath(route.path)
-          return route
-        }
-      }
     ]
+    // [
+    //   "react-static-plugin-source-filesystem",
+    //   {
+    //     location: DOCS_DIR,
+    //     pathPrefix: "docs",
+    //     createRoute(route) {
+    //       route.path = mapPath(route.path)
+    //       return route
+    //     }
+    //   }
+    // ]
   ],
   devServer: {
     host: "0.0.0.0",
