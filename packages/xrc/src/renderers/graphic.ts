@@ -1,8 +1,11 @@
 import {
   compose,
-  fill,
-  FillProps,
-  FillStyle,
+  borderSet,
+  BorderSetProps,
+  BorderSetStyle,
+  colorSet,
+  ColorSetProps,
+  ColorSetStyle,
   positionSet,
   PositionSetProps,
   PositionSetStyle,
@@ -15,20 +18,30 @@ import { displaySet, DisplaySetProps, DisplaySetStyle } from "./display"
 import { childSet, ChildSetProps, ChildSetStyle } from "./child"
 
 export type GraphicSetProps = AnimationSetProps &
+  BorderSetProps &
   ChildSetProps &
   DisplaySetProps &
-  FillProps &
+  ColorSetProps &
   PositionSetProps &
   SpaceSetProps
 
 export type GraphicSetStyle = AnimationSetStyle &
+  BorderSetStyle &
   ChildSetStyle &
   DisplaySetStyle &
-  FillStyle &
+  ColorSetStyle &
   PositionSetStyle &
   SpaceSetStyle
 
 export const graphicSet = compose<GraphicSetProps, GraphicSetStyle>({
   name: "graphic",
-  renderers: [animationSet, childSet, displaySet, fill, positionSet, spaceSet]
+  renderers: [
+    animationSet,
+    borderSet,
+    childSet,
+    colorSet,
+    displaySet,
+    positionSet,
+    spaceSet
+  ]
 })

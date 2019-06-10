@@ -1,23 +1,45 @@
-import { PolymorphProps, VariantProps } from "../types"
+import { omit } from "onno"
+import { jsx } from "@emotion/core"
+import { PolymorphProps } from "../types"
 import { graphicSet, GraphicSetProps } from "../renderers/graphic"
-import { component, polymorph } from "./component"
+import { component } from "./component"
 
-export type LogoVariant = "a" | "b" | "c"
+const LOGOS = ["👋", "👋🏻", "👋🏼", "👋🏽", "👋🏾", "👋🏿"]
 
-export type LogoVariantProps = VariantProps<LogoVariant>
+export type LogoVariant = 0 | 1 | 2 | 3 | 4 | 5
 
 export type LogoProps = PolymorphProps &
-  LogoVariantProps &
   GraphicSetProps & {
-    scale?: number
+    size?: number | string
+    variant?: LogoVariant
+    var?: LogoVariant
   }
 
 export const withLogoStyles = component<LogoProps>({
   name: "Logo",
   renderers: [graphicSet],
-  styles: {
-    boxSizing: "border-box"
+  styles({ size }) {
+    const iconSize = Number(size) || 32
+    return {
+      width: iconSize,
+      height: iconSize,
+      fontSize: iconSize,
+      fontFamily: "system-ui",
+      lineHeight: 1.15,
+      textAlign: "center",
+      display: "block"
+    }
   }
 })
 
-export const Logo = withLogoStyles(polymorph("div"))
+const omitLogoProps = omit({
+  propsKeys: ["as", "size", "var", "variant"]
+})
+
+export const Logo = withLogoStyles((props) => {
+  const Element = props.as || "div"
+  const variant = props.variant || props.var || 0
+  const logoProps = omitLogoProps(props)
+  logoProps.children = LOGOS[variant]
+  return <Element {...logoProps} />
+})
