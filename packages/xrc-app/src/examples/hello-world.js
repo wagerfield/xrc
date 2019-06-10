@@ -1,7 +1,7 @@
 const code = `
 <Box
-  size="1"
-  padding="5"
+  height="1"
+  padding="4"
   display="flex"
   flexDirection="column"
   justifyContent="center"
