@@ -2,7 +2,7 @@ import { jsx } from "@emotion/core"
 import { isNumberLike } from "onno"
 import { graphicSet, GraphicSetProps } from "../renderers/graphic"
 import { component } from "./component"
-import ICONS from "../core/icons.json"
+import ICONS from "./icons.json"
 
 const SIZE = 24
 
