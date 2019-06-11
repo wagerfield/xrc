@@ -1,11 +1,11 @@
 {
   "packages/xrc/cjs/index.js": {
-    "bundled": 22964,
+    "bundled": 21923,
     "minified": 16102,
     "gzipped": 5311
   },
   "packages/xrc/esm/index.js": {
-    "bundled": 22402,
+    "bundled": 21361,
     "minified": 15431,
     "gzipped": 5201,
     "treeshaked": {
