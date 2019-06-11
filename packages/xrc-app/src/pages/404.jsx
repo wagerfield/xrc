@@ -1,14 +1,9 @@
 import React from "react"
-import { Box, Heading } from "xrc"
+import { Heading } from "xrc"
+import { Wrapper } from "../components/wrapper"
 
 export default ({ is404 }) => (
-  <Box
-    height="1"
-    padding="4"
-    display="flex"
-    alignItems="center"
-    justifyContent="center"
-  >
+  <Wrapper>
     <Heading>{is404 ? "Page not found" : "Oops!"}</Heading>
-  </Box>
+  </Wrapper>
 )
