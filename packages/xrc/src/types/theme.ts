@@ -7,6 +7,20 @@ export interface ColorVariant extends ThemeObject {
   color: Color
 }
 
+export interface FontSizesObject<T extends Primitive> extends ThemeObject {
+  xs: T
+  sm: T
+  md: T
+  main: T
+  h3: T
+  h2: T
+  h1: T
+}
+
+export type FontSizes = FontSizesObject<number> & {
+  rem: FontSizesObject<string>
+}
+
 export interface Theme extends BaseTheme {
   colors: {
     brand: {
@@ -41,18 +55,11 @@ export interface Theme extends BaseTheme {
     main: string
     code: string
   }
+  fontSizes: FontSizes
   fontWeights: {
     normal: number
     bold: number
   }
-  fontSizes: [
-    { alias: "xs"; value: Primitive },
-    { alias: "sm"; value: Primitive },
-    { alias: "main"; value: Primitive },
-    { alias: "h3"; value: Primitive },
-    { alias: "h2"; value: Primitive },
-    { alias: "h1"; value: Primitive }
-  ]
   lineHeights: [
     { alias: "single"; value: 1 },
     { alias: "heading"; value: Primitive },

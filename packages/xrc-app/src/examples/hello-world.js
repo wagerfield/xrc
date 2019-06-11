@@ -7,7 +7,7 @@ const code = `
   justifyContent="center"
   alignItems="center"
 >
-  <Heading fontSize="40" marginBottom="4">Hello 🌎</Heading>
+  <Heading marginBottom="4">Hello 🌎</Heading>
   <Button onClick={() => alert("Me again 👋")}>Click me</Button>
 </Box>
 `

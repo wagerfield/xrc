@@ -1,5 +1,6 @@
 import { ThemeObject } from "onno"
 import { Theme } from "../types"
+import { mapFontSizes } from "../core/fonts"
 
 const buttonStyles = (styles: ThemeObject) => ({
   border: "none",
@@ -7,6 +8,7 @@ const buttonStyles = (styles: ThemeObject) => ({
   boxShadow: "none",
   boxSizing: "border-box",
   cursor: "pointer",
+  fontSize: "16px",
   fontSmoothing: "antialiased",
   lineHeight: "single",
   padding: "16px 32px",
@@ -50,18 +52,19 @@ export const MasterTheme: Theme = {
     main: "Avenir Next,system-ui,sans-serif",
     code: "SFMono-Regular,Consolas,Menlo,monospace"
   },
+  fontSizes: mapFontSizes(16, {
+    xs: 12,
+    sm: 14,
+    md: 16, // Alias for "main"
+    main: 16, // Main font size
+    h3: 24,
+    h2: 28,
+    h1: 32
+  }),
   fontWeights: {
     normal: 400,
     bold: 700
   },
-  fontSizes: [
-    { alias: "xs", value: 12 },
-    { alias: "sm", value: 14 },
-    { alias: "main", value: 16 },
-    { alias: "h3", value: 24 },
-    { alias: "h2", value: 28 },
-    { alias: "h1", value: 32 }
-  ],
   lineHeights: [
     { alias: "single", value: 1 },
     { alias: "heading", value: 1.25 },
@@ -119,7 +122,6 @@ export const MasterTheme: Theme = {
       lineHeight: "heading"
     },
     main: {
-      fontSize: "main",
       fontFamily: "main",
       fontWeight: "normal",
       lineHeight: "main"
@@ -168,7 +170,18 @@ export const MasterTheme: Theme = {
     // Text
     "html,button": {
       color: "text.main",
+      fontSize: "main",
       textStyle: "main"
+    },
+    "@media(min-width:360px)": {
+      "html,button": {
+        fontSize: "18px"
+      }
+    },
+    "@media(min-width:720px)": {
+      "html,button": {
+        fontSize: "20px"
+      }
     },
     "h1,h2,h3,h4,h5,h6,p": {
       margin: 0,
@@ -179,13 +192,13 @@ export const MasterTheme: Theme = {
       textStyle: "heading"
     },
     "h1": {
-      fontSize: "h1"
+      fontSize: "rem.h1"
     },
     "h2": {
-      fontSize: "h2"
+      fontSize: "rem.h2"
     },
     "h3": {
-      fontSize: "h3"
+      fontSize: "rem.h3"
     },
     // Code
     "pre,code": {
@@ -250,15 +263,15 @@ export const MasterTheme: Theme = {
     },
     heading: {
       h1: {
-        fontSize: "h1",
+        fontSize: "rem.h1",
         textStyle: "heading"
       },
       h2: {
-        fontSize: "h2",
+        fontSize: "rem.h2",
         textStyle: "heading"
       },
       h3: {
-        fontSize: "h3",
+        fontSize: "rem.h3",
         textStyle: "heading"
       }
     },

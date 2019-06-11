@@ -1,9 +1,10 @@
-import { Style, StyleObject } from "onno"
 import {
   FontFaceFontDisplayProperty,
   FontFaceFontWeightProperty,
   FontFaceFontStyleProperty
 } from "csstype"
+import { addRem, isNumber, Style, StyleObject } from "onno"
+import { FontSizes, FontSizesObject } from "../types/theme"
 
 export type FontFaceFontFormat = "eot" | "svg" | "ttf" | "woff" | "woff2"
 
@@ -56,4 +57,19 @@ export function renderFonts(fonts: FontFaceOptions[]): FontFaceStyle[] {
     if (font.style) fontFace.fontStyle = font.style
     return { "@font-face": fontFace }
   })
+}
+
+export function mapFontSizes(
+  baseSize: number,
+  fontSizes: FontSizesObject<number>
+): FontSizes {
+  const rem = Object.keys(fontSizes).reduce(
+    (acc, key) => {
+      const value = fontSizes[key]
+      if (isNumber(value)) acc[key] = addRem(value / baseSize)
+      return acc
+    },
+    {} as FontSizesObject<string>
+  )
+  return Object.assign({ rem }, fontSizes)
 }
