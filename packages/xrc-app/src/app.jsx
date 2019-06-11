@@ -15,7 +15,12 @@ export default () => (
         <Nav
           links={[
             { path: "/docs", text: "Docs", key: "docs" },
-            { path: "/repl", text: "REPL", key: "repl" }
+            { path: "/repl", text: "REPL", key: "repl" },
+            {
+              href: "https://github.com/wagerfield/xrc",
+              text: "GitHub",
+              key: "github"
+            }
           ]}
         />
         <MDXProvider components={components}>
