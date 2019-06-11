@@ -8,9 +8,7 @@ const activeStyles = {
 }
 
 const pseudoStyles = {
-  ":active,:hover": {
-    background: activeStyles
-  }
+  ":active,:hover": activeStyles
 }
 
 const omitNavProps = omit({
