@@ -1,5 +1,5 @@
 import { variant } from "onno"
-import { PolymorphProps, VariantProps } from "../types"
+import { PolymorphProps, VariantProps } from "../types/component"
 import { textSet, TextSetProps } from "../renderers/text"
 import { component, polymorph } from "./component"
 import { test } from "../core/utils"

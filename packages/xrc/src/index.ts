@@ -1,7 +1,9 @@
-export * from "./types"
-
 // Emotion
 export { css, keyframes } from "@emotion/core"
+
+// Types
+export * from "./types/theme"
+export * from "./types/component"
 
 // Themes
 export * from "./themes/master"

@@ -1,9 +1,8 @@
-import { ObjectInterpolation } from "@emotion/core"
-import { Properties } from "csstype"
+import { Interpolation } from "../types/component"
 
 // normalize.css v8.0.1
 // github.com/necolas/normalize.css
-export const normalize: ObjectInterpolation<Properties> = {
+export const normalize: Interpolation = {
   // 1. Correct the line height in all browsers.
   // 2. Prevent adjustments of font size after orientation changes in iOS.
   "html": {

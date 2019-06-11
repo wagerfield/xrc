@@ -1,6 +1,6 @@
 import { omit } from "onno"
 import { jsx } from "@emotion/core"
-import { PolymorphProps } from "../types"
+import { PolymorphProps } from "../types/component"
 import { graphicSet, GraphicSetProps } from "../renderers/graphic"
 import { component } from "./component"
 

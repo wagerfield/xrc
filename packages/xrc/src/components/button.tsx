@@ -1,5 +1,5 @@
 import { buttonStyle, variant } from "onno"
-import { PolymorphProps, VariantProps } from "../types"
+import { PolymorphProps, VariantProps } from "../types/component"
 import { uiSet, UISetProps } from "../renderers/ui"
 import { component, polymorph } from "./component"
 import { IconVariant } from "./icon"

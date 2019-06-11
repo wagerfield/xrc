@@ -1,15 +1,15 @@
+import { isArray } from "onno"
+import { jsx } from "@emotion/core"
 import { FunctionComponent } from "react"
-import { isArray, globalStyle } from "onno"
-import { jsx, InterpolationWithTheme } from "@emotion/core"
-import { normalize as normalizeStyles } from "../core/normalize"
-import { renderFonts, FontFaceOptions } from "../core/fonts"
-import { Provider, ProviderProps } from "./provider"
 import { MasterTheme } from "../themes/master"
-import { Global } from "./global"
-import { Theme } from "../types"
+import { InterpolationWithTheme } from "../types/component"
+import { renderFonts, FontFaceOptions } from "../core/fonts"
+import { normalize as normalizeStyles } from "../core/normalize"
+import { renderStyles, transformStyles, Global } from "./global"
+import { Provider, ProviderProps } from "./provider"
 
 export interface BaseProps extends ProviderProps {
-  css?: InterpolationWithTheme<Theme>
+  css?: InterpolationWithTheme
   fonts?: FontFaceOptions[]
   normalize?: boolean
 }
@@ -21,13 +21,13 @@ export const Base: FunctionComponent<BaseProps> = ({
   theme,
   css
 }) => {
-  const styles = globalStyle({ theme }) || []
+  const styles = renderStyles({ theme }) || []
   if (isArray(fonts)) styles.unshift(...renderFonts(fonts))
   if (normalize) styles.unshift(normalizeStyles as any)
-  if (css) styles.unshift(globalStyle.transformer!(css as any, theme) as any)
+  if (css) styles.unshift(transformStyles(css as any, theme) as any)
   return (
     <Provider theme={theme}>
-      <Global styles={styles} />
+      <Global transform={false} css={styles} />
       {children}
     </Provider>
   )

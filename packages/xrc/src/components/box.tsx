@@ -1,5 +1,5 @@
 import { variant } from "onno"
-import { PolymorphProps, VariantProps } from "../types"
+import { PolymorphProps, VariantProps } from "../types/component"
 import { boxSet, BoxSetProps } from "../renderers/box"
 import { component, polymorph } from "./component"
 

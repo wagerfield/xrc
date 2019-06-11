@@ -1,4 +1,4 @@
-import { interpolate, isType, omit, pick } from "onno"
+import { interpolate, omit, pick } from "onno"
 import { withTheme } from "emotion-theming"
 import { jsx } from "@emotion/core"
 import {
@@ -8,21 +8,20 @@ import {
   FunctionComponent
 } from "react"
 import {
-  OmitKeys,
+  ComponentKeys,
   ComponentProps,
   PolymorphProps,
-  ComponentOptions,
-  InterpolationFunction
-} from "../types"
+  ComponentOptions
+} from "../types/component"
+import { isFunction } from "../core/utils"
 
-const OMIT: OmitKeys[] = ["css", "style", "forward"]
+const KEYS: ComponentKeys[] = ["css", "style", "forward"]
 
 const omitPolymorphProps = omit({ propsKeys: ["as"] })
 
 export function component<P>({ name, styles, renderers }: ComponentOptions<P>) {
-  const isFunction = isType<InterpolationFunction<P>>("function")
   const transform = interpolate<P, any>({ name, renderers })
-  const omitProps = omit<P>({ propsKeys: OMIT, renderers })
+  const omitProps = omit<P>({ propsKeys: KEYS, renderers })
 
   // With styles function
   return (Component: ComponentType<P & HTMLAttributes<Element>>) => {

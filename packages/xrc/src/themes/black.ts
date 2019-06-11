@@ -1,5 +1,5 @@
+import { Theme } from "../types/theme"
 import { MasterTheme } from "./master"
-import { Theme } from "../types"
 
 export const BlackTheme: Theme = {
   ...MasterTheme,

@@ -1,5 +1,5 @@
 import { ThemeObject } from "onno"
-import { Theme } from "../types"
+import { Theme } from "../types/theme"
 import { mapFontSizes } from "../core/fonts"
 
 const buttonStyles = (styles: ThemeObject) => ({

@@ -1,9 +1,7 @@
 import { ThemeProvider } from "emotion-theming"
-import { Theme } from "../types"
+import { ThemeProps } from "../types/component"
 import { element } from "./component"
 
-export interface ProviderProps {
-  theme: Theme
-}
+export type ProviderProps = ThemeProps
 
 export const Provider = element<ProviderProps>(ThemeProvider)

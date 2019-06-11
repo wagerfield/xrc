@@ -1,28 +1,19 @@
-import { InterpolationWithTheme, ObjectInterpolation } from "@emotion/core"
 import { AnyRenderFunction, StyleObject, Prop } from "onno"
 import { ElementType } from "react"
+import {
+  Interpolation as EmotionInterpolation,
+  InterpolationWithTheme as EmotionInterpolationWithTheme
+} from "@emotion/core"
 import { Theme } from "./theme"
 
 export type AnyStyleObject = StyleObject<any>
 
-export type InterpolationObject<P> = ObjectInterpolation<P>
+export type Interpolation<P = {}> = EmotionInterpolation<P>
 
-export type InterpolationFunction<P> = (props: P) => InterpolationObject<P>
-
-export type InterpolationWithTheme = InterpolationWithTheme<Theme>
-
-export type Interpolation<P = {}> =
-  | InterpolationObject<P>
-  | InterpolationFunction<P>
+export type InterpolationWithTheme = EmotionInterpolationWithTheme<Theme>
 
 export interface ThemeProps {
   theme?: Theme
-}
-
-export interface ComponentProps<P> extends ThemeProps {
-  css?: Interpolation<P>
-  style?: Interpolation<P>
-  forward?: string[]
 }
 
 export interface PolymorphProps {
@@ -34,10 +25,16 @@ export interface VariantProps<T> extends ThemeProps {
   var?: Prop<T>
 }
 
+export interface ComponentProps<P> extends ThemeProps {
+  style?: Interpolation<P>
+  css?: Interpolation<P>
+  forward?: string[]
+}
+
 export interface ComponentOptions<P> {
   name: string
   renderers: AnyRenderFunction[]
   styles?: Interpolation<P>
 }
 
-export type OmitKeys = keyof ComponentProps<any>
+export type ComponentKeys = keyof ComponentProps<{}>
