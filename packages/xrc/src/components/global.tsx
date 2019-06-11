@@ -1,11 +1,15 @@
 import { FunctionComponent } from "react"
 import { globalStyle, isPlainObject } from "onno"
 import { jsx, Global as GlobalStyles } from "@emotion/core"
-import { InterpolationWithTheme, ThemeProps } from "../types/component"
-import { isFunction } from "../core/utils"
+import { Theme } from "../types/theme"
+import {
+  ThemeProps,
+  AnyStyleObject,
+  InterpolationWithTheme
+} from "../types/component"
 
 export interface GlobalProps extends ThemeProps {
-  css?: InterpolationWithTheme
+  styles?: InterpolationWithTheme
   transform?: boolean
 }
 
@@ -13,16 +17,21 @@ export const renderStyles = globalStyle
 
 export const transformStyles = globalStyle.transformer!
 
+export const withTheme = (styles: AnyStyleObject) => {
+  return (theme: Theme) => transformStyles(styles, theme)
+}
+
 export const Global: FunctionComponent<GlobalProps> = ({
   transform,
-  theme,
-  css
+  styles,
+  theme
 }) => {
-  let styles = theme && isFunction(css) ? css(theme) : css
+  let globalStyles = styles
   if (transform && isPlainObject(styles)) {
-    styles = transformStyles(styles as any, theme)
+    globalStyles = withTheme(styles as AnyStyleObject)
+    if (theme) globalStyles = globalStyles(theme)
   }
-  return <GlobalStyles styles={styles} />
+  return <GlobalStyles styles={globalStyles} />
 }
 
 Global.defaultProps = {

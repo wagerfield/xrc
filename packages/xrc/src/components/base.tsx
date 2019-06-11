@@ -9,7 +9,7 @@ import { renderStyles, transformStyles, Global } from "./global"
 import { Provider, ProviderProps } from "./provider"
 
 export interface BaseProps extends ProviderProps {
-  css?: InterpolationWithTheme
+  styles?: InterpolationWithTheme
   fonts?: FontFaceOptions[]
   normalize?: boolean
 }
@@ -19,15 +19,15 @@ export const Base: FunctionComponent<BaseProps> = ({
   children,
   fonts,
   theme,
-  css
+  styles
 }) => {
-  const styles = renderStyles({ theme }) || []
-  if (isArray(fonts)) styles.unshift(...renderFonts(fonts))
-  if (normalize) styles.unshift(normalizeStyles as any)
-  if (css) styles.unshift(transformStyles(css as any, theme) as any)
+  const globalStyles = renderStyles({ theme }) || []
+  if (styles) globalStyles.push(transformStyles(styles as any, theme) as any)
+  if (isArray(fonts)) globalStyles.unshift(...renderFonts(fonts))
+  if (normalize) globalStyles.unshift(normalizeStyles as any)
   return (
     <Provider theme={theme}>
-      <Global transform={false} css={styles} />
+      <Global styles={globalStyles} transform={false} />
       {children}
     </Provider>
   )
