@@ -4,11 +4,10 @@ import { Router } from "@reach/router"
 import { Routes, Root } from "react-static"
 import { MDXProvider } from "@mdx-js/react"
 import { Loading } from "./components/loading"
+import { View } from "./components/view"
 import { Nav } from "./components/nav"
 import { fonts } from "./core/fonts"
 import { components } from "./core/mdx"
-
-const Dynamic = () => <div>This is a dynamic route!</div>
 
 export default () => (
   <Root>
@@ -28,7 +27,7 @@ export default () => (
         <MDXProvider components={components}>
           <React.Suspense fallback={<Loading />}>
             <Box as={Router} primary={false} component="main" overflow="auto">
-              <Dynamic path="/dynamic" />
+              <View path="/view" />
               <Routes default />
             </Box>
           </React.Suspense>
