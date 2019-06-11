@@ -9,7 +9,7 @@ const code = `
 >
   <Heading marginBottom="4">Hejsan 👋</Heading>
   <Text>Welcome to the <code>xrc</code> docs.</Text>
-  <Button as={Link} to="docs" marginTop="5">Get started</Button>
+  <Button as={Link} to="/docs" marginTop="5">Get started</Button>
 </Box>
 `
 
