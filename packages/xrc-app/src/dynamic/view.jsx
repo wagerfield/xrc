@@ -1,7 +1,7 @@
 import React from "react"
 import { Box } from "xrc"
 import { parse } from "query-string"
-import { Error, Preview, Provider } from "./live"
+import { Error, Preview, Provider } from "../components/live"
 
 export const View = () => {
   if (!location) return null
