@@ -10,6 +10,7 @@ export default {
   siteRoot: "https://xrc.netlify.com",
   plugins: [
     "react-static-plugin-xrc",
+    "react-static-plugin-reach-router",
     [
       "react-static-plugin-mdx",
       {

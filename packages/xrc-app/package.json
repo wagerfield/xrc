@@ -21,6 +21,7 @@
     "react-live": "2.1.2",
     "react-static": "7.1.0",
     "react-static-plugin-mdx": "7.1.0",
+    "react-static-plugin-reach-router": "7.0.10",
     "react-static-plugin-source-filesystem": "7.1.0",
     "xrc": "0.10.0"
   },
