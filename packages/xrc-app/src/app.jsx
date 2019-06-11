@@ -8,6 +8,8 @@ import { Nav } from "./components/nav"
 import { fonts } from "./core/fonts"
 import { components } from "./core/mdx"
 
+const Dynamic = () => <div>This is a dynamic route!</div>
+
 export default () => (
   <Root>
     <Base fonts={fonts("/fonts")}>
@@ -26,6 +28,7 @@ export default () => (
         <MDXProvider components={components}>
           <React.Suspense fallback={<Loading />}>
             <Box as={Router} primary={false} component="main" overflow="auto">
+              <Dynamic path="/dynamic" />
               <Routes default />
             </Box>
           </React.Suspense>
