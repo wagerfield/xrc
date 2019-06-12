@@ -1,15 +1,10 @@
 import { FunctionComponent } from "react"
 import { globalStyle, isPlainObject } from "onno"
 import { jsx, Global as GlobalStyles } from "@emotion/core"
+import { AnyStyleObject, StyleProps, ThemeProps } from "../types/component"
 import { Theme } from "../types/theme"
-import {
-  ThemeProps,
-  AnyStyleObject,
-  InterpolationWithTheme
-} from "../types/component"
 
-export interface GlobalProps extends ThemeProps {
-  styles?: InterpolationWithTheme
+export interface GlobalProps extends StyleProps, ThemeProps {
   transform?: boolean
 }
 

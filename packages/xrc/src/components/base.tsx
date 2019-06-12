@@ -2,14 +2,13 @@ import { isArray } from "onno"
 import { jsx } from "@emotion/core"
 import { FunctionComponent } from "react"
 import { MasterTheme } from "../themes/master"
-import { InterpolationWithTheme } from "../types/component"
+import { StyleProps, ThemeProps } from "../types/component"
 import { renderFonts, FontFaceOptions } from "../core/fonts"
 import { normalize as normalizeStyles } from "../core/normalize"
 import { renderStyles, transformStyles, Global } from "./global"
-import { Provider, ProviderProps } from "./provider"
+import { Provider } from "./provider"
 
-export interface BaseProps extends ProviderProps {
-  styles?: InterpolationWithTheme
+export interface BaseProps extends StyleProps, ThemeProps {
   fonts?: FontFaceOptions[]
   normalize?: boolean
 }

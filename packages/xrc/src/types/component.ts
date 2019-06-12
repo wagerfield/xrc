@@ -12,6 +12,10 @@ export type Interpolation<P = {}> = EmotionInterpolation<P>
 
 export type InterpolationWithTheme = EmotionInterpolationWithTheme<Theme>
 
+export interface StyleProps {
+  styles?: InterpolationWithTheme
+}
+
 export interface ThemeProps {
   theme?: Theme
 }
