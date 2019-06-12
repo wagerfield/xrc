@@ -1,8 +1,9 @@
+import Buttons from "./buttons"
 import HelloWorld from "./hello-world"
 import HomePage from "./home-page"
 import Themes from "./themes"
 
-export { HelloWorld, HomePage, Themes }
+export { Buttons, HelloWorld, HomePage, Themes }
 
 export default [
   {
@@ -14,6 +15,11 @@ export default [
     key: "home-page",
     label: "Home Page",
     props: HomePage
+  },
+  {
+    key: "button",
+    label: "Buttons",
+    props: Buttons
   },
   {
     key: "themes",
