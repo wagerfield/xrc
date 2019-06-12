@@ -9118,10 +9118,10 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-onno@0.5.1:
-  version "0.5.1"
-  resolved "https://registry.npmjs.org/onno/-/onno-0.5.1.tgz#46d709ee5b56d0407e1355393f7877f2d8cce017"
-  integrity sha512-eJtt3+LZOaCG8uix3tyVRwPwvQ2E5udhzREEqiawRO2eAZR6xXjLJLFk86nIdGFe944FeTrol7GBL99PHQJ6DA==
+onno@0.5.3:
+  version "0.5.3"
+  resolved "https://registry.npmjs.org/onno/-/onno-0.5.3.tgz#b086ad0d5b891da4c3c6dac405fe30cbdcae0398"
+  integrity sha512-20W/QNi2GmTli2GOZelh8RlzrfyLU7/I7TaeoOfTlOGpF2/v2yPEnsFZSi9Gz2m23KZ/hTT0pjpbonZZ1gEqPw==
   dependencies:
     csstype "2.6.5"
 
