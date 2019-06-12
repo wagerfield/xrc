@@ -7,12 +7,13 @@ import ICONS from "./icons.json"
 const SIZE = 24
 
 export interface IconPaths {
+  bug: string
   camera: string
   close: string
-  right: string
-  left: string
   edit: string
-  bug: string
+  eye: string
+  left: string
+  right: string
 }
 
 export type IconVariant = keyof IconPaths
