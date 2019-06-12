@@ -5,8 +5,6 @@ import { Routes, Root } from "react-static"
 import { MDXProvider } from "@mdx-js/react"
 import { Loading } from "./components/loading"
 import { Nav } from "./components/nav"
-import { Edit } from "./dynamic/edit"
-import { View } from "./dynamic/view"
 import { fonts } from "./core/fonts"
 import { components } from "./core/mdx"
 
@@ -28,8 +26,6 @@ export default () => (
         <MDXProvider components={components}>
           <React.Suspense fallback={<Loading />}>
             <Box as={Router} primary={false} component="main" overflow="auto">
-              <Edit path="/edit" />
-              <View path="/view" />
               <Routes default />
             </Box>
           </React.Suspense>

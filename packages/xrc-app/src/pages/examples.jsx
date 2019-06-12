@@ -1,12 +1,20 @@
 import React from "react"
-import { Text, Box } from "xrc"
 import { Link } from "@reach/router"
-import { stringify } from "query-string"
+import { Wrapper } from "../components/wrapper"
+import { stringifyExample } from "../core/utils"
 import examples from "../examples"
 
 const Example = ({ key, label, props }) => {
-  const path = `/view?${stringify(props)}`
-  return <Text key={key} as={Link} to={path} children={label} />
+  const path = `/view?${stringifyExample(props)}`
+  return (
+    <li key={key}>
+      <Link to={path}>{label}</Link>{" "}
+    </li>
+  )
 }
 
-export default () => <Box>{examples.map(Example)}</Box>
+export default () => (
+  <Wrapper>
+    <ul>{examples.map(Example)}</ul>
+  </Wrapper>
+)
