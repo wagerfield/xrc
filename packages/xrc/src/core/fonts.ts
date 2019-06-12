@@ -63,13 +63,12 @@ export function mapFontSizes(
   baseSize: number,
   fontSizes: FontSizesObject<number>
 ): FontSizes {
-  const rem = Object.keys(fontSizes).reduce(
+  return Object.keys(fontSizes).reduce(
     (acc, key) => {
       const value = fontSizes[key]
       if (isNumber(value)) acc[key] = addRem(value / baseSize)
       return acc
     },
-    {} as FontSizesObject<string>
+    { base: fontSizes } as FontSizes
   )
-  return Object.assign({ rem }, fontSizes)
 }

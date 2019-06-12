@@ -170,7 +170,7 @@ export const MasterTheme: Theme = {
     // Text
     "html,button": {
       color: "text.main",
-      fontSize: "main",
+      fontSize: "16px",
       textStyle: "main"
     },
     "@media(min-width:360px)": {
@@ -192,13 +192,13 @@ export const MasterTheme: Theme = {
       textStyle: "heading"
     },
     "h1": {
-      fontSize: "rem.h1"
+      fontSize: "h1"
     },
     "h2": {
-      fontSize: "rem.h2"
+      fontSize: "h2"
     },
     "h3": {
-      fontSize: "rem.h3"
+      fontSize: "h3"
     },
     // Code
     "pre,code": {
@@ -263,15 +263,15 @@ export const MasterTheme: Theme = {
     },
     heading: {
       h1: {
-        fontSize: "rem.h1",
+        fontSize: "h1",
         textStyle: "heading"
       },
       h2: {
-        fontSize: "rem.h2",
+        fontSize: "h2",
         textStyle: "heading"
       },
       h3: {
-        fontSize: "rem.h3",
+        fontSize: "h3",
         textStyle: "heading"
       }
     },

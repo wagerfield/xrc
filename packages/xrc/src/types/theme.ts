@@ -17,8 +17,8 @@ export interface FontSizesObject<T extends Primitive> extends ThemeObject {
   h1: T
 }
 
-export type FontSizes = FontSizesObject<number> & {
-  rem: FontSizesObject<string>
+export type FontSizes = FontSizesObject<string> & {
+  base: FontSizesObject<number>
 }
 
 export interface Theme extends BaseTheme {
