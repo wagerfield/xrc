@@ -1,19 +1,26 @@
 import { omit } from "onno"
 import { jsx } from "@emotion/core"
+import { HTMLAttributes } from "react"
 import { PolymorphProps } from "../types/component"
 import { graphicSet, GraphicSetProps } from "../renderers/graphic"
 import { component } from "./component"
 
-const LOGOS = ["👋", "👋🏻", "👋🏼", "👋🏽", "👋🏾", "👋🏿"]
+export type LogoAttributes = Omit<HTMLAttributes<HTMLElement>, "color">
 
 export type LogoVariant = 0 | 1 | 2 | 3 | 4 | 5
 
-export type LogoProps = PolymorphProps &
-  GraphicSetProps & {
-    size?: number | string
-    variant?: LogoVariant
-    var?: LogoVariant
-  }
+export type LogoStyleProps = GraphicSetProps
+
+export interface LogoProps
+  extends LogoAttributes,
+    LogoStyleProps,
+    PolymorphProps {
+  size?: number | string
+  variant?: LogoVariant
+  var?: LogoVariant
+}
+
+const LOGOS = ["👋", "👋🏻", "👋🏼", "👋🏽", "👋🏾", "👋🏿"]
 
 export const withLogoStyles = component<LogoProps>({
   name: "Logo",
@@ -36,7 +43,7 @@ const omitLogoProps = omit({
   propsKeys: ["as", "size", "var", "variant"]
 })
 
-export const Logo = withLogoStyles((props) => {
+export const Logo = withLogoStyles((props: LogoProps) => {
   const Element = props.as || "div"
   const variant = props.variant || props.var || 0
   const logoProps = omitLogoProps(props)

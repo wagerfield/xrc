@@ -1,14 +1,19 @@
 import { variant } from "onno"
+import { HTMLAttributes } from "react"
 import { PolymorphProps, VariantProps } from "../types/component"
 import { textSet, TextSetProps } from "../renderers/text"
 import { component, polymorph } from "./component"
 import { test } from "../core/utils"
 
+export type TextAttributes = HTMLAttributes<HTMLElement>
+
 export type TextVariant = "main" | "code" | "caps"
 
 export type TextVariantProps = VariantProps<TextVariant>
 
-export type TextProps = PolymorphProps & TextVariantProps & TextSetProps
+export type TextStyleProps = TextVariantProps & TextSetProps
+
+export type TextProps = TextStyleProps & PolymorphProps
 
 export const textVariant = variant<TextVariantProps, any>({
   propsKeys: ["variant", "var"],
@@ -27,4 +32,4 @@ export const withTextStyles = component<TextProps>({
   })
 })
 
-export const Text = withTextStyles(polymorph("div"))
+export const Text = withTextStyles(polymorph<TextAttributes>("div"))

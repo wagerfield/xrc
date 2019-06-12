@@ -1,47 +1,51 @@
+import { ComponentType, ElementType, FunctionComponent } from "react"
 import { interpolate, omit, pick } from "onno"
 import { withTheme } from "emotion-theming"
 import { jsx } from "@emotion/core"
 import {
-  ElementType,
-  ComponentType,
-  HTMLAttributes,
-  FunctionComponent
-} from "react"
-import {
   ComponentKeys,
-  ComponentProps,
+  AnyStyleObject,
   PolymorphProps,
-  ComponentOptions
+  ComponentOptions,
+  MergedComponentProps
 } from "../types/component"
 import { isFunction } from "../core/utils"
 
 const KEYS: ComponentKeys[] = ["css", "style", "forward"]
 
-const omitPolymorphProps = omit({ propsKeys: ["as"] })
-
-export function component<P>({ name, styles, renderers }: ComponentOptions<P>) {
-  const transform = interpolate<P, any>({ name, renderers })
-  const omitProps = omit<P>({ propsKeys: KEYS, renderers })
+// RP: RendererProps
+// CP: ComponentProps
+// MP: MergedComponentProps
+export function component<RP>({
+  name,
+  styles,
+  renderers
+}: ComponentOptions<RP>) {
+  const transform = interpolate<RP, any>({ name, renderers })
+  const omitProps = omit<RP>({ propsKeys: KEYS, renderers })
 
   // With styles function
-  return (Component: ComponentType<P & HTMLAttributes<Element>>) => {
-    return withTheme((props: ComponentProps<P>) => {
+  return function withStyles<CP, MP extends MergedComponentProps<CP & RP>>(
+    Component: ComponentType<CP>
+  ): FunctionComponent<MP> {
+    // Higher Order Component
+    return withTheme((props: MP) => {
       const { css, style, theme, forward } = props
 
       // Call base styles with props
-      const baseStyles = isFunction(styles) ? styles(props as P) : styles
+      const baseStyles = isFunction(styles) ? styles(props) : styles
 
       // Props filter functions
-      const pickProps = pick<P>({ propsKeys: forward })
+      const pickProps = pick<MP>({ propsKeys: forward })
 
       // Prepare component props
-      const componentProps: any = {
-        ...omitProps(props as P),
-        ...pickProps(props as P),
+      const componentProps = {
+        ...omitProps(props),
+        ...pickProps(props),
         css: [
-          transform(baseStyles as any, theme), // Options styles
-          transform.renderer(props as P), // Props styles
-          transform(css as any, theme) // CSS styles
+          transform(baseStyles as AnyStyleObject, theme),
+          transform.renderer(props),
+          transform(css as AnyStyleObject, theme)
         ]
       }
 
@@ -49,24 +53,22 @@ export function component<P>({ name, styles, renderers }: ComponentOptions<P>) {
       if (style) componentProps.style = transform(style as any, theme)
 
       // Render component with filtered props
-      return <Component {...componentProps} />
-    })
+      return <Component {...(componentProps as MP)} />
+    }) as FunctionComponent<MP>
   }
 }
 
 export function element<P>(Element: ElementType): FunctionComponent<P> {
-  return (props) => {
-    // console.log(Element, props)
-    return <Element {...props} />
-  }
+  return (props) => <Element {...props} />
 }
 
-export function polymorph(
+const omitPolymorphProps = omit({ propsKeys: ["as"] })
+
+export function polymorph<P>(
   defaultElement: ElementType
-): FunctionComponent<PolymorphProps> {
+): FunctionComponent<PolymorphProps & P> {
   return (props) => {
     const Element = props.as || defaultElement
-    // console.log(Element, props)
     return <Element {...omitPolymorphProps(props)} />
   }
 }

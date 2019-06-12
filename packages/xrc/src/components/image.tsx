@@ -1,7 +1,12 @@
+import { ImgHTMLAttributes } from "react"
 import { imageSet, ImageSetProps } from "../renderers/image"
 import { component, element } from "./component"
 
-export type ImageProps = ImageSetProps
+export type ImageAttributes = ImgHTMLAttributes<HTMLImageElement>
+
+export type ImageStyleProps = ImageSetProps
+
+export type ImageProps = ImageStyleProps
 
 export const withImageStyles = component<ImageProps>({
   name: "Image",
@@ -12,4 +17,4 @@ export const withImageStyles = component<ImageProps>({
   }
 })
 
-export const Image = withImageStyles(element("img"))
+export const Image = withImageStyles(element<ImageAttributes>("img"))

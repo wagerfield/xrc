@@ -12,16 +12,16 @@ export type Interpolation<P = {}> = EmotionInterpolation<P>
 
 export type InterpolationWithTheme = EmotionInterpolationWithTheme<Theme>
 
+export interface PolymorphProps {
+  as?: ElementType
+}
+
 export interface StyleProps {
   styles?: InterpolationWithTheme
 }
 
 export interface ThemeProps {
   theme?: Theme
-}
-
-export interface PolymorphProps {
-  as?: ElementType
 }
 
 export interface VariantProps<T> extends ThemeProps {
@@ -42,3 +42,5 @@ export interface ComponentOptions<P> {
 }
 
 export type ComponentKeys = keyof ComponentProps<{}>
+
+export type MergedComponentProps<P> = P & ComponentProps<P>

@@ -1,13 +1,18 @@
 import { variant } from "onno"
+import { HTMLAttributes } from "react"
 import { PolymorphProps, VariantProps } from "../types/component"
 import { boxSet, BoxSetProps } from "../renderers/box"
 import { component, polymorph } from "./component"
+
+export type BoxAttributes = HTMLAttributes<HTMLElement>
 
 export type BoxVariant = "main" | "alt" | "modal"
 
 export type BoxVariantProps = VariantProps<BoxVariant>
 
-export type BoxProps = PolymorphProps & BoxVariantProps & BoxSetProps
+export type BoxStyleProps = BoxVariantProps & BoxSetProps
+
+export type BoxProps = BoxStyleProps & PolymorphProps
 
 export const boxVariant = variant<BoxVariantProps, any>({
   propsKeys: ["variant", "var"],
@@ -23,4 +28,4 @@ export const withBoxStyles = component<BoxProps>({
   }
 })
 
-export const Box = withBoxStyles(polymorph("div"))
+export const Box = withBoxStyles(polymorph<BoxAttributes>("div"))
