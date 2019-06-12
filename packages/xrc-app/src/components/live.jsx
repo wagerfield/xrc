@@ -13,7 +13,7 @@ const editor = {
   padding: 16,
   style: {
     fontFamily: "code",
-    fontSize: "rem.xs"
+    fontSize: "xs"
   },
   css: {
     "textarea:focus": {

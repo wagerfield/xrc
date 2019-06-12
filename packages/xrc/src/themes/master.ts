@@ -8,7 +8,7 @@ const buttonStyles = (styles: ThemeObject) => ({
   boxShadow: "none",
   boxSizing: "border-box",
   cursor: "pointer",
-  fontSize: "16px",
+  fontSize: "base.md",
   fontSmoothing: "antialiased",
   lineHeight: "single",
   padding: "16px 32px",

@@ -35,7 +35,7 @@ const mapLink = (props, index) => {
 const NavLink = (props) => (
   <Text
     css={pseudoStyles}
-    fontSize="md"
+    fontSize="base.md"
     fontSmoothing="antialiased"
     lineHeight="single"
     textStyle="caps"
