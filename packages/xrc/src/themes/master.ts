@@ -134,33 +134,42 @@ export const MasterTheme: Theme = {
       textTransform: "uppercase"
     }
   },
-  buttonStyles: {
-    primary: buttonStyles({
-      "color": "text.inv",
-      "background": "brand.primary",
-      "boxShadow": [
-        "0 -4px 0 rgba(0,0,0,0.32) inset", // inner
-        "0 2px 4px rgba(0,0,0,0.16)" // outer
-      ].join(", "),
-      ":hover": {
-        background: "#08C98D"
-      },
-      ":active": {
-        background: "brand.primary"
-      }
-    }),
-    secondary: buttonStyles({
-      background: "transparent",
-      border: "button",
-      borderColor: "brand.primary",
-      color: "brand.primary",
-      padding: "14px 30px"
-    }),
-    alternative: buttonStyles({
-      background: "overlay.light",
-      color: "brand.primary"
-    })
-  },
+  buttonStyles: [
+    {
+      alias: "primary",
+      value: buttonStyles({
+        "color": "text.inv",
+        "background": "brand.primary",
+        "boxShadow": [
+          "0 -4px 0 rgba(0,0,0,0.32) inset", // inner
+          "0 2px 4px rgba(0,0,0,0.16)" // outer
+        ].join(", "),
+        ":hover": {
+          background: "#08C98D"
+        },
+        ":active": {
+          background: "brand.primary"
+        }
+      })
+    },
+    {
+      alias: "secondary",
+      value: buttonStyles({
+        background: "transparent",
+        border: "button",
+        borderColor: "brand.primary",
+        color: "brand.primary",
+        padding: "14px 30px"
+      })
+    },
+    {
+      alias: "alternative",
+      value: buttonStyles({
+        background: "overlay.light",
+        color: "brand.primary"
+      })
+    }
+  ],
   // Global
   globalStyles: {
     "*": {
@@ -275,16 +284,25 @@ export const MasterTheme: Theme = {
         textStyle: "heading"
       }
     },
-    button: {
-      primary: {
-        buttonStyle: "primary"
+    button: [
+      {
+        alias: "primary",
+        value: {
+          buttonStyle: "primary"
+        }
       },
-      secondary: {
-        buttonStyle: "secondary"
+      {
+        alias: "secondary",
+        value: {
+          buttonStyle: "secondary"
+        }
       },
-      alternative: {
-        buttonStyle: "alternative"
+      {
+        alias: "alternative",
+        value: {
+          buttonStyle: "alternative"
+        }
       }
-    }
+    ]
   }
 }

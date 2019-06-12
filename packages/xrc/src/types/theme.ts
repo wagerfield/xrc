@@ -1,4 +1,10 @@
-import { Primitive, ThemeObject, Theme as BaseTheme } from "onno"
+import { Primitive, AliasObject, ThemeObject, Theme as BaseTheme } from "onno"
+
+export type ButtonVariants = [
+  { alias: "primary"; value: AliasObject<Primitive> },
+  { alias: "secondary"; value: AliasObject<Primitive> },
+  { alias: "alternative"; value: AliasObject<Primitive> }
+]
 
 export type Color = string
 
@@ -111,11 +117,7 @@ export interface Theme extends BaseTheme {
     code: ThemeObject
     caps: ThemeObject
   }
-  buttonStyles: {
-    primary: ThemeObject
-    secondary: ThemeObject
-    alternative: ThemeObject
-  }
+  buttonStyles: ButtonVariants
   globalStyles: ThemeObject
   components: {
     box: {
@@ -133,10 +135,6 @@ export interface Theme extends BaseTheme {
       h2: ThemeObject
       h3: ThemeObject
     }
-    button: {
-      primary: ThemeObject
-      secondary: ThemeObject
-      alternative: ThemeObject
-    }
+    button: ButtonVariants
   }
 }

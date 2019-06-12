@@ -17,7 +17,7 @@ export interface ButtonSizeMap {
 
 export type ButtonSize = keyof ButtonSizeMap
 
-export type ButtonVariant = "primary" | "secondary" | "alternative"
+export type ButtonVariant = 0 | "primary" | 1 | "secondary" | 2 | "alternative"
 
 export type ButtonVariantProps = VariantProps<ButtonVariant>
 
