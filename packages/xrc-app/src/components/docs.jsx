@@ -6,7 +6,7 @@ const V = "all"
 const H = "lg"
 
 const DocsMenu = (props) => (
-  <Box as="nav" overflow="auto" background="overlay.light" {...props} />
+  <Box as="nav" overflow="auto" background="fill.alt" {...props} />
 )
 
 const DocsContent = (props) => <Box overflow="auto" {...props} />
