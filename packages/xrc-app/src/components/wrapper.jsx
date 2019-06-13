@@ -6,8 +6,10 @@ export const Wrapper = (props) => (
     size="1"
     padding="4"
     display="flex"
-    alignItems="center"
+    overflow="auto"
+    flexDirection="column"
     justifyContent="center"
+    alignItems="center"
     {...props}
   />
 )
