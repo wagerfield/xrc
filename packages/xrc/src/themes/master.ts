@@ -8,12 +8,15 @@ const buttonStyles = (styles: ThemeObject) => ({
   boxShadow: "none",
   boxSizing: "border-box",
   cursor: "pointer",
+  display: "inline-block",
   fontSize: "base.md",
   fontSmoothing: "antialiased",
+  height: "lg",
   lineHeight: "single",
   padding: "16px 32px",
   textStyle: "caps",
   userSelect: "none",
+  verticalAlign: "bottom",
   ...styles
 })
 
@@ -155,18 +158,30 @@ export const MasterTheme: Theme = {
     {
       alias: "secondary",
       value: buttonStyles({
-        background: "transparent",
-        border: "button",
-        borderColor: "brand.primary",
-        color: "brand.primary",
-        padding: "14px 30px"
+        "background": "transparent",
+        "border": "button",
+        "borderColor": "brand.primary",
+        "color": "brand.primary",
+        "padding": "14px 30px",
+        ":hover": {
+          background: "rgba(0,182,125,0.12)"
+        },
+        ":active": {
+          background: "transparent"
+        }
       })
     },
     {
       alias: "alternative",
       value: buttonStyles({
-        background: "overlay.light",
-        color: "brand.primary"
+        "background": "overlay.light",
+        "color": "brand.primary",
+        ":hover": {
+          background: "rgba(32,32,32,0.16)"
+        },
+        ":active": {
+          background: "overlay.light"
+        }
       })
     }
   ],
