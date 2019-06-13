@@ -209,7 +209,7 @@ export const MasterTheme: Theme = {
     },
     "h1,h2,h3,h4,h5,h6,p": {
       margin: 0,
-      marginBottom: 4
+      marginBottom: "1rem"
     },
     // Headings
     "h1,h2,h3,h4,h5,h6": {
@@ -252,7 +252,7 @@ export const MasterTheme: Theme = {
     },
     "ol ol,ul ul": {
       listStyleType: "disc",
-      marginLeft: 28
+      marginLeft: "1.5rem"
     },
     // Button
     "button": {
