@@ -45,9 +45,9 @@ export const MasterTheme: Theme = {
       failure: "#D50000"
     },
     overlay: {
-      dark: "rgba(0,0,0,0.64)",
-      medium: "rgba(0,0,0,0.32)",
-      light: "rgba(0,0,0,0.08)"
+      dark: "rgba(32,32,32,0.64)",
+      medium: "rgba(32,32,32,0.32)",
+      light: "rgba(32,32,32,0.08)"
     }
   },
   // Typography
@@ -177,7 +177,7 @@ export const MasterTheme: Theme = {
         "background": "overlay.light",
         "color": "brand.primary",
         ":hover": {
-          background: "rgba(0,0,0,0.16)"
+          background: "rgba(0,0,0,0.12)"
         },
         ":active": {
           background: "overlay.light"
