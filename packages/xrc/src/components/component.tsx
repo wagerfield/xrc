@@ -1,7 +1,13 @@
 import { ComponentType, ElementType, FunctionComponent } from "react"
-import { interpolate, omit, pick, variant as onnoVariant } from "onno"
 import { withTheme } from "emotion-theming"
 import { jsx } from "@emotion/core"
+import {
+  omit,
+  pick,
+  isFunction,
+  interpolate,
+  variant as onnoVariant
+} from "onno"
 import {
   ComponentKeys,
   AnyStyleObject,
@@ -10,7 +16,6 @@ import {
   ComponentOptions,
   MergedComponentProps
 } from "../types/component"
-import { isFunction } from "../core/utils"
 
 const KEYS: ComponentKeys[] = ["css", "style", "forward"]
 

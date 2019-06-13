@@ -1,6 +1,4 @@
-import { isString, isType, Func } from "onno"
-
-export const isFunction = isType<Func>("function")
+import { isString } from "onno"
 
 export function test(regex: RegExp) {
   return (value: any): value is string => {
