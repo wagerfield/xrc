@@ -5,7 +5,7 @@ import Themes from "./themes"
 
 export { Buttons, HelloWorld, HomePage, Themes }
 
-export default [
+export const examples = [
   {
     name: "Buttons",
     slug: "button",
@@ -27,3 +27,12 @@ export default [
     data: Themes
   }
 ]
+
+export const mapPaths = (paths) => {
+  return paths.reduce((result, path) => {
+    examples.forEach((example) => {
+      result.push(`${path}/${example.slug}`)
+    })
+    return result
+  }, [])
+}

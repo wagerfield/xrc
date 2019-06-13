@@ -1,15 +1,18 @@
 import React from "react"
 import { Base, Box } from "xrc"
 import { Router } from "@reach/router"
-import { Routes, Root } from "react-static"
 import { MDXProvider } from "@mdx-js/react"
+import { Routes, Root, addPrefetchExcludes } from "react-static"
 import { Loading } from "./components/loading"
 import { Nav } from "./components/nav"
 import { fonts } from "./core/fonts"
 import { components } from "./core/mdx"
-
+import { mapPaths } from "./examples"
 import Edit from "./pages/edit"
 import View from "./pages/view"
+
+// Add dynamic paths for example routes
+addPrefetchExcludes(mapPaths(["edit", "view"]))
 
 export default () => (
   <Root>
