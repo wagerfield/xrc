@@ -1,13 +1,13 @@
 import React from "react"
 import { resolve } from "path"
-import { mapPath } from "./src/core/utils"
+import { mapPath, ROOT } from "./src/core/utils"
 
 const DOCS_DIR = resolve("../../docs")
 const PAGES_DIR = resolve("src/pages")
 
 export default {
   entry: "index.jsx",
-  siteRoot: "https://xrc.netlify.com",
+  siteRoot: ROOT,
   plugins: [
     "react-static-plugin-xrc",
     "react-static-plugin-reach-router",

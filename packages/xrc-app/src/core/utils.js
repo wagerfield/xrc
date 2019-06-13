@@ -1,8 +1,10 @@
 import { parse, stringify } from "query-string"
 
-const README = /(\/)?(readme)?(\.mdx?)?$/
+export const ROOT = "https://xrc.netlify.com"
 
-export const mapPath = (path) => path.replace(README, "")
+export const README = /(\/)?(readme)?(\.mdx?)?$/
+
+export const mapPath = (path) => path.replace(ROOT, "").replace(README, "")
 
 export const isString = (str) => typeof str === "string"
 
