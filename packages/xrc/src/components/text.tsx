@@ -1,8 +1,7 @@
-import { variant } from "onno"
 import { HTMLAttributes } from "react"
 import { PolymorphProps, VariantProps } from "../types/component"
+import { component, polymorph, variant } from "./component"
 import { textSet, TextSetProps } from "../renderers/text"
-import { component, polymorph } from "./component"
 import { test } from "../core/utils"
 
 export type TextAttributes = HTMLAttributes<HTMLElement>
@@ -15,10 +14,9 @@ export type TextStyleProps = TextVariantProps & TextSetProps
 
 export type TextProps = TextStyleProps & PolymorphProps
 
-export const textVariant = variant<TextVariantProps, any>({
-  propsKeys: ["variant", "var"],
-  themeKeys: ["components.text"],
-  renderers: [textSet]
+export const textVariant = variant<TextVariantProps>({
+  themeKey: "text",
+  renderer: textSet
 })
 
 const isCode = test(/^code$/)

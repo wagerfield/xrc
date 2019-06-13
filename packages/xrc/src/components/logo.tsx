@@ -1,5 +1,5 @@
-import { omit } from "onno"
 import { jsx } from "@emotion/core"
+import { omit, Primitive } from "onno"
 import { HTMLAttributes } from "react"
 import { PolymorphProps } from "../types/component"
 import { graphicSet, GraphicSetProps } from "../renderers/graphic"
@@ -15,9 +15,11 @@ export interface LogoProps
   extends LogoAttributes,
     LogoStyleProps,
     PolymorphProps {
-  size?: number | string
+  size?: Primitive
+  s?: Primitive
   variant?: LogoVariant
   var?: LogoVariant
+  v?: LogoVariant
 }
 
 const LOGOS = ["👋", "👋🏻", "👋🏼", "👋🏽", "👋🏾", "👋🏿"]
@@ -25,8 +27,8 @@ const LOGOS = ["👋", "👋🏻", "👋🏼", "👋🏽", "👋🏾", "👋🏿
 export const withLogoStyles = component<LogoProps>({
   name: "Logo",
   renderers: [graphicSet],
-  styles({ size }) {
-    const iconSize = Number(size) || 32
+  styles({ size, s }) {
+    const iconSize = Number(size || s) || 32
     return {
       width: iconSize,
       height: iconSize,
@@ -40,12 +42,12 @@ export const withLogoStyles = component<LogoProps>({
 })
 
 const omitLogoProps = omit({
-  propsKeys: ["as", "size", "var", "variant"]
+  propsKeys: ["as", "size", "s", "variant", "var", "v"]
 })
 
 export const Logo = withLogoStyles((props: LogoProps) => {
   const Element = props.as || "div"
-  const variant = props.variant || props.var || 0
+  const variant = props.variant || props.var || props.v || 0
   const logoProps = omitLogoProps(props)
   logoProps.children = LOGOS[variant]
   return <Element {...logoProps} />

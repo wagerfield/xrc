@@ -1,8 +1,7 @@
-import { variant } from "onno"
 import { HTMLAttributes } from "react"
 import { PolymorphProps, VariantProps } from "../types/component"
+import { component, polymorph, variant } from "./component"
 import { textSet, TextSetProps } from "../renderers/text"
-import { component, polymorph } from "./component"
 import { test } from "../core/utils"
 
 export type HeadingAttributes = HTMLAttributes<HTMLElement>
@@ -15,10 +14,9 @@ export type HeadingStyleProps = HeadingVariantProps & TextSetProps
 
 export type HeadingProps = HeadingStyleProps & PolymorphProps
 
-export const headingVariant = variant<HeadingVariantProps, any>({
-  propsKeys: ["variant", "var"],
-  themeKeys: ["components.heading"],
-  renderers: [textSet]
+export const headingVariant = variant<HeadingVariantProps>({
+  themeKey: "heading",
+  renderer: textSet
 })
 
 const isHeading = test(/^h[123]$/)

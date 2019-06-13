@@ -1,8 +1,8 @@
-import { buttonStyle, variant } from "onno"
+import { buttonStyle } from "onno"
 import { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react"
 import { PolymorphProps, VariantProps } from "../types/component"
+import { component, polymorph, variant } from "./component"
 import { uiSet, UISetProps } from "../renderers/ui"
-import { component, polymorph } from "./component"
 import { IconVariant } from "./icon"
 
 export type ButtonAttributes =
@@ -15,7 +15,7 @@ export interface ButtonSizeMap {
   lg: string
 }
 
-export type ButtonSize = keyof ButtonSizeMap
+export type ButtonSize = 0 | "sm" | 1 | "md" | 2 | "lg"
 
 export type ButtonVariant = 0 | "primary" | 1 | "secondary" | 2 | "alternative"
 
@@ -24,9 +24,11 @@ export type ButtonVariantProps = VariantProps<ButtonVariant>
 export type ButtonStyleProps = ButtonVariantProps & UISetProps
 
 export interface ButtonProps extends ButtonStyleProps, PolymorphProps {
+  icon?: IconVariant
+  i?: IconVariant
   text?: string
   size?: ButtonSize
-  icon?: IconVariant
+  s?: ButtonSize
 }
 
 const DEFAULT_SIZE: ButtonSize = "lg"
@@ -43,10 +45,9 @@ const PADDING: ButtonSizeMap = {
   lg: "16px 32px"
 }
 
-export const buttonVariant = variant<ButtonVariantProps, any>({
-  propsKeys: ["variant", "var"],
-  themeKeys: ["components.button"],
-  renderers: [buttonStyle]
+export const buttonVariant = variant<ButtonVariantProps>({
+  themeKey: "button",
+  renderer: buttonStyle
 })
 
 export const withButtonStyles = component<ButtonProps>({

@@ -27,6 +27,7 @@ export interface ThemeProps {
 export interface VariantProps<T> extends ThemeProps {
   variant?: Prop<T>
   var?: Prop<T>
+  v?: Prop<T>
 }
 
 export interface ComponentProps<P> extends ThemeProps {
@@ -41,6 +42,13 @@ export interface ComponentOptions<P> {
   styles?: Interpolation<P>
 }
 
+export type MergedComponentProps<P> = P & ComponentProps<P>
+
 export type ComponentKeys = keyof ComponentProps<{}>
 
-export type MergedComponentProps<P> = P & ComponentProps<P>
+export type VariantKeys = keyof VariantProps<{}>
+
+export interface VariantOptions {
+  themeKey: string
+  renderer: AnyRenderFunction
+}

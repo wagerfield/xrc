@@ -1,11 +1,12 @@
 import { ComponentType, ElementType, FunctionComponent } from "react"
-import { interpolate, omit, pick } from "onno"
+import { interpolate, omit, pick, variant as onnoVariant } from "onno"
 import { withTheme } from "emotion-theming"
 import { jsx } from "@emotion/core"
 import {
   ComponentKeys,
   AnyStyleObject,
   PolymorphProps,
+  VariantOptions,
   ComponentOptions,
   MergedComponentProps
 } from "../types/component"
@@ -71,4 +72,12 @@ export function polymorph<P>(
     const Element = props.as || defaultElement
     return <Element {...omitPolymorphProps(props)} />
   }
+}
+
+export function variant<P>({ themeKey, renderer }: VariantOptions) {
+  return onnoVariant<P, any>({
+    propsKeys: ["variant", "var", "v"],
+    themeKeys: [`components.${themeKey}`],
+    renderers: [renderer]
+  })
 }
