@@ -29,10 +29,10 @@ export type FontSizes = FontSizesObject<string> & {
 
 export interface Theme extends BaseTheme {
   colors: {
-    brand: {
-      primary: Color
-      secondary: Color
-    }
+    brand: [
+      { alias: "primary"; value: Color },
+      { alias: "secondary"; value: Color }
+    ]
     text: {
       main: Color
       link: Color

@@ -4,10 +4,10 @@ import { MasterTheme } from "./master"
 export const BlackTheme: Theme = {
   ...MasterTheme,
   colors: {
-    brand: {
-      primary: "#80CBC4",
-      secondary: "#CE93D8"
-    },
+    brand: [
+      { alias: "primary", value: "#80CBC4" },
+      { alias: "secondary", value: "#CE93D8" }
+    ],
     text: {
       main: "#ECEFF1",
       link: "#90CAF9",
@@ -27,8 +27,8 @@ export const BlackTheme: Theme = {
       failure: "#E57373"
     },
     overlay: {
-      dark: "rgba(0,0,0,0.6)",
-      medium: "rgba(0,0,0,0.3)",
+      dark: "rgba(0,0,0,0.64)",
+      medium: "rgba(0,0,0,0.32)",
       light: "rgba(0,0,0,0.16)"
     }
   }

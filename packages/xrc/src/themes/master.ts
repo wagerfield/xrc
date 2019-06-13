@@ -22,10 +22,10 @@ const buttonStyles = (styles: ThemeObject) => ({
 
 export const MasterTheme: Theme = {
   colors: {
-    brand: {
-      primary: "#00B67D",
-      secondary: "#FF6A00"
-    },
+    brand: [
+      { alias: "primary", value: "#00B67D" },
+      { alias: "secondary", value: "#FF6A00" }
+    ],
     text: {
       main: "#202020",
       link: "#00B67D",
@@ -45,9 +45,9 @@ export const MasterTheme: Theme = {
       failure: "#D50000"
     },
     overlay: {
-      dark: "rgba(0,0,0,0.6)",
-      medium: "rgba(0,0,0,0.3)",
-      light: "rgba(32,32,32,0.08)"
+      dark: "rgba(0,0,0,0.64)",
+      medium: "rgba(0,0,0,0.32)",
+      light: "rgba(0,0,0,0.08)"
     }
   },
   // Typography
@@ -177,7 +177,7 @@ export const MasterTheme: Theme = {
         "background": "overlay.light",
         "color": "brand.primary",
         ":hover": {
-          background: "rgba(32,32,32,0.16)"
+          background: "rgba(0,0,0,0.16)"
         },
         ":active": {
           background: "overlay.light"
@@ -194,7 +194,7 @@ export const MasterTheme: Theme = {
     // Text
     "html,button": {
       color: "text.main",
-      fontSize: "16px",
+      fontSize: "base.main",
       textStyle: "main"
     },
     "@media(min-width:360px)": {
