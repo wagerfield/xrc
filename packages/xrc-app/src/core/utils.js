@@ -4,6 +4,8 @@ export const ROOT = "https://xrc.netlify.com"
 
 export const README = /(\/)?(readme)?(\.mdx?)?$/
 
+export const propEq = (key) => (value) => (obj) => obj[key] === value
+
 export const mapPath = (path) => path.replace(ROOT, "").replace(README, "")
 
 export const isString = (str) => typeof str === "string"
@@ -28,10 +30,10 @@ export const decodeExample = (example) => {
   })
 }
 
-export const stringifyExample = (example) => {
+export const exampleToQuery = (example) => {
   return stringify(encodeExample(example))
 }
 
-export const parseExample = (example) => {
-  return decodeExample(parse(example))
+export const queryToExample = (query) => {
+  return decodeExample(parse(query))
 }

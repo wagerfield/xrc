@@ -1,5 +1,5 @@
 import React from "react"
 import { REPL } from "../components/repl"
-import { HelloWorld } from "../examples"
+import { getExample } from "../examples"
 
-export default () => <REPL {...HelloWorld} />
+export default () => <REPL {...getExample("/edit")} fullscreen edit />

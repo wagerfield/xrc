@@ -7,12 +7,11 @@ import { Loading } from "./components/loading"
 import { Nav } from "./components/nav"
 import { fonts } from "./core/fonts"
 import { components } from "./core/mdx"
-import { mapPaths } from "./examples"
 import Edit from "./pages/edit"
 import View from "./pages/view"
 
 // Add dynamic paths for example routes
-addPrefetchExcludes(mapPaths(["edit", "view"]))
+addPrefetchExcludes([/(edit|view)\/.+/])
 
 export default () => (
   <Root>
