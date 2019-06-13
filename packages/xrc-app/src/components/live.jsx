@@ -1,12 +1,19 @@
 import React from "react"
 import theme from "prism-react-renderer/themes/oceanicNext"
-import { LiveError, LiveEditor, LivePreview, LiveProvider } from "react-live"
-import { Link } from "@reach/router"
+import { Link as RouterLink } from "@reach/router"
+import {
+  withLive,
+  LiveError,
+  LiveEditor,
+  LivePreview,
+  LiveProvider
+} from "react-live"
 import * as xrc from "xrc"
+import { exampleToQuery } from "../core/utils"
 
 const { Box } = xrc
 
-const scope = { Link, ...xrc }
+const scope = { Link: RouterLink, ...xrc }
 
 const editor = {
   forward: ["padding"],
@@ -59,3 +66,8 @@ export const Preview = (props) => <Box as={LivePreview} {...props} />
 export const Editor = (props) => <Box as={LiveEditor} {...props} {...editor} />
 
 export const Error = (props) => <Box as={LiveError} {...props} {...error} />
+
+export const Link = withLive(({ to, live, inline, ...props }) => {
+  const query = exampleToQuery({ code: live.code, inline })
+  return <RouterLink {...props} to={`${to}?${query}`} />
+})

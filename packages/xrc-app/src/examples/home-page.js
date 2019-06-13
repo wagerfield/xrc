@@ -13,4 +13,4 @@ const code = `
 </Box>
 `
 
-export default { code }
+export default { code, inline: false }

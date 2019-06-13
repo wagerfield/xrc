@@ -1,11 +1,12 @@
-import { Docs as wrapper } from "../components/docs"
-import { Code as code } from "../components/code"
-import { Link as a } from "../components/link"
+import { Code } from "../components/code"
+import { Docs } from "../components/docs"
+import { Link } from "../components/link"
 
 export const components = {
   // Wrapper
-  wrapper,
+  wrapper: Docs,
   // Elements
-  a,
-  code
+  a: Link,
+  code: Code,
+  pre: ({ children }) => children
 }

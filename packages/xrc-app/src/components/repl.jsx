@@ -1,12 +1,12 @@
 import React from "react"
-import { Box } from "xrc"
-import { Provider, Preview, Editor, Error } from "./live"
+import { Box, Button } from "xrc"
+import { Provider, Preview, Editor, Error, Link } from "./live"
 
 // Breakpoints
 const V = "all"
 const H = "lg"
 
-const containerStyles = (edit, fullscreen) => {
+const containerStyles = (editor, fullscreen) => {
   if (!fullscreen) return null
   return {
     display: "grid",
@@ -18,14 +18,14 @@ const containerStyles = (edit, fullscreen) => {
       [H]: "hidden"
     },
     gridTemplate: {
-      [V]: edit ? "1fr auto / 1fr" : "1fr",
-      [H]: edit ? "1fr / 640px 1fr" : "1fr"
+      [V]: editor ? "1fr auto / 1fr" : "1fr",
+      [H]: editor ? "1fr / 640px 1fr" : "1fr"
     }
   }
 }
 
-const REPLContainer = ({ edit, fullscreen, ...props }) => (
-  <Box {...containerStyles(edit, fullscreen)} {...props} />
+const REPLContainer = ({ editor, fullscreen, ...props }) => (
+  <Box {...containerStyles(editor, fullscreen)} {...props} />
 )
 
 const REPLPanel = (props) => (
@@ -33,23 +33,51 @@ const REPLPanel = (props) => (
 )
 
 const REPLWrapper = (props) => (
-  <Box display="flex" overflow="auto" flex="1 0 auto" {...props} />
+  <Box
+    display="flex"
+    overflow="auto"
+    position="relative"
+    flex="1 0 auto"
+    {...props}
+  />
 )
 
 const REPLChild = (props) => <Box flex="1 0 auto" {...props} />
 
-export const REPL = ({ edit, fullscreen, ...props }) => (
-  <Provider {...props}>
-    <REPLContainer className="repl" edit={edit} fullscreen={fullscreen}>
-      <REPLPanel className="preview-panel" order={{ [H]: 1 }}>
-        <REPLWrapper className="preview-wrapper" order={{ [H]: 1 }}>
-          <REPLChild className="preview" as={Preview} />
-        </REPLWrapper>
-        <REPLWrapper className="error-wrapper" flexGrow="0">
-          <REPLChild as={Error} className="error" />
-        </REPLWrapper>
-      </REPLPanel>
-      {edit && (
+const REPLLink = (props) => (
+  <Button position="absolute" right="0" top="0" margin="4" {...props} />
+)
+
+export const REPL = ({
+  code,
+  disabled,
+  editor,
+  fullscreen,
+  inline,
+  language,
+  preview
+}) => (
+  <Provider code={code} disabled={disabled} inline={inline} language={language}>
+    <REPLContainer className="repl" editor={editor} fullscreen={fullscreen}>
+      {preview && (
+        <REPLPanel className="preview-panel" order={{ [H]: 1 }}>
+          <REPLWrapper className="preview-wrapper" order={{ [H]: 1 }}>
+            <REPLLink
+              className="preview-button"
+              as={Link}
+              to={editor ? "/view" : "/edit"}
+              inline={inline}
+            >
+              {editor ? "View" : "Edit"}
+            </REPLLink>
+            <REPLChild className="preview" as={Preview} />
+          </REPLWrapper>
+          <REPLWrapper className="error-wrapper" flexGrow="0">
+            <REPLChild as={Error} className="error" />
+          </REPLWrapper>
+        </REPLPanel>
+      )}
+      {editor && (
         <REPLPanel className="editor-panel">
           <REPLWrapper className="editor-wrapper">
             <REPLChild className="editor" as={Editor} />

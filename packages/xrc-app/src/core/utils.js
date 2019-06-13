@@ -18,17 +18,15 @@ export const decodeNewlines = (str) => {
   return isString(str) ? str.replace(/\\n/g, "\n") : null
 }
 
-export const encodeExample = (example) => {
-  return Object.assign({}, example, {
-    code: encodeNewlines(example.code)
-  })
-}
+export const encodeExample = (example) => ({
+  code: encodeNewlines(example.code),
+  inline: example.inline
+})
 
-export const decodeExample = (example) => {
-  return Object.assign({}, example, {
-    code: decodeNewlines(example.code)
-  })
-}
+export const decodeExample = (example) => ({
+  code: decodeNewlines(example.code),
+  inline: example.inline === "true"
+})
 
 export const exampleToQuery = (example) => {
   return stringify(encodeExample(example))
