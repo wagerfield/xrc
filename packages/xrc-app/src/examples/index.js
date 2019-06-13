@@ -7,23 +7,23 @@ export { Buttons, HelloWorld, HomePage, Themes }
 
 export default [
   {
-    key: "hello-world",
-    label: "Hello World",
-    props: HelloWorld
+    name: "Buttons",
+    slug: "button",
+    data: Buttons
   },
   {
-    key: "home-page",
-    label: "Home Page",
-    props: HomePage
+    name: "Hello World",
+    slug: "hello-world",
+    data: HelloWorld
   },
   {
-    key: "button",
-    label: "Buttons",
-    props: Buttons
+    name: "Home Page",
+    slug: "home-page",
+    data: HomePage
   },
   {
-    key: "themes",
-    label: "Themes",
-    props: Themes
+    name: "Themes",
+    slug: "themes",
+    data: Themes
   }
 ]
