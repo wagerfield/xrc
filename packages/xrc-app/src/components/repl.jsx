@@ -51,6 +51,7 @@ const REPLChild = (props) => (
 const REPLButton = (props) => (
   <Button
     zIndex="1"
+    size="sm"
     variant="alternative"
     position="absolute"
     margin="24"
