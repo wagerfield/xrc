@@ -5,11 +5,13 @@ import { Box } from "xrc"
 const V = "all"
 const H = "lg"
 
+const DocsPanel = (props) => <Box overflow="auto" {...props} />
+
 const DocsMenu = (props) => (
-  <Box as="nav" overflow="auto" background="fill.alt" {...props} />
+  <Box minHeight="1" background="fill.alt" {...props} />
 )
 
-const DocsContent = (props) => <Box overflow="auto" {...props} />
+const DocsContent = (props) => <Box marginY="2rem" {...props} />
 
 export const Docs = ({ children }) => (
   <Box
@@ -25,7 +27,17 @@ export const Docs = ({ children }) => (
       [H]: "240px 1fr"
     }}
   >
-    <DocsMenu className="docs-menu" />
-    <DocsContent className="docs-content">{children}</DocsContent>
+    <DocsPanel className="menu-panel">
+      <DocsMenu className="menu" as="nav" />
+    </DocsPanel>
+    <DocsPanel
+      className="content-panel"
+      display="grid"
+      gridTemplateColumns="minmax(1rem, 1fr) minmax(auto, 800px) minmax(1rem, 1fr)"
+    >
+      <DocsContent className="content" as="article" gridColumn="2">
+        {children}
+      </DocsContent>
+    </DocsPanel>
   </Box>
 )
