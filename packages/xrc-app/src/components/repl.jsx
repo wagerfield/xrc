@@ -9,24 +9,21 @@ const V = "all"
 const H = "lg"
 
 const containerStyles = (editor, fullscreen) => {
-  const styles = { position: "relative" }
-  if (fullscreen) {
-    Object.assign(styles, {
-      display: "grid",
-      minHeight: 1,
-      height: {
-        [H]: 1
-      },
-      overflow: {
-        [H]: "hidden"
-      },
-      gridTemplate: {
-        [V]: editor ? "1fr auto / 1fr" : "1fr",
-        [H]: editor ? "1fr / 640px 1fr" : "1fr"
-      }
-    })
+  if (!fullscreen) return null
+  return {
+    display: "grid",
+    minHeight: 1,
+    height: {
+      [H]: 1
+    },
+    overflow: {
+      [H]: "hidden"
+    },
+    gridTemplate: {
+      [V]: editor ? "1fr auto / 1fr" : "1fr",
+      [H]: editor ? "1fr / 640px 1fr" : "1fr"
+    }
   }
-  return styles
 }
 
 const REPLContainer = ({ editor, fullscreen, ...props }) => (
@@ -34,7 +31,13 @@ const REPLContainer = ({ editor, fullscreen, ...props }) => (
 )
 
 const REPLPanel = (props) => (
-  <Box display="flex" overflow="auto" flexDirection="column" {...props} />
+  <Box
+    display="flex"
+    overflow="auto"
+    position="relative"
+    flexDirection="column"
+    {...props}
+  />
 )
 
 const REPLWrapper = (props) => (
@@ -72,6 +75,7 @@ export const REPL = ({
   const exampleQuery = exampleToQuery({ code, inline })
   const linkPath = editor ? "/view" : "/edit"
   const linkTitle = editor ? "View" : "Edit"
+  const modeTitle = inline ? "Render" : "Inline"
   if (persist) {
     useEffect(() => {
       const examplePath = `${location.pathname}?${exampleQuery}`
@@ -87,15 +91,13 @@ export const REPL = ({
     >
       <REPLContainer className="repl" editor={editor} fullscreen={fullscreen}>
         {preview && (
-          <REPLButton
-            className="preview-link"
-            title={linkTitle}
-            children={linkTitle}
-            onClick={() => navigate(`${linkPath}?${exampleQuery}`)}
-          />
-        )}
-        {preview && (
           <REPLPanel className="preview-panel" order={{ [H]: 1 }}>
+            <REPLButton
+              className="preview-link"
+              title={linkTitle}
+              children={linkTitle}
+              onClick={() => navigate(`${linkPath}?${exampleQuery}`)}
+            />
             <REPLWrapper className="preview-wrapper" order={{ [H]: 1 }}>
               <REPLChild
                 as={Preview}
@@ -111,6 +113,12 @@ export const REPL = ({
         )}
         {editor && (
           <REPLPanel className="editor-panel">
+            <REPLButton
+              className="editor-mode"
+              title={modeTitle}
+              children={modeTitle}
+              onClick={() => setInline(!inline)}
+            />
             <REPLWrapper className="editor-wrapper">
               <REPLChild
                 as={Editor}
