@@ -3,17 +3,18 @@ import { Theme } from "../types/theme"
 import { mapFontSizes } from "../core/fonts"
 
 const buttonStyles = (styles: ThemeObject) => ({
+  alignItems: "center",
   border: "none",
   borderRadius: "lg",
   boxShadow: "none",
   boxSizing: "border-box",
   cursor: "pointer",
-  display: "inline-block",
+  display: "inline-flex",
   fontSize: "base.md",
   fontSmoothing: "antialiased",
   height: "lg",
   lineHeight: "single",
-  padding: "16px 32px",
+  paddingX: "32px",
   textStyle: "caps",
   userSelect: "none",
   verticalAlign: "bottom",
@@ -162,7 +163,7 @@ export const MasterTheme: Theme = {
         "border": "button",
         "borderColor": "brand.primary",
         "color": "brand.primary",
-        "padding": "14px 30px",
+        "paddingX": "30px",
         ":hover": {
           background: "rgba(0,182,125,0.12)"
         },
