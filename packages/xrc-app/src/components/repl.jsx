@@ -33,16 +33,12 @@ const REPLPanel = (props) => (
 )
 
 const REPLWrapper = (props) => (
-  <Box
-    display="flex"
-    overflow="auto"
-    position="relative"
-    flex="1 0 auto"
-    {...props}
-  />
+  <Box display="flex" overflow="auto" flex="1 0 auto" {...props} />
 )
 
-const REPLChild = (props) => <Box flex="1 0 auto" {...props} />
+const REPLChild = (props) => (
+  <Box position="relative" flex="1 0 auto" {...props} />
+)
 
 const REPLLink = (props) => (
   <Button position="absolute" right="0" top="0" margin="4" {...props} />
@@ -50,26 +46,26 @@ const REPLLink = (props) => (
 
 export const REPL = ({
   code,
-  disabled,
-  editor,
-  fullscreen,
   inline,
   language,
-  preview
+  disabled,
+  fullscreen,
+  preview,
+  editor
 }) => (
-  <Provider code={code} disabled={disabled} inline={inline} language={language}>
+  <Provider code={code} inline={inline} language={language} disabled={disabled}>
     <REPLContainer className="repl" editor={editor} fullscreen={fullscreen}>
+      {/* <REPLLink
+        className="preview-button"
+        as={Link}
+        to={editor ? "/view" : "/edit"}
+        inline={inline}
+      >
+        {editor ? "View" : "Edit"}
+      </REPLLink> */}
       {preview && (
         <REPLPanel className="preview-panel" order={{ [H]: 1 }}>
           <REPLWrapper className="preview-wrapper" order={{ [H]: 1 }}>
-            <REPLLink
-              className="preview-button"
-              as={Link}
-              to={editor ? "/view" : "/edit"}
-              inline={inline}
-            >
-              {editor ? "View" : "Edit"}
-            </REPLLink>
             <REPLChild className="preview" as={Preview} />
           </REPLWrapper>
           <REPLWrapper className="error-wrapper" flexGrow="0">
