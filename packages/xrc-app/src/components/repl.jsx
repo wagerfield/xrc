@@ -78,8 +78,10 @@ export const REPL = ({
   const modeTitle = inline ? "Render" : "Inline"
   if (persist) {
     useEffect(() => {
-      const examplePath = `${location.pathname}?${exampleQuery}`
-      history.replaceState(null, null, examplePath)
+      const url = new URL(window.location.href)
+      url.search = exampleQuery
+      console.log(url)
+      history.replaceState(null, null, url.toString())
     })
   }
   return (
