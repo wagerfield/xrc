@@ -60,10 +60,10 @@ const REPLButton = (props) => (
 export const REPL = ({
   code: initialCode,
   inline: initialInline,
-  persist,
+  fullscreen,
   language,
   disabled,
-  fullscreen,
+  persist,
   preview,
   editor
 }) => {
