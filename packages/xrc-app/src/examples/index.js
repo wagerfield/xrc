@@ -1,5 +1,4 @@
-import { navigate } from "@reach/router"
-import { propEq, exampleToQuery, queryToExample } from "../core/utils"
+import { propEq, queryToExample } from "../core/utils"
 import Buttons from "./buttons"
 import HelloWorld from "./hello-world"
 import HomePage from "./home-page"
@@ -20,10 +19,6 @@ export const getExample = (path, defaultExample = HelloWorld) => {
   const match = location.pathname.replace(path, "").match(/[\w-]+$/)
   const result = examples.find(slugEq(match && match[0]))
   return result ? result.data : defaultExample
-}
-
-export const navigateToExample = (path, example, options) => {
-  navigate(`${path}?${exampleToQuery(example)}`, options)
 }
 
 export const examples = [

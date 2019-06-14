@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
+import { navigate } from "@reach/router"
 import { Box, Button } from "xrc"
-import { Provider, Preview, Editor, Error, Link } from "./live"
+import { exampleToQuery } from "../core/utils"
+import { Provider, Preview, Editor, Error } from "./live"
 
 // Breakpoints
 const V = "all"
@@ -43,7 +45,7 @@ const REPLChild = (props) => (
   <Box position="relative" flex="1 0 auto" {...props} />
 )
 
-const REPLLink = (props) => (
+const REPLButton = (props) => (
   <Button
     zIndex="1"
     variant="alternative"
@@ -55,58 +57,71 @@ const REPLLink = (props) => (
   />
 )
 
-const handleChange = (code) => {
-  console.log(code)
-  return code
-}
-
 export const REPL = ({
-  code,
-  inline,
+  code: initialCode,
+  inline: initialInline,
+  persist,
   language,
   disabled,
   fullscreen,
   preview,
   editor
-}) => (
-  <Provider code={code} inline={inline} language={language} disabled={disabled}>
-    <REPLContainer className="repl" editor={editor} fullscreen={fullscreen}>
-      {preview && (
-        <REPLLink
-          as={Link}
-          className="preview-link"
-          to={editor ? "/view" : "/edit"}
-          title={editor ? "View" : "Edit"}
-          children={editor ? "View" : "Edit"}
-          inline={inline}
-        />
-      )}
-      {preview && (
-        <REPLPanel className="preview-panel" order={{ [H]: 1 }}>
-          <REPLWrapper className="preview-wrapper" order={{ [H]: 1 }}>
-            <REPLChild
-              as={Preview}
-              className="preview"
-              minHeight={!fullscreen && "160"}
-              boxShadow={!fullscreen && "inset 0 0 1px #202020"}
-            />
-          </REPLWrapper>
-          <REPLWrapper className="error-wrapper" flexGrow="0">
-            <REPLChild className="error" as={Error} />
-          </REPLWrapper>
-        </REPLPanel>
-      )}
-      {editor && (
-        <REPLPanel className="editor-panel">
-          <REPLWrapper className="editor-wrapper">
-            <REPLChild
-              as={Editor}
-              className="editor"
-              minHeight={fullscreen && "160"}
-            />
-          </REPLWrapper>
-        </REPLPanel>
-      )}
-    </REPLContainer>
-  </Provider>
-)
+}) => {
+  const [code, setCode] = useState(initialCode)
+  const [inline, setInline] = useState(initialInline)
+  const exampleQuery = exampleToQuery({ code, inline })
+  const linkPath = editor ? "/view" : "/edit"
+  const linkTitle = editor ? "View" : "Edit"
+  if (persist) {
+    useEffect(() => {
+      const examplePath = `${location.pathname}?${exampleQuery}`
+      history.replaceState(null, null, examplePath)
+    })
+  }
+  return (
+    <Provider
+      code={code}
+      inline={inline}
+      language={language}
+      disabled={disabled}
+    >
+      <REPLContainer className="repl" editor={editor} fullscreen={fullscreen}>
+        {preview && (
+          <REPLButton
+            className="preview-link"
+            title={linkTitle}
+            children={linkTitle}
+            onClick={() => navigate(`${linkPath}?${exampleQuery}`)}
+          />
+        )}
+        {preview && (
+          <REPLPanel className="preview-panel" order={{ [H]: 1 }}>
+            <REPLWrapper className="preview-wrapper" order={{ [H]: 1 }}>
+              <REPLChild
+                as={Preview}
+                className="preview"
+                minHeight={!fullscreen && "160"}
+                boxShadow={!fullscreen && "inset 0 0 1px #202020"}
+              />
+            </REPLWrapper>
+            <REPLWrapper className="error-wrapper" flexGrow="0">
+              <REPLChild className="error" as={Error} />
+            </REPLWrapper>
+          </REPLPanel>
+        )}
+        {editor && (
+          <REPLPanel className="editor-panel">
+            <REPLWrapper className="editor-wrapper">
+              <REPLChild
+                as={Editor}
+                className="editor"
+                minHeight={fullscreen && "160"}
+                onChange={setCode}
+              />
+            </REPLWrapper>
+          </REPLPanel>
+        )}
+      </REPLContainer>
+    </Provider>
+  )
+}
