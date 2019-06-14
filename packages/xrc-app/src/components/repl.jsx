@@ -68,7 +68,8 @@ export const REPL = ({
   disabled,
   persist,
   preview,
-  editor
+  editor,
+  toggle
 }) => {
   const [code, setCode] = useState(initialCode)
   const [inline, setInline] = useState(initialInline)
@@ -115,12 +116,14 @@ export const REPL = ({
         )}
         {editor && (
           <REPLPanel className="editor-panel">
-            <REPLButton
-              className="editor-mode"
-              title={modeTitle}
-              children={modeTitle}
-              onClick={() => setInline(!inline)}
-            />
+            {toggle && (
+              <REPLButton
+                className="editor-mode"
+                title={modeTitle}
+                children={modeTitle}
+                onClick={() => setInline(!inline)}
+              />
+            )}
             <REPLWrapper className="editor-wrapper">
               <REPLChild
                 as={Editor}
