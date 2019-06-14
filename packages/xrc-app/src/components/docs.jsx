@@ -35,7 +35,16 @@ export const Docs = ({ children }) => (
       display="grid"
       gridTemplateColumns="minmax(1rem, 1fr) minmax(auto, 800px) minmax(1rem, 1fr)"
     >
-      <DocsContent className="content" as="article" gridColumn="2">
+      <DocsContent
+        className="content"
+        as="article"
+        gridColumn="2"
+        css={{
+          "> *": {
+            marginBottom: "1rem"
+          }
+        }}
+      >
         {children}
       </DocsContent>
     </DocsPanel>
