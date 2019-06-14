@@ -40,6 +40,8 @@ export interface ComponentOptions<P> {
   name: string
   renderers: AnyRenderFunction[]
   styles?: Interpolation<P>
+  omitKeys?: string[]
+  pickKeys?: string[]
 }
 
 export type MergedComponentProps<P> = P & ComponentProps<P>

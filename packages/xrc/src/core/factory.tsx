@@ -9,6 +9,7 @@ import {
   variant as onnoVariant
 } from "onno"
 import {
+  VariantKeys,
   ComponentKeys,
   AnyStyleObject,
   PolymorphProps,
@@ -17,7 +18,14 @@ import {
   MergedComponentProps
 } from "../types/component"
 
-const KEYS: ComponentKeys[] = ["css", "style", "forward"]
+export const COMPONENT_KEYS: ComponentKeys[] = [
+  "css",
+  "style",
+  "theme",
+  "forward"
+]
+
+export const VARIANT_KEYS: VariantKeys[] = ["variant", "var", "v"]
 
 // RP: RendererProps
 // CP: ComponentProps
@@ -25,10 +33,14 @@ const KEYS: ComponentKeys[] = ["css", "style", "forward"]
 export function component<RP>({
   name,
   styles,
+  omitKeys,
+  pickKeys,
   renderers
 }: ComponentOptions<RP>) {
   const transform = interpolate<RP, any>({ name, renderers })
-  const omitProps = omit<RP>({ propsKeys: KEYS, renderers })
+  const omitRendererProps = omitKeys && omit<RP>({ propsKeys: omitKeys })
+  const pickRendererProps = pickKeys && pick<RP>({ propsKeys: pickKeys })
+  const omitComponentProps = omit<RP>({ propsKeys: COMPONENT_KEYS, renderers })
 
   // With styles function
   return function withStyles<CP, MP extends MergedComponentProps<CP & RP>>(
@@ -42,15 +54,20 @@ export function component<RP>({
       const baseStyles = isFunction(styles) ? styles(props) : styles
 
       // Props filter functions
-      const pickProps = pick<MP>({ propsKeys: forward })
+      const pickComponentProps = pick<MP>({ propsKeys: forward })
+
+      // Prepare renderer props
+      let rendererProps = props as Partial<RP>
+      if (omitRendererProps) rendererProps = omitRendererProps(props)
+      if (pickRendererProps) rendererProps = pickRendererProps(props)
 
       // Prepare component props
       const componentProps = {
-        ...omitProps(props),
-        ...pickProps(props),
+        ...omitComponentProps(props),
+        ...pickComponentProps(props),
         css: [
           transform(baseStyles as AnyStyleObject, theme),
-          transform.renderer(props),
+          transform.renderer(rendererProps as any),
           transform(css as AnyStyleObject, theme)
         ]
       }
@@ -81,7 +98,7 @@ export function polymorph<P>(
 
 export function variant<P>({ themeKey, renderer }: VariantOptions) {
   return onnoVariant<P, any>({
-    propsKeys: ["variant", "var", "v"],
+    propsKeys: VARIANT_KEYS,
     themeKeys: [`components.${themeKey}`],
     renderers: [renderer]
   })
