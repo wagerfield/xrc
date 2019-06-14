@@ -5,12 +5,14 @@ export { css, keyframes } from "@emotion/core"
 export * from "./types/theme"
 export * from "./types/component"
 
+// Core
+export * from "./core/factory"
+
 // Themes
 export * from "./themes/master"
 export * from "./themes/black"
 
 // Components
-export * from "./components/component"
 export * from "./components/provider"
 export * from "./components/global"
 export * from "./components/base"

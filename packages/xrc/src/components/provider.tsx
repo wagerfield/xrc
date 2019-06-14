@@ -1,7 +1,7 @@
 import { ThemeProvider } from "emotion-theming"
 import { ThemeProps } from "../types/component"
 import { MasterTheme } from "../themes/master"
-import { element } from "./component"
+import { element } from "../core/factory"
 
 export type ProviderProps = ThemeProps
 

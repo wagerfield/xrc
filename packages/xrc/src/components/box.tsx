@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react"
 import { PolymorphProps, VariantProps } from "../types/component"
-import { component, polymorph, variant } from "./component"
+import { component, polymorph, variant } from "../core/factory"
 import { boxSet, BoxSetProps } from "../renderers/box"
 
 export type BoxAttributes = HTMLAttributes<HTMLElement>

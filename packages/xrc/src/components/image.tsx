@@ -1,6 +1,6 @@
 import { ImgHTMLAttributes } from "react"
 import { imageSet, ImageSetProps } from "../renderers/image"
-import { component, element } from "./component"
+import { component, element } from "../core/factory"
 
 export type ImageAttributes = ImgHTMLAttributes<HTMLImageElement>
 

@@ -2,7 +2,7 @@ import { jsx } from "@emotion/core"
 import { HTMLAttributes } from "react"
 import { isNumber, omit, Primitive } from "onno"
 import { graphicSet, GraphicSetProps } from "../renderers/graphic"
-import { component } from "./component"
+import { component } from "../core/factory"
 import ICONS from "./icons.json"
 
 export type IconAttributes = Omit<HTMLAttributes<HTMLElement>, "color">

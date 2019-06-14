@@ -3,7 +3,7 @@ import { omit, Primitive } from "onno"
 import { HTMLAttributes } from "react"
 import { PolymorphProps } from "../types/component"
 import { graphicSet, GraphicSetProps } from "../renderers/graphic"
-import { component } from "./component"
+import { component } from "../core/factory"
 
 export type LogoAttributes = Omit<HTMLAttributes<HTMLElement>, "color">
 
