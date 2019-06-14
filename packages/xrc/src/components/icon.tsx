@@ -35,7 +35,8 @@ export const withIconStyles = component<IconProps>({
   name: "Icon",
   renderers: [graphicSet],
   styles: {
-    boxSizing: "border-box"
+    boxSizing: "border-box",
+    fill: "text.main"
   }
 })
 
