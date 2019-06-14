@@ -239,6 +239,9 @@ export const MasterTheme: Theme = {
     "b,strong": {
       fontWeight: "bold"
     },
+    "blockquote": {
+      margin: "1rem 0"
+    },
     // Links
     "a": {
       color: "text.link",
