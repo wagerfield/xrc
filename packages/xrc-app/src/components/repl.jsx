@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { navigate } from "@reach/router"
 import { Box, Button } from "xrc"
 import { exampleToQuery } from "../core/utils"
@@ -71,18 +71,16 @@ export const REPL = ({
   editor,
   toggle
 }) => {
-  const [code, setCode] = useState(initialCode)
-  const [inline, setInline] = useState(initialInline)
+  const [code, setCode] = React.useState(initialCode)
+  const [inline, setInline] = React.useState(initialInline)
   const exampleQuery = exampleToQuery({ code, inline })
   const linkPath = editor ? "/view" : "/edit"
   const linkTitle = editor ? "View" : "Edit"
   const modeTitle = inline ? "Render" : "Inline"
   if (persist) {
-    useEffect(() => {
-      const url = new URL(window.location.href)
-      url.search = exampleQuery
-      console.log(url)
-      history.replaceState(null, null, url.toString())
+    React.useEffect(() => {
+      const path = `${location.pathname}?${exampleQuery}`
+      history.replaceState(null, null, path)
     })
   }
   return (
