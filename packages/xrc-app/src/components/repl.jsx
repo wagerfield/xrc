@@ -51,7 +51,6 @@ const REPLChild = (props) => (
 const REPLButton = (props) => (
   <Button
     zIndex="1"
-    size="sm"
     variant="alternative"
     position="absolute"
     margin="24"
@@ -80,8 +79,6 @@ export const REPL = ({
   const [inline, setInline] = React.useState(initialInline)
   const exampleQuery = exampleToQuery({ code, inline })
   const linkPath = editor ? "/view" : "/edit"
-  const linkTitle = editor ? "View" : "Edit"
-  const modeTitle = inline ? "Render" : "Inline"
   if (persist) {
     React.useEffect(() => {
       const path = `${location.pathname}?${exampleQuery}`
@@ -101,8 +98,8 @@ export const REPL = ({
           <REPLPanel className="preview-panel" order={{ [H]: 1 }}>
             <REPLButton
               className="preview-link"
-              title={linkTitle}
-              children={linkTitle}
+              icon={editor ? "eye" : "edit"}
+              title={editor ? "View" : "Edit"}
               onClick={() => navigate(`${linkPath}?${exampleQuery}`)}
             />
             <REPLWrapper className="preview-wrapper" order={{ [H]: 1 }}>
@@ -123,8 +120,8 @@ export const REPL = ({
             {toggle && (
               <REPLButton
                 className="editor-mode"
-                title={modeTitle}
-                children={modeTitle}
+                text={inline ? "Render" : "Inline"}
+                title={inline ? "Render" : "Inline"}
                 onClick={() => setInline(!inline)}
               />
             )}
