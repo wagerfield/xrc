@@ -9,7 +9,7 @@ import {
   LiveProvider
 } from "react-live"
 import * as xrc from "xrc"
-import { exampleToQuery } from "../core/utils"
+import { navigateToExample } from "../examples"
 
 const { Box } = xrc
 
@@ -68,6 +68,22 @@ export const Editor = (props) => <Box as={LiveEditor} {...props} {...editor} />
 export const Error = (props) => <Box as={LiveError} {...props} {...error} />
 
 export const Link = withLive(({ to, live, inline, ...props }) => {
-  const query = exampleToQuery({ code: live.code, inline })
-  return <RouterLink {...props} to={`${to}?${query}`} />
+  // console.log(live)
+  // live.onChange((a, b, c) => {
+  //   console.log(a, b, c)
+  //   return null
+  // })
+  return (
+    <a
+      {...props}
+      href={to}
+      onClick={(event) => {
+        event.preventDefault()
+        navigateToExample(to, {
+          code: live.code,
+          inline
+        })
+      }}
+    />
+  )
 })
