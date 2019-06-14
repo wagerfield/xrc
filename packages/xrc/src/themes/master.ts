@@ -5,16 +5,13 @@ import { mapFontSizes } from "../core/fonts"
 const buttonStyles = (styles: ThemeObject) => ({
   alignItems: "center",
   border: "none",
-  borderRadius: "lg",
   boxShadow: "none",
   boxSizing: "border-box",
   cursor: "pointer",
   display: "inline-flex",
-  fontSize: "base.md",
   fontSmoothing: "antialiased",
-  height: "lg",
+  justifyContent: "center",
   lineHeight: "single",
-  paddingX: "32px",
   textStyle: "caps",
   userSelect: "none",
   verticalAlign: "bottom",
@@ -163,7 +160,6 @@ export const MasterTheme: Theme = {
         "border": "button",
         "borderColor": "brand.primary",
         "color": "brand.primary",
-        "paddingX": "30px",
         ":hover": {
           background: "rgba(0,182,125,0.12)"
         },
@@ -260,7 +256,11 @@ export const MasterTheme: Theme = {
     },
     // Button
     "button": {
-      buttonStyle: "primary"
+      buttonStyle: "primary",
+      borderRadius: "lg",
+      fontSize: "base.md",
+      height: "lg",
+      paddingX: "32px"
     }
   },
   // Components
