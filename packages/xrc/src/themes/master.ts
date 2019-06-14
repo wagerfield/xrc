@@ -249,7 +249,7 @@ export const MasterTheme: Theme = {
     },
     // Lists
     "ol,ul": {
-      listStyle: "disc outer none",
+      listStyle: "disc inside none",
       padding: 0,
       margin: 0
     },
