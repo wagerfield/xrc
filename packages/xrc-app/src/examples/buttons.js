@@ -1,35 +1,35 @@
 const code = `
-<Box
-  minHeight="1"
-  display="grid"
-  alignContent="center"
-  justifyContent="center"
-  gridTemplateColumns="repeat(6, auto)"
-  gridGap="4"
-  padding="4"
->
-  {/* Large */}
-  <Button var="0" as="a"/>
-  <Button var="0">Click me</Button>
-  <Button var="1"/>
-  <Button var="1" as="a">Click me</Button>
-  <Button var="2"/>
-  {/* Medium */}
-  <Button var="2">Click me</Button>
-  <Button var="0" size="md" as="a"/>
-  <Button var="0" size="md">Click me</Button>
-  <Button var="1" size="md"/>
-  <Button var="1" size="md" as="a">Click me</Button>
-  <Button var="2" size="md"/>
-  <Button var="2" size="md">Click me</Button>
-  {/* Small */}
-  <Button var="0" size="sm" as="a"/>
-  <Button var="0" size="sm">Click me</Button>
-  <Button var="1" size="sm"/>
-  <Button var="1" size="sm" as="a">Click me</Button>
-  <Button var="2" size="sm"/>
-  <Button var="2" size="sm">Click me</Button>
-</Box>
+const KEYS = [0, 1, 2]
+
+const ButtonVariants = (props) => KEYS.map((key) => (
+  <React.Fragment key={key}>
+    <Button {...props} variant={key} />
+    <Button {...props} variant={key}>Click me</Button>
+  </React.Fragment>
+))
+
+const ButtonSizes = (props) => KEYS.map((key) => (
+  <ButtonVariants key={key} size={key} />
+))
+
+const Container = (props) => (
+  <Box
+    minHeight="1"
+    display="grid"
+    alignContent="center"
+    justifyContent="center"
+    gridTemplateColumns="repeat(6, auto)"
+    gridGap="4"
+    padding="4"
+    {...props}
+  />
+)
+
+render(
+  <Container>
+    <ButtonSizes />
+  </Container>
+)
 `
 
-export default { code, inline: false }
+export default { code, inline: true }
