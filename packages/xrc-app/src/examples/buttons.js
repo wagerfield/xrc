@@ -1,14 +1,16 @@
 const code = `
-const KEYS = [0, 1, 2]
+const SIZES = ["lg", "md", "sm"]
 
-const ButtonVariants = (props) => KEYS.map((key) => (
+const VARIANTS = ["primary", "secondary", "alternative"]
+
+const ButtonVariants = (props) => VARIANTS.map((key) => (
   <React.Fragment key={key}>
     <Button {...props} variant={key} />
     <Button {...props} variant={key}>Click me</Button>
   </React.Fragment>
 ))
 
-const ButtonSizes = (props) => KEYS.map((key) => (
+const ButtonSizes = (props) => SIZES.map((key) => (
   <ButtonVariants key={key} size={key} />
 ))
 
@@ -17,6 +19,7 @@ const Container = (props) => (
     minHeight="1"
     display="grid"
     alignContent="center"
+    justifyItems="center"
     justifyContent="center"
     gridTemplateColumns="repeat(6, auto)"
     gridGap="4"
