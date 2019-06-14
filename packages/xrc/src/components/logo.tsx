@@ -7,7 +7,11 @@ import { component } from "../core/factory"
 
 export type LogoAttributes = Omit<HTMLAttributes<HTMLElement>, "color">
 
-export type LogoVariant = 0 | 1 | 2 | 3 | 4 | 5
+type LogoNumberVariant = 0 | 1 | 2 | 3 | 4 | 5
+
+type LogoStringVariant = "0" | "1" | "2" | "3" | "4" | "5"
+
+export type LogoVariant = LogoNumberVariant | LogoStringVariant
 
 export type LogoStyleProps = GraphicSetProps
 
