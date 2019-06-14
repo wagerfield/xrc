@@ -14,8 +14,8 @@ export type BoxStyleProps = BoxVariantProps & BoxSetProps
 export type BoxProps = BoxStyleProps & PolymorphProps
 
 export const boxVariant = variant<BoxVariantProps>({
-  themeKey: "box",
-  renderer: boxSet
+  themeKeys: ["box"],
+  renderers: [boxSet]
 })
 
 export const withBoxStyles = component<BoxProps>({

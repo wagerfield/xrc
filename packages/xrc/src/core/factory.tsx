@@ -96,10 +96,10 @@ export function polymorph<P>(
   }
 }
 
-export function variant<P>({ themeKey, renderer }: VariantOptions) {
+export function variant<P>({ themeKeys, renderers }: VariantOptions) {
   return onnoVariant<P, any>({
     propsKeys: VARIANT_KEYS,
-    themeKeys: [`components.${themeKey}`],
-    renderers: [renderer]
+    themeKeys: themeKeys.map<string>((key) => `components.${key}`),
+    renderers
   })
 }

@@ -15,8 +15,8 @@ export type TextStyleProps = TextVariantProps & TextSetProps
 export type TextProps = TextStyleProps & PolymorphProps
 
 export const textVariant = variant<TextVariantProps>({
-  themeKey: "text",
-  renderer: textSet
+  themeKeys: ["text"],
+  renderers: [textSet]
 })
 
 const isCode = test(/^code$/)

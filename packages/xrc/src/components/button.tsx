@@ -32,16 +32,21 @@ export interface ButtonProps extends ButtonStyleProps, PolymorphProps {
 }
 
 export const buttonVariant = variant<ButtonVariantProps>({
-  themeKey: "button",
-  renderer: buttonStyle
+  themeKeys: ["button"],
+  renderers: [buttonStyle]
 })
 
 export const withButtonStyles = component<ButtonProps>({
   name: "Button",
   renderers: [buttonVariant],
   pickKeys: VARIANT_KEYS.concat("theme"),
-  styles: {
-    variant: "primary"
+  styles(props) {
+    // const size = props.size || props.s || "lg"
+    // const icon = props.icon || props.i || null
+    // const text = props.text || null
+    return {
+      variant: "primary"
+    }
   }
 })
 

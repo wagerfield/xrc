@@ -51,6 +51,6 @@ export type ComponentKeys = keyof ComponentProps<{}>
 export type VariantKeys = keyof VariantProps<{}>
 
 export interface VariantOptions {
-  themeKey: string
-  renderer: AnyRenderFunction
+  themeKeys: string[]
+  renderers: AnyRenderFunction[]
 }

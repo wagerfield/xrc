@@ -15,8 +15,8 @@ export type HeadingStyleProps = HeadingVariantProps & TextSetProps
 export type HeadingProps = HeadingStyleProps & PolymorphProps
 
 export const headingVariant = variant<HeadingVariantProps>({
-  themeKey: "heading",
-  renderer: textSet
+  themeKeys: ["heading"],
+  renderers: [textSet]
 })
 
 const isHeading = test(/^h[123]$/)
