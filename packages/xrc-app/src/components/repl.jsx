@@ -7,21 +7,24 @@ const V = "all"
 const H = "lg"
 
 const containerStyles = (editor, fullscreen) => {
-  if (!fullscreen) return null
-  return {
-    display: "grid",
-    minHeight: 1,
-    height: {
-      [H]: 1
-    },
-    overflow: {
-      [H]: "hidden"
-    },
-    gridTemplate: {
-      [V]: editor ? "1fr auto / 1fr" : "1fr",
-      [H]: editor ? "1fr / 640px 1fr" : "1fr"
-    }
+  const styles = { position: "relative" }
+  if (fullscreen) {
+    Object.assign(styles, {
+      display: "grid",
+      minHeight: 1,
+      height: {
+        [H]: 1
+      },
+      overflow: {
+        [H]: "hidden"
+      },
+      gridTemplate: {
+        [V]: editor ? "1fr auto / 1fr" : "1fr",
+        [H]: editor ? "1fr / 640px 1fr" : "1fr"
+      }
+    })
   }
+  return styles
 }
 
 const REPLContainer = ({ editor, fullscreen, ...props }) => (
@@ -41,7 +44,15 @@ const REPLChild = (props) => (
 )
 
 const REPLLink = (props) => (
-  <Button position="absolute" right="0" top="0" margin="4" {...props} />
+  <Button
+    position="absolute"
+    right="0"
+    top="0"
+    margin="4"
+    variant="alternative"
+    zIndex="1"
+    {...props}
+  />
 )
 
 export const REPL = ({
@@ -55,14 +66,15 @@ export const REPL = ({
 }) => (
   <Provider code={code} inline={inline} language={language} disabled={disabled}>
     <REPLContainer className="repl" editor={editor} fullscreen={fullscreen}>
-      {/* <REPLLink
-        className="preview-button"
-        as={Link}
-        to={editor ? "/view" : "/edit"}
-        inline={inline}
-      >
-        {editor ? "View" : "Edit"}
-      </REPLLink> */}
+      {preview && (
+        <REPLLink
+          className="preview-button"
+          as={Link}
+          to={editor ? "/view" : "/edit"}
+          children={editor ? "View" : "Edit"}
+          inline={inline}
+        />
+      )}
       {preview && (
         <REPLPanel className="preview-panel" order={{ [H]: 1 }}>
           <REPLWrapper className="preview-wrapper" order={{ [H]: 1 }}>
