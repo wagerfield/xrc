@@ -7,8 +7,8 @@ import { Loading } from "./components/loading"
 import { Nav } from "./components/nav"
 import { fonts } from "./core/fonts"
 import { components } from "./core/mdx"
-import Edit from "./pages/edit"
-import View from "./pages/view"
+import Edit from "./dynamic/edit"
+import View from "./dynamic/view"
 
 // Add dynamic paths for example routes
 addPrefetchExcludes([/(edit|view)/])
@@ -31,8 +31,8 @@ export default () => (
         <MDXProvider components={components}>
           <React.Suspense fallback={<Loading />}>
             <Box as={Router} primary={false} component="main" overflow="auto">
-              <Edit path="/edit" />
-              <View path="/view" />
+              <Edit path="/edit/*" />
+              <View path="/view/*" />
               <Routes default />
             </Box>
           </React.Suspense>
