@@ -5,8 +5,8 @@ const VARIANTS = ["primary", "secondary", "alternative"]
 
 const ButtonVariants = (props) => VARIANTS.map((key) => (
   <React.Fragment key={key}>
-    <Button {...props} variant={key} />
-    <Button {...props} variant={key}>Click me</Button>
+    <Button {...props} variant={key} icon="bug" />
+    <Button {...props} variant={key} text="Click me" />
   </React.Fragment>
 ))
 
@@ -18,6 +18,7 @@ const Container = (props) => (
   <Box
     minHeight="1"
     display="grid"
+    alignItems="center"
     alignContent="center"
     justifyItems="center"
     justifyContent="center"

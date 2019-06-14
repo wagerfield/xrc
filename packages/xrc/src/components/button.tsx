@@ -1,13 +1,13 @@
-import { buttonStyle } from "onno"
+import { jsx } from "@emotion/core"
+import { buttonStyle, omit } from "onno"
 import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react"
-import { component, polymorph, variant, VARIANT_KEYS } from "../core/factory"
+import { component, variant, VARIANT_KEYS } from "../core/factory"
 import { PolymorphProps, VariantProps } from "../types/component"
+import { Icon, IconVariant } from "./icon"
 import { withUIStyles } from "./ui"
-import { IconVariant } from "./icon"
 
-export type ButtonAttributes =
-  | AnchorHTMLAttributes<HTMLAnchorElement>
-  | ButtonHTMLAttributes<HTMLButtonElement>
+export type ButtonAttributes = AnchorHTMLAttributes<HTMLAnchorElement> &
+  ButtonHTMLAttributes<HTMLButtonElement>
 
 type ButtonIndexVariant = 0 | "0" | 1 | "1" | 2 | "2"
 
@@ -23,7 +23,10 @@ export type ButtonVariantProps = VariantProps<ButtonVariant>
 
 export type ButtonStyleProps = ButtonVariantProps
 
-export interface ButtonProps extends ButtonStyleProps, PolymorphProps {
+export interface ButtonProps
+  extends ButtonAttributes,
+    ButtonStyleProps,
+    PolymorphProps {
   children?: ReactNode
   icon?: IconVariant
   i?: IconVariant
@@ -55,7 +58,7 @@ const mapSizes = (sizes: any[]) =>
 
 const FONT_SIZE_MAP = mapSizes([14, 14, 16])
 
-const PADDING_MAP = mapSizes([16, 20, 32])
+const PADDING_MAP = mapSizes([16, 24, 32])
 
 const RADIUS_MAP = mapSizes([16, 20, 24])
 
@@ -71,21 +74,40 @@ export const withButtonStyles = component<ButtonProps>({
   renderers: [buttonVariant],
   pickKeys: VARIANT_KEYS.concat("theme"),
   styles(props) {
+    const v = props.variant || props.var || props.v || 0
     const text = props.text || props.children || null
     const icon = props.icon || props.i || null
     let size = props.size || props.s || "lg"
     if (icon && size === "sm") size = "md"
+    const hasBorder = v === 1 || v === "secondary"
+    const padding = text ? PADDING_MAP[size] : 0
     return {
-      borderRadius: RADIUS_MAP[size],
       fontSize: FONT_SIZE_MAP[size],
-      paddingX: text ? PADDING_MAP[size] : 0,
+      borderRadius: RADIUS_MAP[size],
       width: text ? null : SIZE_MAP[size],
       height: SIZE_MAP[size],
-      variant: "primary"
+      paddingX: padding && hasBorder ? padding - 2 : padding,
+      paddingY: 0,
+      variant: v
     }
   }
 })
 
-const BaseButton = withButtonStyles(polymorph<ButtonAttributes>("button"))
+const omitButtonProps = omit({
+  propsKeys: ["as", "icon", "i", "size", "s", "text", "variant", "var", "v"]
+})
+
+const BaseButton = withButtonStyles((props: ButtonProps) => {
+  const Element = props.as || "button"
+  const buttonProps = omitButtonProps(props)
+  const icon = props.icon || props.i
+  buttonProps.children = [props.text || props.children]
+  if (icon) {
+    buttonProps.children.unshift(
+      <Icon key="icon" fill="inherit" variant={icon} />
+    )
+  }
+  return <Element {...buttonProps} />
+})
 
 export const Button = withUIStyles(BaseButton)

@@ -139,6 +139,7 @@ export const MasterTheme: Theme = {
     {
       alias: "primary",
       value: buttonStyles({
+        "fill": "text.inv",
         "color": "text.inv",
         "background": "brand.primary",
         "boxShadow": [
@@ -160,6 +161,7 @@ export const MasterTheme: Theme = {
         "border": "button",
         "borderColor": "brand.primary",
         "color": "brand.primary",
+        "fill": "brand.primary",
         ":hover": {
           background: "rgba(0,182,125,0.12)"
         },
@@ -173,6 +175,7 @@ export const MasterTheme: Theme = {
       value: buttonStyles({
         "background": "overlay.light",
         "color": "brand.primary",
+        "fill": "brand.primary",
         ":hover": {
           background: "rgba(0,0,0,0.12)"
         },
