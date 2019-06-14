@@ -24,7 +24,7 @@
     "@emotion/core": "10.0.10",
     "@types/react": "16.8.19",
     "emotion-theming": "10.0.10",
-    "onno": "0.5.4",
+    "onno": "0.6.0",
     "react": "16.8.6"
   }
 }
