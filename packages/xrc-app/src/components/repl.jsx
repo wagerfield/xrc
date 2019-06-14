@@ -45,15 +45,20 @@ const REPLChild = (props) => (
 
 const REPLLink = (props) => (
   <Button
+    zIndex="1"
+    variant="alternative"
     position="absolute"
+    margin="24"
     right="0"
     top="0"
-    margin="4"
-    variant="alternative"
-    zIndex="1"
     {...props}
   />
 )
+
+const handleChange = (code) => {
+  console.log(code)
+  return code
+}
 
 export const REPL = ({
   code,
@@ -68,9 +73,10 @@ export const REPL = ({
     <REPLContainer className="repl" editor={editor} fullscreen={fullscreen}>
       {preview && (
         <REPLLink
-          className="preview-button"
           as={Link}
+          className="preview-link"
           to={editor ? "/view" : "/edit"}
+          title={editor ? "View" : "Edit"}
           children={editor ? "View" : "Edit"}
           inline={inline}
         />
@@ -78,17 +84,26 @@ export const REPL = ({
       {preview && (
         <REPLPanel className="preview-panel" order={{ [H]: 1 }}>
           <REPLWrapper className="preview-wrapper" order={{ [H]: 1 }}>
-            <REPLChild className="preview" as={Preview} />
+            <REPLChild
+              as={Preview}
+              className="preview"
+              minHeight={!fullscreen && "160"}
+              boxShadow={!fullscreen && "inset 0 0 1px #202020"}
+            />
           </REPLWrapper>
           <REPLWrapper className="error-wrapper" flexGrow="0">
-            <REPLChild as={Error} className="error" />
+            <REPLChild className="error" as={Error} />
           </REPLWrapper>
         </REPLPanel>
       )}
       {editor && (
         <REPLPanel className="editor-panel">
           <REPLWrapper className="editor-wrapper">
-            <REPLChild className="editor" as={Editor} />
+            <REPLChild
+              as={Editor}
+              className="editor"
+              minHeight={fullscreen && "160"}
+            />
           </REPLWrapper>
         </REPLPanel>
       )}
