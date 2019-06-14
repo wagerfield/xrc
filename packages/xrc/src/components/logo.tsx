@@ -53,6 +53,6 @@ export const Logo = withLogoStyles((props: LogoProps) => {
   const Element = props.as || "div"
   const variant = props.variant || props.var || props.v || 0
   const logoProps = omitLogoProps(props)
-  logoProps.children = LOGOS[variant]
+  logoProps.children = LOGOS[variant as number]
   return <Element {...logoProps} />
 })
