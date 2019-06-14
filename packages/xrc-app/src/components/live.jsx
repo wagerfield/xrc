@@ -41,11 +41,13 @@ export const Provider = ({
   language = "jsx",
   disabled = false,
   inline = false,
+  transformCode,
   children
 }) => (
   <LiveProvider
     scope={scope}
     theme={theme}
+    transformCode={transformCode}
     children={children}
     disabled={disabled}
     language={language}

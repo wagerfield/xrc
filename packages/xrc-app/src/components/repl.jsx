@@ -60,6 +60,10 @@ const REPLButton = (props) => (
   />
 )
 
+const transformCode = (code) => {
+  return code.replace(/render\(\s*\)/, "render(null)")
+}
+
 export const REPL = ({
   code: initialCode,
   inline: initialInline,
@@ -89,6 +93,7 @@ export const REPL = ({
       inline={inline}
       language={language}
       disabled={disabled}
+      transformCode={transformCode}
     >
       <REPLContainer className="repl" editor={editor} fullscreen={fullscreen}>
         {preview && (
