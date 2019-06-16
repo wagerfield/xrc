@@ -80,13 +80,13 @@ export const withButtonStyles = component<ButtonProps>({
     let size = props.size || props.s || "lg"
     if (icon && size === "sm") size = "md"
     const hasBorder = v === 1 || v === "secondary"
-    const padding = text ? PADDING_MAP[size] : 0
+    const paddingX = text ? PADDING_MAP[size] : 0
     return {
       fontSize: FONT_SIZE_MAP[size],
       borderRadius: RADIUS_MAP[size],
       width: text ? null : SIZE_MAP[size],
       height: SIZE_MAP[size],
-      paddingX: padding && hasBorder ? padding - 2 : padding,
+      paddingX: paddingX && hasBorder ? paddingX - 2 : paddingX,
       paddingY: 0,
       variant: v
     }
@@ -100,11 +100,18 @@ const omitButtonProps = omit({
 const BaseButton = withButtonStyles((props: ButtonProps) => {
   const Element = props.as || "button"
   const buttonProps = omitButtonProps(props)
+  const text = props.text || props.children
   const icon = props.icon || props.i
-  buttonProps.children = [props.text || props.children]
+  buttonProps.children = [text]
   if (icon) {
     buttonProps.children.unshift(
-      <Icon key="icon" fill="inherit" variant={icon} />
+      <Icon
+        key="icon"
+        fill="inherit"
+        marginLeft={text ? -3 : 0}
+        marginRight={text ? 2 : 0}
+        variant={icon}
+      />
     )
   }
   return <Element {...buttonProps} />
