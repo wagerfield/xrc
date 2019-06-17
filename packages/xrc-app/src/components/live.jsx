@@ -3,10 +3,11 @@ import theme from "prism-react-renderer/themes/oceanicNext"
 import { Link } from "@reach/router"
 import { LiveError, LiveEditor, LivePreview, LiveProvider } from "react-live"
 import * as xrc from "xrc"
+import { Grid } from "../components/grid"
 
 const { Box } = xrc
 
-const scope = { Link, ...xrc }
+const scope = { Grid, Link, ...xrc }
 
 const editor = {
   forward: ["padding"],

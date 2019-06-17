@@ -14,25 +14,10 @@ const ButtonSizes = (props) => SIZES.map((key) => (
   <ButtonVariants key={key} size={key} />
 ))
 
-const Container = (props) => (
-  <Box
-    minHeight="1"
-    display="grid"
-    alignItems="center"
-    alignContent="center"
-    justifyItems="center"
-    justifyContent="center"
-    gridTemplateColumns="repeat(6, auto)"
-    gridGap="4"
-    padding="4"
-    {...props}
-  />
-)
-
 render(
-  <Container>
+  <Grid cols="6">
     <ButtonSizes />
-  </Container>
+  </Grid>
 )
 `
 
