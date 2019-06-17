@@ -53,7 +53,6 @@ const REPLButton = (props) => (
     zIndex="1"
     variant="alternative"
     position="absolute"
-    margin="24"
     right="0"
     top="0"
     {...props}
@@ -78,6 +77,7 @@ export const REPL = ({
   const [code, setCode] = React.useState(initialCode)
   const [inline, setInline] = React.useState(initialInline)
   const exampleQuery = exampleToQuery({ code, inline })
+  const buttonMargin = fullscreen ? 24 : 16
   const linkPath = editor ? "/view" : "/edit"
   if (persist) {
     React.useEffect(() => {
@@ -98,6 +98,7 @@ export const REPL = ({
           <REPLPanel className="preview-panel" order={{ [H]: 1 }}>
             <REPLButton
               className="preview-link"
+              margin={buttonMargin}
               icon={editor ? "eye" : "edit"}
               title={editor ? "View" : "Edit"}
               onClick={() => navigate(`${linkPath}?${exampleQuery}`)}
@@ -120,6 +121,7 @@ export const REPL = ({
             {toggle && (
               <REPLButton
                 className="editor-mode"
+                margin={buttonMargin}
                 text={inline ? "Render" : "Inline"}
                 title={inline ? "Render" : "Inline"}
                 onClick={() => setInline(!inline)}
