@@ -79,15 +79,17 @@ export const withButtonStyles = component<ButtonProps>({
     const icon = props.icon || props.i || null
     let size = props.size || props.s || "lg"
     if (icon && size === "sm") size = "md"
-    const hasBorder = v === 1 || v === "secondary"
+    const isPrimary = v === 0 || v === "primary"
+    const isSecondary = v === 1 || v === "secondary"
     const paddingX = text ? PADDING_MAP[size] : 0
     return {
       fontSize: FONT_SIZE_MAP[size],
       borderRadius: RADIUS_MAP[size],
       width: text ? null : SIZE_MAP[size],
       height: SIZE_MAP[size],
-      paddingX: paddingX && hasBorder ? paddingX - 2 : paddingX,
-      paddingY: 0,
+      paddingX: paddingX && isSecondary ? paddingX - 2 : paddingX,
+      paddingTop: isPrimary ? 0 : 1,
+      paddingBottom: 0,
       variant: v
     }
   }
@@ -108,6 +110,7 @@ const BaseButton = withButtonStyles((props: ButtonProps) => {
       <Icon
         key="icon"
         fill="inherit"
+        marginTop={-1}
         marginLeft={text ? -3 : 0}
         marginRight={text ? 2 : 0}
         variant={icon}
