@@ -14,7 +14,7 @@
   "dependencies": {
     "@philpl/buble": "0.19.7",
     "@reach/router": "1.2.1",
-    "query-string": "6.8.1",
+    "query-string": "6.8.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-hot-loader": "4.12.9",
