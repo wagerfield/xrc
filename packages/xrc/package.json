@@ -21,9 +21,9 @@
     "types"
   ],
   "dependencies": {
-    "@emotion/core": "10.0.16",
+    "@emotion/core": "10.0.17",
     "@types/react": "16.9.2",
-    "emotion-theming": "10.0.14",
+    "emotion-theming": "10.0.17",
     "onno": "1.0.0",
     "react": "16.9.0"
   }
