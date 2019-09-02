@@ -3922,7 +3922,7 @@ chokidar@^1.6.0:
   optionalDependencies:
     fsevents "^1.0.0"
 
-chokidar@^2.0.2, chokidar@^2.0.4, chokidar@^2.1.5, chokidar@^2.1.6:
+chokidar@^2.0.2, chokidar@^2.0.4, chokidar@^2.1.6:
   version "2.1.6"
   resolved "https://registry.npmjs.org/chokidar/-/chokidar-2.1.6.tgz#b6cad653a929e244ce8a834244164d241fa954c5"
   integrity sha512-V2jUo67OKkc6ySiRpJrjlpJKl9kDuG+Xb8VgsGzb+aEouhgS1D0weyPU4lEzdAcsCAvrih2J2BqyXqHWvVLw5g==
@@ -11208,13 +11208,13 @@ react-static-plugin-reach-router@7.2.0:
   resolved "https://registry.npmjs.org/react-static-plugin-reach-router/-/react-static-plugin-reach-router-7.2.0.tgz#0570e2c4c4852fb0a04a5ed5c5ac8302097a4a97"
   integrity sha512-itwKYMLyKlwPXsDpgtIrY5rqTBCszbZ+c5qiXt+HM+6S8Zej7qVUktmVdtNsNhvnBFefRhFX4DY2fC1M4a3A0w==
 
-react-static-plugin-source-filesystem@7.1.0:
-  version "7.1.0"
-  resolved "https://registry.npmjs.org/react-static-plugin-source-filesystem/-/react-static-plugin-source-filesystem-7.1.0.tgz#41ed385f6b01a4c53bebd918281a7bcb03423e85"
-  integrity sha512-HI7yVBNDTQz5aYsFWJfTUsCgOVjUU9+s+vLPEd8BxeqGAJ0TPKymkmKJJLJYFo8TGm20Wn0yqXiEvuXEOYDoEg==
+react-static-plugin-source-filesystem@7.2.0:
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/react-static-plugin-source-filesystem/-/react-static-plugin-source-filesystem-7.2.0.tgz#c312e43bab5682b4164afbdde8ae3bcd853848ec"
+  integrity sha512-bm92VKFO3rIDyQguyY+9i3ToX3otrnLp9IsXehW6IAkLO0Mx51PHnkUF91UTD5ngE8WFWfzuWJH2EYi67/Ky8A==
   dependencies:
-    chokidar "^2.1.5"
-    glob "^7.1.3"
+    chokidar "^3.0.2"
+    glob "^7.1.4"
 
 react-static@7.2.0:
   version "7.2.0"
