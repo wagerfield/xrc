@@ -22,7 +22,7 @@
     "react-static": "7.2.2",
     "react-static-plugin-mdx": "7.2.0",
     "react-static-plugin-reach-router": "7.2.2",
-    "react-static-plugin-source-filesystem": "7.2.0",
+    "react-static-plugin-source-filesystem": "7.2.2",
     "xrc": "0.14.2"
   },
   "devDependencies": {
