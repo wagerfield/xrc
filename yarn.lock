@@ -11216,10 +11216,10 @@ react-static-plugin-source-filesystem@7.2.0:
     chokidar "^3.0.2"
     glob "^7.1.4"
 
-react-static@7.2.0:
-  version "7.2.0"
-  resolved "https://registry.npmjs.org/react-static/-/react-static-7.2.0.tgz#203e76058f917b18f3aca99f3d9ec7422178cb84"
-  integrity sha512-WQ5I2ftaUxeUqWNqWbRMwn13/gJ08Xl0GmJ/O9/oSpUeujy8STnUkmWLnI/vDZ/0jTdYQmg/lm+w4tDgoMCOUQ==
+react-static@7.2.2:
+  version "7.2.2"
+  resolved "https://registry.npmjs.org/react-static/-/react-static-7.2.2.tgz#09c43fd73d0c4201a3d21d8d1609d6afd578447a"
+  integrity sha512-+ebhBhRnAT/pPqwJBF1gqqxJOZWpV57fklxm5yM7zRU6xa+CNG3wnYj8VgYI4asjI+WSLnWx92Z+Yk2bWSKd9w==
   dependencies:
     "@babel/cli" "^7.5.5"
     "@babel/core" "^7.5.5"
