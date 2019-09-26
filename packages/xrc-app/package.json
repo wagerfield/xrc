@@ -26,6 +26,6 @@
     "xrc": "0.14.2"
   },
   "devDependencies": {
-    "serve": "11.1.0"
+    "serve": "11.2.0"
   }
 }
