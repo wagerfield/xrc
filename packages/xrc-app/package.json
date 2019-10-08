@@ -17,7 +17,7 @@
     "query-string": "6.8.3",
     "react": "16.10.2",
     "react-dom": "16.10.2",
-    "react-hot-loader": "4.12.14",
+    "react-hot-loader": "4.12.15",
     "react-live": "2.2.1",
     "react-static": "7.2.2",
     "react-static-plugin-mdx": "7.2.2",
