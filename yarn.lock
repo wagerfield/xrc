@@ -11226,10 +11226,10 @@ react-static-plugin-reach-router@7.2.3:
   resolved "https://registry.npmjs.org/react-static-plugin-reach-router/-/react-static-plugin-reach-router-7.2.3.tgz#0b991e347a64ee462cfa7b2b08d34bec56620a5b"
   integrity sha512-OgOm7/3PjPCZD6/U++adNlzi8dJMn6Weig14l12w4TOWlWSI453Cv54bZH0N7ejUnFKwvrPS5mamP+FGCP6VUw==
 
-react-static-plugin-source-filesystem@7.2.2:
-  version "7.2.2"
-  resolved "https://registry.npmjs.org/react-static-plugin-source-filesystem/-/react-static-plugin-source-filesystem-7.2.2.tgz#9405bd857a4ad7e75e8991840d16b4ebbd31d08c"
-  integrity sha512-z2gcxuCC9FVUZ+Sew9nizsFXJRRB52H+WTsOFGO5vEqGO8+FE0f0TlFHDNJ+7UzR5beAKWAOf9OVkS0xrrssww==
+react-static-plugin-source-filesystem@7.2.3:
+  version "7.2.3"
+  resolved "https://registry.npmjs.org/react-static-plugin-source-filesystem/-/react-static-plugin-source-filesystem-7.2.3.tgz#8ce4b9e122d075f217899f44ec08db0747acc02c"
+  integrity sha512-pUf3J4LPFkVsVHlk7nj1xZkuSZPLqf5QhSgNtDtotfqY6Jslrv/NoZJFlvHCNZdOsVVFEfnAPN6VGlJzHtELkw==
   dependencies:
     chokidar "^3.0.2"
     glob "^7.1.4"
