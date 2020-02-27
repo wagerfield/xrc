@@ -2467,10 +2467,10 @@
   resolved "https://registry.npmjs.org/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
 
-"@types/react@16.9.23":
-  version "16.9.23"
-  resolved "https://registry.npmjs.org/@types/react/-/react-16.9.23.tgz#1a66c6d468ba11a8943ad958a8cb3e737568271c"
-  integrity sha512-SsGVT4E7L2wLN3tPYLiF20hmZTPGuzaayVunfgXzUn1x4uHVsKH6QDJQ/TdpHqwsTLd4CwrmQ2vOgxN7gE24gw==
+"@types/react@16.9.24":
+  version "16.9.24"
+  resolved "https://registry.npmjs.org/@types/react/-/react-16.9.24.tgz#9896c3ce0cf0d67beb3f9a35049b4a37679de30d"
+  integrity sha512-SoAlUP6XkRlGEWK0Jb4fMPt98CptLHmRYxxXQGIGbfM4Xyppbo0n7NmX/u6mlOyCnIeDViAanZ6dTVHI29U1Ig==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
