@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "@emotion/core": "10.0.28",
-    "@types/react": "16.9.34",
+    "@types/react": "16.9.35",
     "emotion-theming": "10.0.27",
     "onno": "1.0.0",
     "react": "16.13.1"
