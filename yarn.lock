@@ -11927,10 +11927,10 @@ react-static-plugin-mdx@7.2.2:
   dependencies:
     "@mdx-js/loader" "^1.3.0"
 
-react-static-plugin-reach-router@7.4.0:
-  version "7.4.0"
-  resolved "https://registry.npmjs.org/react-static-plugin-reach-router/-/react-static-plugin-reach-router-7.4.0.tgz#be0e9c67762a326e84a6a44e9896f9a3870abaec"
-  integrity sha512-vFI06sBjCRWduJZwEMMS8stUdM1uC3kAeib3eeHxoR4s/s2mVrK/1fFuLPy1Zbnc+pQ4jgCgrOxGbwgE/CL6Ng==
+react-static-plugin-reach-router@7.4.2:
+  version "7.4.2"
+  resolved "https://registry.npmjs.org/react-static-plugin-reach-router/-/react-static-plugin-reach-router-7.4.2.tgz#65dcfb2a5c6f2a9ce80e9e18141ad2398aabd6b3"
+  integrity sha512-vqIXgZ1zyzsvjOahn1NydQUPRhPhEHmL9x7C4OUhwy2T+lZ8EQM90rLCo5z6sGjj48kJ/RnhDxA/uR+uBQTAPQ==
 
 react-static-plugin-source-filesystem@7.4.0:
   version "7.4.0"
