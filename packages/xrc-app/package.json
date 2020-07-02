@@ -19,7 +19,7 @@
     "react-dom": "16.13.1",
     "react-hot-loader": "4.12.21",
     "react-live": "2.2.2",
-    "react-static": "7.4.0",
+    "react-static": "7.4.2",
     "react-static-plugin-mdx": "7.2.2",
     "react-static-plugin-reach-router": "7.4.2",
     "react-static-plugin-source-filesystem": "7.4.0",
